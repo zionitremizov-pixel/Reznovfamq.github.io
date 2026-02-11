@@ -17,7 +17,7 @@
             transition: background-color 0.3s, color 0.3s;
         }
         
-        /* ТЁМНАЯ ТЕМА (по умолчанию) */
+        /* ТЁМНАЯ ТЕМА (базовая) */
         body.dark-theme {
             background: #000000;
             color: #ffffff;
@@ -36,7 +36,6 @@
         }
         body.dark-theme .tagline {
             color: #cccccc;
-            border-left-color: #888888;
         }
         body.dark-theme .tab {
             color: #999999;
@@ -52,7 +51,6 @@
         body.dark-theme th {
             background: #1a1a1a;
             color: #ffffff;
-            border-bottom: 2px solid #666666;
         }
         body.dark-theme td {
             color: #dddddd;
@@ -113,7 +111,6 @@
         }
         body.light-theme .tagline {
             color: #555555;
-            border-left-color: #aaaaaa;
         }
         body.light-theme .tab {
             color: #666666;
@@ -129,7 +126,6 @@
         body.light-theme th {
             background: #eaeaea;
             color: #222222;
-            border-bottom: 2px solid #aaaaaa;
         }
         body.light-theme td {
             color: #333333;
@@ -214,11 +210,6 @@
             border: 1px solid #cccccc;
             color: #222222;
         }
-        body.light-theme [data-tooltip]:before {
-            background: #333333;
-            color: white;
-            border: 1px solid #666666;
-        }
 
         .container {
             max-width: 1400px;
@@ -232,9 +223,10 @@
             align-items: center;
             gap: 16px;
             margin-bottom: 28px;
-            border-bottom: 2px solid #666666;
+            border-bottom: 2px solid;
             padding-bottom: 20px;
             flex-wrap: wrap;
+            transition: border-color 0.3s;
         }
         .logo {
             width: 70px;
@@ -270,10 +262,15 @@
             padding-left: 12px;
             transition: color 0.3s, border-left-color 0.3s;
         }
+        .theme-controls {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
         .theme-toggle {
             background: transparent;
-            border: 1px solid #888888;
-            color: #ffffff;
+            border: 1px solid;
             padding: 12px 20px;
             border-radius: 40px;
             font-size: 16px;
@@ -284,15 +281,24 @@
             align-items: center;
             gap: 8px;
         }
-        body.light-theme .theme-toggle {
-            color: #333333;
-            border-color: #aaaaaa;
+        .color-selector {
+            background: transparent;
+            border: 1px solid;
+            padding: 12px 20px;
+            border-radius: 40px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            outline: none;
         }
-        .theme-toggle:hover {
-            background: #333333;
+        .color-selector option {
+            background: #1a1a1a;
+            color: white;
         }
-        body.light-theme .theme-toggle:hover {
-            background: #dddddd;
+        body.light-theme .color-selector option {
+            background: white;
+            color: black;
         }
         .search-box {
             margin-bottom: 24px;
@@ -311,9 +317,6 @@
             transition: background-color 0.3s, border 0.3s, color 0.3s;
         }
         .voice-btn {
-            background: #222222;
-            border: 1px solid #555555;
-            color: #cccccc;
             padding: 14px 24px;
             border-radius: 40px;
             font-size: 16px;
@@ -323,24 +326,9 @@
             display: flex;
             align-items: center;
             gap: 8px;
-        }
-        body.light-theme .voice-btn {
-            background: #eaeaea;
-            border: 1px solid #cccccc;
-            color: #333333;
-        }
-        .voice-btn:hover {
-            background: #333333;
-            color: white;
-        }
-        body.light-theme .voice-btn:hover {
-            background: #dddddd;
-            color: #000000;
+            border: 1px solid;
         }
         .voice-btn.listening {
-            background: #444444;
-            color: white;
-            border-color: #888888;
             animation: pulse 1.5s infinite;
         }
         @keyframes pulse {
@@ -355,18 +343,16 @@
             font-weight: 600;
             cursor: pointer;
             transition: 0.2s;
+            border: 1px solid;
         }
         .tabs {
             display: flex;
             gap: 8px;
             margin-bottom: 28px;
             flex-wrap: wrap;
-            border-bottom: 1px solid #333333;
+            border-bottom: 1px solid;
             padding-bottom: 12px;
             transition: border-color 0.3s;
-        }
-        body.light-theme .tabs {
-            border-bottom-color: #dddddd;
         }
         .tab {
             background: transparent;
@@ -400,7 +386,7 @@
             text-transform: uppercase;
             font-size: 14px;
             letter-spacing: 1px;
-            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+            transition: background-color 0.3s, color 0.3s;
         }
         td {
             padding: 14px 12px;
@@ -422,7 +408,7 @@
         [data-tooltip] {
             position: relative;
             cursor: help;
-            border-bottom: 1px dotted #888888;
+            border-bottom: 1px dotted;
         }
         
         [data-tooltip]:before {
@@ -484,11 +470,8 @@
             gap: 12px;
             margin-bottom: 16px;
             padding-bottom: 8px;
-            border-bottom: 1px solid #444444;
+            border-bottom: 1px solid;
             transition: border-color 0.3s;
-        }
-        body.light-theme .role-title {
-            border-bottom-color: #dddddd;
         }
         .role-name {
             font-size: 20px;
@@ -502,6 +485,7 @@
             border-radius: 40px;
             font-size: 14px;
             transition: background-color 0.3s, color 0.3s, border 0.3s;
+            border: 1px solid;
         }
         .members-grid {
             display: grid;
@@ -512,6 +496,7 @@
             border-radius: 12px;
             padding: 14px 18px;
             transition: background-color 0.3s, border 0.3s;
+            border: 1px solid;
         }
         .member-name {
             font-size: 16px;
@@ -522,12 +507,13 @@
             border-radius: 16px;
             padding: 24px;
             transition: background-color 0.3s, border 0.3s;
+            border: 1px solid;
         }
         .info-title {
             font-size: 20px;
             font-weight: 700;
             margin-bottom: 20px;
-            border-bottom: 1px solid #444444;
+            border-bottom: 1px solid;
             padding-bottom: 12px;
             transition: color 0.3s, border-color 0.3s;
         }
@@ -536,7 +522,7 @@
         }
         .info-list li {
             padding: 12px 0;
-            border-bottom: 1px solid #333333;
+            border-bottom: 1px solid;
             display: flex;
             align-items: flex-start;
             gap: 12px;
@@ -546,33 +532,19 @@
             border-bottom: none;
         }
         .miranda-box {
-            border-left: 4px solid #888888;
+            border-left: 4px solid;
             padding: 20px;
             margin-bottom: 24px;
             border-radius: 0 12px 12px 0;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, border-left-color 0.3s;
         }
         .footer {
             margin-top: 40px;
             text-align: center;
             font-size: 14px;
-            border-top: 1px solid #333333;
+            border-top: 1px solid;
             padding-top: 20px;
             transition: color 0.3s, border-color 0.3s;
-        }
-        .no-results {
-            padding: 40px;
-            text-align: center;
-            color: #888888;
-            font-size: 18px;
-        }
-        .results-info {
-            margin-bottom: 16px;
-            font-size: 14px;
-            padding: 8px 16px;
-            border-radius: 40px;
-            display: inline-block;
-            transition: background-color 0.3s, color 0.3s, border 0.3s;
         }
         
         /* ЭКРАН ВХОДА */
@@ -599,6 +571,7 @@
             width: 90%;
             text-align: center;
             transition: background-color 0.3s, border 0.3s;
+            border: 1px solid;
         }
         .login-logo {
             font-size: 64px;
@@ -629,6 +602,7 @@
             margin-bottom: 20px;
             outline: none;
             transition: background-color 0.3s, border 0.3s, color 0.3s;
+            border: 1px solid;
         }
         .login-button {
             width: 100%;
@@ -638,6 +612,7 @@
             font-weight: 600;
             cursor: pointer;
             transition: 0.2s;
+            border: 1px solid;
         }
         .login-error {
             color: #ff6666;
@@ -657,6 +632,8 @@
             .tab { padding: 8px 16px; font-size: 14px; }
             .search-box { flex-direction: column; }
             .search-clear, .voice-btn { width: 100%; text-align: center; }
+            .theme-controls { width: 100%; flex-direction: column; }
+            .theme-toggle, .color-selector { width: 100%; justify-content: center; }
             [data-tooltip]:before {
                 min-width: 200px;
                 font-size: 12px;
@@ -667,12 +644,12 @@
 <body class="dark-theme">
     <!-- ЭКРАН ВХОДА ПО ПАРОЛЮ -->
     <div id="loginScreen" class="login-screen">
-        <div class="login-box">
+        <div class="login-box" style="border-color: #666666; background: #0a0a0a;">
             <div class="login-logo">R</div>
-            <div class="login-title">Reznov FAMQ</div>
+            <div class="login-title" style="color: white;">Reznov FAMQ</div>
             <div class="login-subtitle">Закрытый ресурс семьи</div>
-            <input type="password" id="passwordInput" class="login-input" placeholder="Введи пароль" onkeypress="if(event.key==='Enter') checkPassword()">
-            <button onclick="checkPassword()" class="login-button">Войти</button>
+            <input type="password" id="passwordInput" class="login-input" placeholder="Введи пароль" style="background: #111111; border-color: #444444; color: white;" onkeypress="if(event.key==='Enter') checkPassword()">
+            <button onclick="checkPassword()" class="login-button" style="background: #222222; border-color: #555555; color: white;">Войти</button>
             <div id="loginError" class="login-error">Неверный пароль</div>
         </div>
     </div>
@@ -680,17 +657,26 @@
     <!-- ОСНОВНОЙ КОНТЕНТ -->
     <div id="mainContent" class="main-content">
         <div class="container">
-            <div class="header">
-                <div class="logo">
+            <div class="header" id="mainHeader">
+                <div class="logo" id="mainLogo">
                     <span>R</span>
                 </div>
                 <div class="title-section">
                     <h1>Reznov FAMQ · Уголовный кодекс</h1>
-                    <div class="tagline">Закон есть закон. Мы — Reznov</div>
+                    <div class="tagline" id="mainTagline">Закон есть закон. Мы — Reznov</div>
                 </div>
-                <button id="themeToggle" class="theme-toggle" onclick="toggleTheme()">
-                    <span id="themeIcon">🌙</span> Тема
-                </button>
+                <div class="theme-controls">
+                    <select id="colorSelector" class="color-selector" onchange="changeAccentColor()">
+                        <option value="classic">🎯 Классика (серый)</option>
+                        <option value="gold">🥇 Золото</option>
+                        <option value="red">🔴 Красный</option>
+                        <option value="blue">🔵 Синий</option>
+                        <option value="khaki">🎖️ Хаки</option>
+                    </select>
+                    <button id="themeToggle" class="theme-toggle" onclick="toggleTheme()">
+                        <span id="themeIcon">🌙</span> Тема
+                    </button>
+                </div>
             </div>
 
             <!-- ПОИСК + ГОЛОСОВОЙ ПОИСК -->
@@ -701,10 +687,10 @@
                 </button>
                 <button class="search-clear" onclick="clearSearch()">✕ Сбросить</button>
             </div>
-            <div id="resultsCount" class="results-info" style="display: none;"></div>
+            <div id="resultsCount" class="results-info" style="display: none; padding: 8px 16px; border-radius: 40px; background: #1a1a1a; color: #cccccc; display: inline-block; border: 1px solid #444444;"></div>
 
             <!-- ВКЛАДКИ -->
-            <div class="tabs">
+            <div class="tabs" id="mainTabs">
                 <button class="tab active" onclick="showTab(1)">📘 Общая часть</button>
                 <button class="tab" onclick="showTab(2)">🔫 Тяжкие преступления</button>
                 <button class="tab" onclick="showTab(3)">💰 Имущество / Экономика</button>
@@ -997,21 +983,21 @@
 
                     <div style="margin-bottom: 24px;">
                         <p style="font-size: 18px; font-weight: 600; margin-bottom: 12px;">📢 ПОЛНАЯ ФОРМА МИРАНДЫ:</p>
-                        <p style="background: #0a0a0a; padding: 16px; border-left: 4px solid #888888; border-radius: 0 8px 8px 0;">
+                        <p style="background: #0a0a0a; padding: 16px; border-left: 4px solid; border-radius: 0 8px 8px 0;">
                         «Вы имеете право хранить молчание. Всё, что вы скажете, может быть использовано против вас в суде. Вы имеете право на адвоката. Если вы не можете позволить себе адвоката, он будет назначен вам штатом. Вы понимаете свои права?»
                         </p>
                     </div>
 
                     <div style="margin-bottom: 24px;">
                         <p style="font-size: 18px; font-weight: 600; margin-bottom: 12px;">📢 КРАТКАЯ ФОРМА МИРАНДЫ:</p>
-                        <p style="background: #0a0a0a; padding: 16px; border-left: 4px solid #888888; border-radius: 0 8px 8px 0;">
+                        <p style="background: #0a0a0a; padding: 16px; border-left: 4px solid; border-radius: 0 8px 8px 0;">
                         «Вы имеете право хранить молчание. Вы имеете право на адвоката. Если у вас нет денег — адвокат будет от штата. Вам ясны ваши права?»
                         </p>
                     </div>
 
                     <div style="margin-bottom: 24px;">
                         <p style="font-size: 18px; font-weight: 600; margin-bottom: 12px;">⚠️ ЕСЛИ ЗАДЕРЖАННЫЙ ОТВЕТИЛ «НЕТ»:</p>
-                        <p style="background: #0a0a0a; padding: 16px; border-left: 4px solid #888888;">
+                        <p style="background: #0a0a0a; padding: 16px; border-left: 4px solid;">
                         ➜ Разъяснить права еще раз (можно своими словами, но сохранить смысл).<br>
                         ➜ Не начинать допрос, пока задержанный не подтвердит, что понял права.
                         </p>
@@ -1091,12 +1077,12 @@
                         <div class="member-card"><div class="member-name">Vladislav Reznov</div></div>
                     </div>
                 </div>
-                <div style="margin-top: 32px; padding: 16px; background: #0c0c0c; border-radius: 12px; border: 1px solid #444444; text-align: center;">
+                <div style="margin-top: 32px; padding: 16px; background: #0c0c0c; border-radius: 12px; border: 1px solid; text-align: center;">
                     <span style="font-size: 18px; font-weight: 600;">Всего: 19 участников</span>
                 </div>
             </div>
 
-            <div class="footer">
+            <div class="footer" id="mainFooter">
                 Reznov FAMQ · Уголовный кодекс · Majestic RP
             </div>
         </div>
@@ -1130,6 +1116,83 @@
             }
         }
 
+        // СМЕНА АКЦЕНТНОГО ЦВЕТА
+        function changeAccentColor() {
+            const color = document.getElementById('colorSelector').value;
+            const header = document.getElementById('mainHeader');
+            const tagline = document.getElementById('mainTagline');
+            const tabs = document.getElementById('mainTabs');
+            const footer = document.getElementById('mainFooter');
+            const logo = document.getElementById('mainLogo');
+            
+            let accentColor, borderColor, textColor;
+            
+            switch(color) {
+                case 'classic':
+                    accentColor = '#888888';
+                    borderColor = '#666666';
+                    textColor = '#cccccc';
+                    break;
+                case 'gold':
+                    accentColor = '#FFD700';
+                    borderColor = '#DAA520';
+                    textColor = '#FFD700';
+                    break;
+                case 'red':
+                    accentColor = '#C41E3A';
+                    borderColor = '#8B0000';
+                    textColor = '#FF6B6B';
+                    break;
+                case 'blue':
+                    accentColor = '#0A4C8C';
+                    borderColor = '#003366';
+                    textColor = '#6AB0FF';
+                    break;
+                case 'khaki':
+                    accentColor = '#4B5A3A';
+                    borderColor = '#3A4A2A';
+                    textColor = '#8A9A7A';
+                    break;
+            }
+            
+            // Применяем цвета к элементам
+            header.style.borderBottomColor = borderColor;
+            tagline.style.borderLeftColor = accentColor;
+            tabs.style.borderBottomColor = borderColor;
+            footer.style.borderTopColor = borderColor;
+            logo.style.borderColor = accentColor;
+            
+            // Меняем цвет активных вкладок
+            const activeTabs = document.querySelectorAll('.tab.active');
+            activeTabs.forEach(tab => {
+                tab.style.background = accentColor + '33';
+                tab.style.color = textColor;
+            });
+            
+            // Меняем цвет границ у карточек
+            const memberCards = document.querySelectorAll('.member-card');
+            memberCards.forEach(card => {
+                card.style.borderColor = accentColor + '66';
+            });
+            
+            // Меняем цвет рамки Миранды
+            const mirandaBoxes = document.querySelectorAll('.miranda-box');
+            mirandaBoxes.forEach(box => {
+                box.style.borderLeftColor = accentColor;
+            });
+            
+            // Меняем цвет кнопок
+            const voiceBtn = document.getElementById('voiceBtn');
+            const searchClear = document.querySelector('.search-clear');
+            const themeToggle = document.getElementById('themeToggle');
+            const colorSelector = document.getElementById('colorSelector');
+            
+            if (voiceBtn) voiceBtn.style.borderColor = accentColor;
+            if (searchClear) searchClear.style.borderColor = accentColor;
+            if (themeToggle) themeToggle.style.borderColor = accentColor;
+            if (colorSelector) colorSelector.style.borderColor = accentColor;
+        }
+
         // ПЕРЕКЛЮЧЕНИЕ ВКЛАДОК
         function showTab(tabId) {
             for (let i = 1; i <= 9; i++) {
@@ -1141,7 +1204,22 @@
             
             const tabs = document.querySelectorAll('.tab');
             tabs.forEach((tab, index) => {
-                tab.classList.toggle('active', index + 1 === tabId);
+                if (index + 1 === tabId) {
+                    tab.classList.add('active');
+                    // Обновляем цвет активной вкладки
+                    const color = document.getElementById('colorSelector').value;
+                    let accentColor = '#888888';
+                    switch(color) {
+                        case 'gold': accentColor = '#FFD700'; break;
+                        case 'red': accentColor = '#C41E3A'; break;
+                        case 'blue': accentColor = '#0A4C8C'; break;
+                        case 'khaki': accentColor = '#4B5A3A'; break;
+                    }
+                    tab.style.background = accentColor + '33';
+                } else {
+                    tab.classList.remove('active');
+                    tab.style.background = '';
+                }
             });
         }
 
