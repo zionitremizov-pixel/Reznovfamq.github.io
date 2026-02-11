@@ -124,47 +124,19 @@
         }
         .members-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 16px;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 12px;
         }
         .member-card {
             background: #0c0c0c;
             border: 1px solid #444444;
-            border-radius: 16px;
-            padding: 18px;
-            transition: 0.2s;
-        }
-        .member-card:hover {
-            background: #121212;
-            border-color: #777777;
+            border-radius: 12px;
+            padding: 14px 18px;
         }
         .member-name {
-            font-size: 18px;
-            font-weight: 700;
+            font-size: 16px;
+            font-weight: 500;
             color: white;
-            margin-bottom: 6px;
-        }
-        .member-status {
-            color: #aaaaaa;
-            font-size: 14px;
-            margin-bottom: 8px;
-            padding-bottom: 8px;
-            border-bottom: 1px dashed #333333;
-        }
-        .member-extra {
-            color: #bbbbbb;
-            font-size: 13px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        .extra-tag {
-            background: #1a1a1a;
-            padding: 2px 10px;
-            border-radius: 40px;
-            border: 1px solid #555555;
-            color: #dddddd;
-            font-size: 12px;
         }
         .footer {
             margin-top: 40px;
@@ -202,21 +174,21 @@
             <button class="tab active" onclick="showTab(3)">👥 Участники Reznov</button>
         </div>
 
-        <!-- ТАБ 1: Законы (скрыт по умолчанию) -->
+        <!-- ТАБ 1: Законы -->
         <div id="tab1" style="display: none;">
             <div style="color: #cccccc; text-align: center; padding: 40px;">
-                ⚖️ Уголовный кодекс Majestic RP · Скоро будет обновление
+                ⚖️ Уголовный кодекс Majestic RP
             </div>
         </div>
 
-        <!-- ТАБ 2: Имущество (скрыт по умолчанию) -->
+        <!-- ТАБ 2: Имущество -->
         <div id="tab2" style="display: none;">
             <div style="color: #cccccc; text-align: center; padding: 40px;">
-                📦 Раздел законов · Скоро будет обновление
+                📦 Раздел законов
             </div>
         </div>
 
-        <!-- ТАБ 3: Участники Reznov FAMQ (ПОЛНЫЙ СОСТАВ) -->
+        <!-- ТАБ 3: Участники Reznov FAMQ — ТОЛЬКО ИМЕНА -->
         <div id="tab3">
             <!-- ЛИДЕР — 1 -->
             <div class="role-section">
@@ -225,11 +197,7 @@
                     <span class="role-count">1</span>
                 </div>
                 <div class="members-grid">
-                    <div class="member-card">
-                        <div class="member-name">Yaroslav Reznov</div>
-                        <div class="member-status">🔊 В голосовом чате</div>
-                        <div class="member-extra"></div>
-                    </div>
+                    <div class="member-card"><div class="member-name">Yaroslav Reznov</div></div>
                 </div>
             </div>
 
@@ -240,21 +208,9 @@
                     <span class="role-count">3</span>
                 </div>
                 <div class="members-grid">
-                    <div class="member-card">
-                        <div class="member-name">Ekaterina Reznova</div>
-                        <div class="member-status">+1 · 🟢 ⚪ ⚫</div>
-                        <div class="member-extra"></div>
-                    </div>
-                    <div class="member-card">
-                        <div class="member-name">Michael Reznov ADLR</div>
-                        <div class="member-status">Любовь на аве.</div>
-                        <div class="member-extra"></div>
-                    </div>
-                    <div class="member-card">
-                        <div class="member-name">Tony Reznov</div>
-                        <div class="member-status">🍺 ПИВО</div>
-                        <div class="member-extra"></div>
-                    </div>
+                    <div class="member-card"><div class="member-name">Ekaterina Reznova</div></div>
+                    <div class="member-card"><div class="member-name">Michael Reznov ADLR</div></div>
+                    <div class="member-card"><div class="member-name">Tony Reznov</div></div>
                 </div>
             </div>
 
@@ -265,21 +221,9 @@
                     <span class="role-count">3</span>
                 </div>
                 <div class="members-grid">
-                    <div class="member-card">
-                        <div class="member-name">Artem Reznov famq</div>
-                        <div class="member-status">Grand Theft Auto V Leg... +1</div>
-                        <div class="member-extra"></div>
-                    </div>
-                    <div class="member-card">
-                        <div class="member-name">Boris Reznov</div>
-                        <div class="member-status">🔊 В голосовом чате</div>
-                        <div class="member-extra"></div>
-                    </div>
-                    <div class="member-card">
-                        <div class="member-name">Mizzl XVII</div>
-                        <div class="member-status">truth yandere</div>
-                        <div class="member-extra"></div>
-                    </div>
+                    <div class="member-card"><div class="member-name">Artem Reznov famq</div></div>
+                    <div class="member-card"><div class="member-name">Boris Reznov</div></div>
+                    <div class="member-card"><div class="member-name">Mizzl XVII</div></div>
                 </div>
             </div>
 
@@ -290,16 +234,8 @@
                     <span class="role-count">2</span>
                 </div>
                 <div class="members-grid">
-                    <div class="member-card">
-                        <div class="member-name">Danny Reznov MJRP</div>
-                        <div class="member-status">+1 · 🟠 Melancholie by Opfer</div>
-                        <div class="member-extra"></div>
-                    </div>
-                    <div class="member-card">
-                        <div class="member-name">Rayden Reznov</div>
-                        <div class="member-status">Grand Theft Auto V Legacy +1</div>
-                        <div class="member-extra"></div>
-                    </div>
+                    <div class="member-card"><div class="member-name">Danny Reznov MJRP</div></div>
+                    <div class="member-card"><div class="member-name">Rayden Reznov</div></div>
                 </div>
             </div>
 
@@ -310,22 +246,21 @@
                     <span class="role-count">10</span>
                 </div>
                 <div class="members-grid">
-                    <div class="member-card"><div class="member-name">Alen Reznov MJRP</div><div class="member-status"></div><div class="member-extra"></div></div>
-                    <div class="member-card"><div class="member-name">Antonio Reznov</div><div class="member-status">Роблок</div><div class="member-extra"></div></div>
-                    <div class="member-card"><div class="member-name">Bob Reznov SURP</div><div class="member-status">Grand Theft Auto V Legacy</div><div class="member-extra"></div></div>
-                    <div class="member-card"><div class="member-name">Kirill Reznov</div><div class="member-status">Grand Theft Auto V Legacy</div><div class="member-extra"></div></div>
-                    <div class="member-card"><div class="member-name">Maiden Reznov</div><div class="member-status"></div><div class="member-extra"></div></div>
-                    <div class="member-card"><div class="member-name">Ronnie Reznov +888</div><div class="member-status">🔊 В голосовом чате</div><div class="member-extra"></div></div>
-                    <div class="member-card"><div class="member-name">Sebastyan Reznov</div><div class="member-status"></div><div class="member-extra"></div></div>
-                    <div class="member-card"><div class="member-name">Timan Reznov</div><div class="member-status">Counter-Strike 2</div><div class="member-extra"></div></div>
-                    <div class="member-card"><div class="member-name">Vladislav Reznov</div><div class="member-status"></div><div class="member-extra"></div></div>
+                    <div class="member-card"><div class="member-name">Alen Reznov MJRP</div></div>
+                    <div class="member-card"><div class="member-name">Antonio Reznov</div></div>
+                    <div class="member-card"><div class="member-name">Bob Reznov SURP</div></div>
+                    <div class="member-card"><div class="member-name">Kirill Reznov</div></div>
+                    <div class="member-card"><div class="member-name">Maiden Reznov</div></div>
+                    <div class="member-card"><div class="member-name">Ronnie Reznov +888</div></div>
+                    <div class="member-card"><div class="member-name">Sebastyan Reznov</div></div>
+                    <div class="member-card"><div class="member-name">Timan Reznov</div></div>
+                    <div class="member-card"><div class="member-name">Vladislav Reznov</div></div>
                 </div>
             </div>
 
             <!-- ИТОГО -->
-            <div style="margin-top: 32px; padding: 20px; background: #0c0c0c; border-radius: 16px; border: 1px solid #444444; text-align: center;">
-                <span style="font-size: 20px; font-weight: 700; color: white;">Всего: 19 участников</span>
-                <span style="margin-left: 16px; color: #aaaaaa;">👥 Reznov FAMQ</span>
+            <div style="margin-top: 32px; padding: 16px; background: #0c0c0c; border-radius: 12px; border: 1px solid #444444; text-align: center;">
+                <span style="font-size: 18px; font-weight: 600; color: white;">Всего: 19 участников</span>
             </div>
         </div>
 
