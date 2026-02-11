@@ -12,19 +12,220 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
         body {
-            background: #000000;
-            color: #ffffff;
             padding: 16px;
             line-height: 1.5;
+            transition: background-color 0.3s, color 0.3s;
         }
+        
+        /* ТЁМНАЯ ТЕМА (по умолчанию) */
+        body.dark-theme {
+            background: #000000;
+            color: #ffffff;
+        }
+        body.dark-theme .container {
+            background: #0a0a0a;
+            border: 1px solid #333333;
+            box-shadow: 0 20px 35px -8px rgba(0,0,0,0.9);
+        }
+        body.dark-theme .logo {
+            background: #111111;
+            border: 1px solid #888888;
+        }
+        body.dark-theme .logo span {
+            color: #ffffff;
+        }
+        body.dark-theme .tagline {
+            color: #cccccc;
+            border-left-color: #888888;
+        }
+        body.dark-theme .tab {
+            color: #999999;
+        }
+        body.dark-theme .tab.active {
+            background: #333333;
+            color: white;
+        }
+        body.dark-theme .table-wrapper {
+            border: 1px solid #333333;
+            background: #080808;
+        }
+        body.dark-theme th {
+            background: #1a1a1a;
+            color: #ffffff;
+            border-bottom: 2px solid #666666;
+        }
+        body.dark-theme td {
+            color: #dddddd;
+            border-bottom: 1px solid #333333;
+        }
+        body.dark-theme tr:hover td {
+            background: #151515;
+        }
+        body.dark-theme .search-input {
+            background: #111111;
+            border: 1px solid #444444;
+            color: white;
+        }
+        body.dark-theme .search-input:focus {
+            border-color: #888888;
+            background: #1a1a1a;
+        }
+        body.dark-theme .search-clear {
+            background: #222222;
+            border: 1px solid #555555;
+            color: #cccccc;
+        }
+        body.dark-theme .search-clear:hover {
+            background: #333333;
+            color: white;
+        }
+        body.dark-theme .member-card {
+            background: #0c0c0c;
+            border: 1px solid #444444;
+        }
+        body.dark-theme .member-name {
+            color: white;
+        }
+        body.dark-theme .footer {
+            color: #777777;
+            border-top-color: #333333;
+        }
+        
+        /* СВЕТЛАЯ ТЕМА */
+        body.light-theme {
+            background: #f5f5f5;
+            color: #222222;
+        }
+        body.light-theme .container {
+            background: #ffffff;
+            border: 1px solid #dddddd;
+            box-shadow: 0 20px 35px -8px rgba(0,0,0,0.1);
+        }
+        body.light-theme .logo {
+            background: #eeeeee;
+            border: 1px solid #cccccc;
+        }
+        body.light-theme .logo span {
+            color: #333333;
+        }
+        body.light-theme .title-section h1 {
+            color: #222222;
+        }
+        body.light-theme .tagline {
+            color: #555555;
+            border-left-color: #aaaaaa;
+        }
+        body.light-theme .tab {
+            color: #666666;
+        }
+        body.light-theme .tab.active {
+            background: #dddddd;
+            color: #222222;
+        }
+        body.light-theme .table-wrapper {
+            border: 1px solid #dddddd;
+            background: #fafafa;
+        }
+        body.light-theme th {
+            background: #eaeaea;
+            color: #222222;
+            border-bottom: 2px solid #aaaaaa;
+        }
+        body.light-theme td {
+            color: #333333;
+            border-bottom: 1px solid #dddddd;
+        }
+        body.light-theme tr:hover td {
+            background: #f0f0f0;
+        }
+        body.light-theme .stars {
+            color: #333333;
+        }
+        body.light-theme .badge {
+            background: #e0e0e0;
+            color: #333333;
+            border: 1px solid #cccccc;
+        }
+        body.light-theme .search-input {
+            background: #ffffff;
+            border: 1px solid #cccccc;
+            color: #222222;
+        }
+        body.light-theme .search-input::placeholder {
+            color: #999999;
+        }
+        body.light-theme .search-clear {
+            background: #eaeaea;
+            border: 1px solid #cccccc;
+            color: #333333;
+        }
+        body.light-theme .search-clear:hover {
+            background: #dddddd;
+            color: #000000;
+        }
+        body.light-theme .member-card {
+            background: #f5f5f5;
+            border: 1px solid #dddddd;
+        }
+        body.light-theme .member-name {
+            color: #222222;
+        }
+        body.light-theme .role-name {
+            color: #222222;
+        }
+        body.light-theme .role-count {
+            background: #eaeaea;
+            color: #333333;
+            border: 1px solid #cccccc;
+        }
+        body.light-theme .footer {
+            color: #777777;
+            border-top-color: #dddddd;
+        }
+        body.light-theme .miranda-box {
+            background: #f5f5f5;
+        }
+        body.light-theme .info-block {
+            background: #ffffff;
+            border: 1px solid #dddddd;
+        }
+        body.light-theme .info-title {
+            color: #222222;
+            border-bottom-color: #dddddd;
+        }
+        body.light-theme .info-list li {
+            color: #444444;
+            border-bottom-color: #dddddd;
+        }
+        body.light-theme .login-box {
+            background: #ffffff;
+            border: 1px solid #dddddd;
+        }
+        body.light-theme .login-title {
+            color: #222222;
+        }
+        body.light-theme .login-input {
+            background: #ffffff;
+            border: 1px solid #cccccc;
+            color: #222222;
+        }
+        body.light-theme .login-button {
+            background: #eaeaea;
+            border: 1px solid #cccccc;
+            color: #222222;
+        }
+        body.light-theme [data-tooltip]:before {
+            background: #333333;
+            color: white;
+            border: 1px solid #666666;
+        }
+
         .container {
             max-width: 1400px;
             margin: 0 auto;
-            background: #0a0a0a;
             border-radius: 24px;
             padding: 24px 20px;
-            border: 1px solid #333333;
-            box-shadow: 0 20px 35px -8px rgba(0,0,0,0.9);
+            transition: background-color 0.3s, border 0.3s, box-shadow 0.3s;
         }
         .header {
             display: flex;
@@ -36,20 +237,18 @@
             flex-wrap: wrap;
         }
         .logo {
-            background: #111111;
             width: 70px;
             height: 70px;
             border-radius: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid #888888;
+            transition: background-color 0.3s, border 0.3s;
         }
         .logo span {
             font-size: 44px;
             font-weight: 800;
-            color: #ffffff;
-            text-shadow: 0 0 10px rgba(255,255,255,0.2);
+            transition: color 0.3s;
         }
         .title-section {
             flex: 1;
@@ -58,97 +257,43 @@
             font-size: 28px;
             font-weight: 700;
             letter-spacing: 1px;
-            color: #ffffff;
             margin-bottom: 6px;
+            transition: color 0.3s;
         }
         .title-section .tagline {
-            color: #cccccc;
             font-weight: 600;
             text-transform: uppercase;
             font-size: 14px;
             letter-spacing: 3px;
-            border-left: 4px solid #888888;
+            border-left-width: 4px;
+            border-left-style: solid;
             padding-left: 12px;
+            transition: color 0.3s, border-left-color 0.3s;
         }
-        
-        /* ЭКРАН ВХОДА */
-        .login-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #000000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-        .login-box {
-            background: #0a0a0a;
-            border: 1px solid #444444;
-            border-radius: 24px;
-            padding: 40px;
-            max-width: 400px;
-            width: 90%;
-            text-align: center;
-        }
-        .login-logo {
-            font-size: 64px;
-            font-weight: 800;
-            color: white;
-            margin-bottom: 16px;
-        }
-        .login-title {
-            font-size: 24px;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 8px;
-        }
-        .login-subtitle {
-            color: #aaaaaa;
-            margin-bottom: 32px;
-            font-size: 14px;
-        }
-        .login-input {
-            width: 100%;
-            background: #111111;
-            border: 1px solid #444444;
-            border-radius: 40px;
-            padding: 16px 20px;
-            font-size: 16px;
-            color: white;
-            margin-bottom: 20px;
-            outline: none;
-        }
-        .login-input:focus {
-            border-color: #888888;
-        }
-        .login-button {
-            width: 100%;
-            background: #222222;
-            border: 1px solid #555555;
-            color: white;
-            padding: 16px 32px;
+        .theme-toggle {
+            background: transparent;
+            border: 1px solid #888888;
+            color: #ffffff;
+            padding: 12px 20px;
             border-radius: 40px;
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;
             transition: 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
-        .login-button:hover {
+        body.light-theme .theme-toggle {
+            color: #333333;
+            border-color: #aaaaaa;
+        }
+        .theme-toggle:hover {
             background: #333333;
         }
-        .login-error {
-            color: #ff6666;
-            margin-top: 16px;
-            display: none;
+        body.light-theme .theme-toggle:hover {
+            background: #dddddd;
         }
-        
-        .main-content {
-            display: none;
-        }
-        
         .search-box {
             margin-bottom: 24px;
             display: flex;
@@ -159,35 +304,57 @@
         .search-input {
             flex: 1;
             min-width: 250px;
-            background: #111111;
-            border: 1px solid #444444;
             border-radius: 40px;
             padding: 14px 20px;
             font-size: 16px;
-            color: white;
             outline: none;
+            transition: background-color 0.3s, border 0.3s, color 0.3s;
         }
-        .search-input:focus {
-            border-color: #888888;
-            background: #1a1a1a;
-        }
-        .search-input::placeholder {
-            color: #777777;
-        }
-        .search-clear {
+        .voice-btn {
             background: #222222;
             border: 1px solid #555555;
             color: #cccccc;
+            padding: 14px 24px;
+            border-radius: 40px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        body.light-theme .voice-btn {
+            background: #eaeaea;
+            border: 1px solid #cccccc;
+            color: #333333;
+        }
+        .voice-btn:hover {
+            background: #333333;
+            color: white;
+        }
+        body.light-theme .voice-btn:hover {
+            background: #dddddd;
+            color: #000000;
+        }
+        .voice-btn.listening {
+            background: #444444;
+            color: white;
+            border-color: #888888;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+        .search-clear {
             padding: 14px 28px;
             border-radius: 40px;
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;
             transition: 0.2s;
-        }
-        .search-clear:hover {
-            background: #333333;
-            color: white;
         }
         .tabs {
             display: flex;
@@ -196,11 +363,14 @@
             flex-wrap: wrap;
             border-bottom: 1px solid #333333;
             padding-bottom: 12px;
+            transition: border-color 0.3s;
+        }
+        body.light-theme .tabs {
+            border-bottom-color: #dddddd;
         }
         .tab {
             background: transparent;
             border: none;
-            color: #999999;
             padding: 12px 24px;
             font-size: 16px;
             font-weight: 600;
@@ -211,16 +381,11 @@
             align-items: center;
             gap: 8px;
         }
-        .tab.active {
-            background: #333333;
-            color: white;
-        }
         .table-wrapper {
             overflow-x: auto;
             border-radius: 16px;
-            border: 1px solid #333333;
-            background: #080808;
             margin-top: 10px;
+            transition: background-color 0.3s, border 0.3s;
         }
         table {
             width: 100%;
@@ -229,37 +394,29 @@
             min-width: 600px;
         }
         th {
-            background: #1a1a1a;
-            color: #ffffff;
             font-weight: 600;
             padding: 16px 12px;
             white-space: nowrap;
-            border-bottom: 2px solid #666666;
             text-transform: uppercase;
             font-size: 14px;
             letter-spacing: 1px;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         }
         td {
             padding: 14px 12px;
-            border-bottom: 1px solid #333333;
-            color: #dddddd;
-        }
-        tr:hover td {
-            background: #151515;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         }
         .stars {
-            color: #ffffff;
             letter-spacing: 2px;
             font-weight: 600;
+            transition: color 0.3s;
         }
         .badge {
-            background: #222222;
-            color: #cccccc;
             padding: 4px 10px;
             border-radius: 40px;
             font-size: 13px;
-            border: 1px solid #555555;
             display: inline-block;
+            transition: background-color 0.3s, color 0.3s, border 0.3s;
         }
         
         [data-tooltip] {
@@ -328,21 +485,23 @@
             margin-bottom: 16px;
             padding-bottom: 8px;
             border-bottom: 1px solid #444444;
+            transition: border-color 0.3s;
+        }
+        body.light-theme .role-title {
+            border-bottom-color: #dddddd;
         }
         .role-name {
             font-size: 20px;
             font-weight: 700;
-            color: white;
             text-transform: uppercase;
             letter-spacing: 2px;
+            transition: color 0.3s;
         }
         .role-count {
-            background: #222222;
-            color: #cccccc;
             padding: 4px 12px;
             border-radius: 40px;
             font-size: 14px;
-            border: 1px solid #555555;
+            transition: background-color 0.3s, color 0.3s, border 0.3s;
         }
         .members-grid {
             display: grid;
@@ -350,58 +509,56 @@
             gap: 12px;
         }
         .member-card {
-            background: #0c0c0c;
-            border: 1px solid #444444;
             border-radius: 12px;
             padding: 14px 18px;
+            transition: background-color 0.3s, border 0.3s;
         }
         .member-name {
             font-size: 16px;
             font-weight: 500;
-            color: white;
+            transition: color 0.3s;
         }
         .info-block {
-            background: #0c0c0c;
-            border: 1px solid #444444;
             border-radius: 16px;
             padding: 24px;
+            transition: background-color 0.3s, border 0.3s;
         }
         .info-title {
             font-size: 20px;
             font-weight: 700;
-            color: white;
             margin-bottom: 20px;
             border-bottom: 1px solid #444444;
             padding-bottom: 12px;
+            transition: color 0.3s, border-color 0.3s;
         }
         .info-list {
             list-style: none;
         }
         .info-list li {
             padding: 12px 0;
-            color: #dddddd;
             border-bottom: 1px solid #333333;
             display: flex;
             align-items: flex-start;
             gap: 12px;
+            transition: color 0.3s, border-color 0.3s;
         }
         .info-list li:last-child {
             border-bottom: none;
         }
         .miranda-box {
-            background: #0a0a0a;
             border-left: 4px solid #888888;
             padding: 20px;
             margin-bottom: 24px;
             border-radius: 0 12px 12px 0;
+            transition: background-color 0.3s;
         }
         .footer {
             margin-top: 40px;
             text-align: center;
-            color: #777777;
             font-size: 14px;
             border-top: 1px solid #333333;
             padding-top: 20px;
+            transition: color 0.3s, border-color 0.3s;
         }
         .no-results {
             padding: 40px;
@@ -411,14 +568,87 @@
         }
         .results-info {
             margin-bottom: 16px;
-            color: #cccccc;
             font-size: 14px;
             padding: 8px 16px;
-            background: #111111;
             border-radius: 40px;
             display: inline-block;
-            border: 1px solid #444444;
+            transition: background-color 0.3s, color 0.3s, border 0.3s;
         }
+        
+        /* ЭКРАН ВХОДА */
+        .login-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: background-color 0.3s;
+        }
+        body.light-theme .login-screen {
+            background: #f5f5f5;
+        }
+        .login-box {
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            transition: background-color 0.3s, border 0.3s;
+        }
+        .login-logo {
+            font-size: 64px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 16px;
+            transition: color 0.3s;
+        }
+        body.light-theme .login-logo {
+            color: #333333;
+        }
+        .login-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            transition: color 0.3s;
+        }
+        .login-subtitle {
+            color: #aaaaaa;
+            margin-bottom: 32px;
+            font-size: 14px;
+        }
+        .login-input {
+            width: 100%;
+            border-radius: 40px;
+            padding: 16px 20px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            outline: none;
+            transition: background-color 0.3s, border 0.3s, color 0.3s;
+        }
+        .login-button {
+            width: 100%;
+            padding: 16px 32px;
+            border-radius: 40px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .login-error {
+            color: #ff6666;
+            margin-top: 16px;
+            display: none;
+        }
+        
+        .main-content {
+            display: none;
+        }
+        
         @media (max-width: 600px) {
             .container { padding: 16px; }
             .title-section h1 { font-size: 22px; }
@@ -426,7 +656,7 @@
             .logo span { font-size: 34px; }
             .tab { padding: 8px 16px; font-size: 14px; }
             .search-box { flex-direction: column; }
-            .search-clear { width: 100%; text-align: center; }
+            .search-clear, .voice-btn { width: 100%; text-align: center; }
             [data-tooltip]:before {
                 min-width: 200px;
                 font-size: 12px;
@@ -434,7 +664,7 @@
         }
     </style>
 </head>
-<body>
+<body class="dark-theme">
     <!-- ЭКРАН ВХОДА ПО ПАРОЛЮ -->
     <div id="loginScreen" class="login-screen">
         <div class="login-box">
@@ -447,7 +677,7 @@
         </div>
     </div>
 
-    <!-- ОСНОВНОЙ КОНТЕНТ (доступен только после пароля) -->
+    <!-- ОСНОВНОЙ КОНТЕНТ -->
     <div id="mainContent" class="main-content">
         <div class="container">
             <div class="header">
@@ -458,11 +688,17 @@
                     <h1>Reznov FAMQ · Уголовный кодекс</h1>
                     <div class="tagline">Закон есть закон. Мы — Reznov</div>
                 </div>
+                <button id="themeToggle" class="theme-toggle" onclick="toggleTheme()">
+                    <span id="themeIcon">🌙</span> Тема
+                </button>
             </div>
 
-            <!-- ПОИСК -->
+            <!-- ПОИСК + ГОЛОСОВОЙ ПОИСК -->
             <div class="search-box">
                 <input type="text" id="searchInput" class="search-input" placeholder="🔍 Введи статью или название..." onkeyup="searchArticles()">
+                <button id="voiceBtn" class="voice-btn" onclick="startVoiceSearch()">
+                    🎤 Голосовой поиск
+                </button>
                 <button class="search-clear" onclick="clearSearch()">✕ Сбросить</button>
             </div>
             <div id="resultsCount" class="results-info" style="display: none;"></div>
@@ -751,56 +987,45 @@
                     <div class="info-title">👮 Памятка сотруднику правоохранительных органов</div>
                     
                     <div class="miranda-box">
-                        <p style="color: #ffffff; font-size: 18px; font-weight: 600; margin-bottom: 12px;">📋 ПРАВИЛА ЗАЧИТЫВАНИЯ МИРАНДЫ</p>
-                        <p style="color: #cccccc; margin-bottom: 8px;"><span style="color: white;">1.</span> Миранда зачитывается <span style="color: white; font-weight: 600;">ОДИН раз</span> за задержание.</p>
-                        <p style="color: #cccccc; margin-bottom: 8px;"><span style="color: white;">2.</span> Зачитывается <span style="color: white; font-weight: 600;">СРАЗУ после задержания</span> (после того как надел наручники).</p>
-                        <p style="color: #cccccc; margin-bottom: 8px;"><span style="color: white;">3.</span> Если задержанный отключился/вышел — при возвращении зачитывать <span style="color: white; font-weight: 600;">ПОВТОРНО</span>.</p>
-                        <p style="color: #cccccc; margin-bottom: 8px;"><span style="color: white;">4.</span> Если задержанный был передан другому сотруднику — <span style="color: white; font-weight: 600;">ПОВТОРНО зачитывать НЕ НАДО</span>.</p>
-                        <p style="color: #cccccc; margin-bottom: 8px;"><span style="color: white;">5.</span> Разрешено зачитывать <span style="color: white; font-weight: 600;">одну из двух</span> форм (полную или сокращенную).</p>
+                        <p style="font-size: 18px; font-weight: 600; margin-bottom: 12px;">📋 ПРАВИЛА ЗАЧИТЫВАНИЯ МИРАНДЫ</p>
+                        <p style="margin-bottom: 8px;"><span style="font-weight: 600;">1.</span> Миранда зачитывается <span style="font-weight: 600;">ОДИН раз</span> за задержание.</p>
+                        <p style="margin-bottom: 8px;"><span style="font-weight: 600;">2.</span> Зачитывается <span style="font-weight: 600;">СРАЗУ после задержания</span> (после того как надел наручники).</p>
+                        <p style="margin-bottom: 8px;"><span style="font-weight: 600;">3.</span> Если задержанный отключился/вышел — при возвращении зачитывать <span style="font-weight: 600;">ПОВТОРНО</span>.</p>
+                        <p style="margin-bottom: 8px;"><span style="font-weight: 600;">4.</span> Если задержанный был передан другому сотруднику — <span style="font-weight: 600;">ПОВТОРНО зачитывать НЕ НАДО</span>.</p>
+                        <p style="margin-bottom: 8px;"><span style="font-weight: 600;">5.</span> Разрешено зачитывать <span style="font-weight: 600;">одну из двух</span> форм (полную или сокращенную).</p>
                     </div>
 
                     <div style="margin-bottom: 24px;">
-                        <p style="color: #ffffff; font-size: 18px; font-weight: 600; margin-bottom: 12px;">📢 ПОЛНАЯ ФОРМА МИРАНДЫ:</p>
-                        <p style="color: #dddddd; background: #0a0a0a; padding: 16px; border-left: 4px solid #888888; border-radius: 0 8px 8px 0;">
+                        <p style="font-size: 18px; font-weight: 600; margin-bottom: 12px;">📢 ПОЛНАЯ ФОРМА МИРАНДЫ:</p>
+                        <p style="background: #0a0a0a; padding: 16px; border-left: 4px solid #888888; border-radius: 0 8px 8px 0;">
                         «Вы имеете право хранить молчание. Всё, что вы скажете, может быть использовано против вас в суде. Вы имеете право на адвоката. Если вы не можете позволить себе адвоката, он будет назначен вам штатом. Вы понимаете свои права?»
                         </p>
                     </div>
 
                     <div style="margin-bottom: 24px;">
-                        <p style="color: #ffffff; font-size: 18px; font-weight: 600; margin-bottom: 12px;">📢 КРАТКАЯ ФОРМА МИРАНДЫ:</p>
-                        <p style="color: #dddddd; background: #0a0a0a; padding: 16px; border-left: 4px solid #888888; border-radius: 0 8px 8px 0;">
+                        <p style="font-size: 18px; font-weight: 600; margin-bottom: 12px;">📢 КРАТКАЯ ФОРМА МИРАНДЫ:</p>
+                        <p style="background: #0a0a0a; padding: 16px; border-left: 4px solid #888888; border-radius: 0 8px 8px 0;">
                         «Вы имеете право хранить молчание. Вы имеете право на адвоката. Если у вас нет денег — адвокат будет от штата. Вам ясны ваши права?»
                         </p>
                     </div>
 
                     <div style="margin-bottom: 24px;">
-                        <p style="color: #ffffff; font-size: 18px; font-weight: 600; margin-bottom: 12px;">⚠️ ЕСЛИ ЗАДЕРЖАННЫЙ ОТВЕТИЛ «НЕТ»:</p>
-                        <p style="color: #dddddd; background: #0a0a0a; padding: 16px; border-left: 4px solid #888888;">
+                        <p style="font-size: 18px; font-weight: 600; margin-bottom: 12px;">⚠️ ЕСЛИ ЗАДЕРЖАННЫЙ ОТВЕТИЛ «НЕТ»:</p>
+                        <p style="background: #0a0a0a; padding: 16px; border-left: 4px solid #888888;">
                         ➜ Разъяснить права еще раз (можно своими словами, но сохранить смысл).<br>
                         ➜ Не начинать допрос, пока задержанный не подтвердит, что понял права.
                         </p>
                     </div>
 
                     <div style="margin-bottom: 24px;">
-                        <p style="color: #ffffff; font-size: 18px; font-weight: 600; margin-bottom: 12px;">🔍 ПОРЯДОК ЗАДЕРЖАНИЯ:</p>
+                        <p style="font-size: 18px; font-weight: 600; margin-bottom: 12px;">🔍 ПОРЯДОК ЗАДЕРЖАНИЯ:</p>
                         <ul class="info-list">
-                            <li><span style="color: white;">1.</span> Приблизиться, представиться, назвать причину</li>
-                            <li><span style="color: white;">2.</span> Зачитать права (только после нарушения/розыска)</li>
-                            <li><span style="color: white;">3.</span> Надеть наручники</li>
-                            <li><span style="color: white;">4.</span> Проверить по базе</li>
-                            <li><span style="color: white;">5.</span> Инкриминировать статьи</li>
-                            <li><span style="color: white;">6.</span> Доставить в участок</li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <p style="color: #ffffff; font-size: 18px; font-weight: 600; margin-bottom: 12px;">📌 ВАЖНО:</p>
-                        <ul class="info-list">
-                            <li>• Если задержанный в маске и отказывается снять — можно задержать до установки личности (НЕ 17.6!)</li>
-                            <li>• Отказ от оплаты штрафа → 17.7 — 3 года</li>
-                            <li>• Оскорбление при исполнении → 17.3 — до 60к штрафа / 3 года</li>
-                            <li>• Неподчинение требованию остановиться → 17.6 — до 60к / 3 года</li>
-                            <li>• Нападение на сотрудника → 17.2 — 4 года</li>
+                            <li><span style="font-weight: 600;">1.</span> Приблизиться, представиться, назвать причину</li>
+                            <li><span style="font-weight: 600;">2.</span> Зачитать права (только после нарушения/розыска)</li>
+                            <li><span style="font-weight: 600;">3.</span> Надеть наручники</li>
+                            <li><span style="font-weight: 600;">4.</span> Проверить по базе</li>
+                            <li><span style="font-weight: 600;">5.</span> Инкриминировать статьи</li>
+                            <li><span style="font-weight: 600;">6.</span> Доставить в участок</li>
                         </ul>
                     </div>
                 </div>
@@ -867,7 +1092,7 @@
                     </div>
                 </div>
                 <div style="margin-top: 32px; padding: 16px; background: #0c0c0c; border-radius: 12px; border: 1px solid #444444; text-align: center;">
-                    <span style="font-size: 18px; font-weight: 600; color: white;">Всего: 19 участников</span>
+                    <span style="font-size: 18px; font-weight: 600;">Всего: 19 участников</span>
                 </div>
             </div>
 
@@ -889,7 +1114,23 @@
             }
         }
 
-        // Переключение вкладок
+        // ПЕРЕКЛЮЧЕНИЕ ТЕМЫ
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById('themeIcon');
+            
+            if (body.classList.contains('dark-theme')) {
+                body.classList.remove('dark-theme');
+                body.classList.add('light-theme');
+                themeIcon.textContent = '☀️';
+            } else {
+                body.classList.remove('light-theme');
+                body.classList.add('dark-theme');
+                themeIcon.textContent = '🌙';
+            }
+        }
+
+        // ПЕРЕКЛЮЧЕНИЕ ВКЛАДОК
         function showTab(tabId) {
             for (let i = 1; i <= 9; i++) {
                 const tab = document.getElementById('tab' + i);
@@ -950,7 +1191,6 @@
             resultsCount.textContent = totalResults > 0 ? `🔍 Найдено статей: ${totalResults}` : `🔍 Ничего не найдено`;
             resultsCount.style.display = 'inline-block';
             
-            // Активируем первую вкладку с результатами
             const tabs = document.querySelectorAll('.tab');
             tabs.forEach(tab => tab.classList.remove('active'));
             for (let i = 1; i <= 7; i++) {
@@ -977,9 +1217,44 @@
             showTab(1);
         }
 
-        // Показываем первую вкладку при загрузке
-        window.onload = function() {
-            // Ничего не делаем, пока не введен пароль
+        // ГОЛОСОВОЙ ПОИСК
+        function startVoiceSearch() {
+            if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+                alert('Голосовой поиск не поддерживается в вашем браузере. Используйте Chrome или Edge.');
+                return;
+            }
+            
+            const voiceBtn = document.getElementById('voiceBtn');
+            voiceBtn.classList.add('listening');
+            voiceBtn.textContent = '🎤 Слушаю...';
+            
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            const recognition = new SpeechRecognition();
+            
+            recognition.lang = 'ru-RU';
+            recognition.continuous = false;
+            recognition.interimResults = false;
+            
+            recognition.onresult = function(event) {
+                const speechText = event.results[0][0].transcript;
+                document.getElementById('searchInput').value = speechText;
+                searchArticles();
+                voiceBtn.classList.remove('listening');
+                voiceBtn.textContent = '🎤 Голосовой поиск';
+            };
+            
+            recognition.onerror = function() {
+                voiceBtn.classList.remove('listening');
+                voiceBtn.textContent = '🎤 Голосовой поиск';
+                alert('Ошибка распознавания. Попробуйте ещё раз.');
+            };
+            
+            recognition.onend = function() {
+                voiceBtn.classList.remove('listening');
+                voiceBtn.textContent = '🎤 Голосовой поиск';
+            };
+            
+            recognition.start();
         }
     </script>
 </body>
