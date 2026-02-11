@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+    <title>Reznov FAMQ — Уголовный кодекс</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        body {
+            background: #000000;
+            color: #ffffff;
+            padding: 16px;
+            line-height: 1.5;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: #0a0a0a;
+            border-radius: 24px;
+            padding: 24px 20px;
+            border: 1px solid #333333;
+            box-shadow: 0 20px 35px -8px rgba(0,0,0,0.9);
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 28px;
+            border-bottom: 2px solid #666666;
+            padding-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .logo {
+            background: #111111;
+            width: 70px;
+            height: 70px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #888888;
+        }
+        .logo span {
+            font-size: 44px;
+            font-weight: 800;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255,255,255,0.2);
+        }
+        .title-section {
+            flex: 1;
+        }
+        .title-section h1 {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+        .title-section .tagline {
+            color: #cccccc;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 3px;
+            border-left: 4px solid #888888;
+            padding-left: 12px;
+        }
+        .tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 28px;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #333333;
+            padding-bottom: 12px;
+        }
+        .tab {
+            background: transparent;
+            border: none;
+            color: #999999;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .tab.active {
+            background: #333333;
+            color: white;
+        }
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 16px;
+            border: 1px solid #333333;
+            background: #080808;
+            margin-top: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 15px;
+            min-width: 600px;
+        }
+        th {
+            background: #1a1a1a;
+            color: #ffffff;
+            font-weight: 600;
+            padding: 16px 12px;
+            white-space: nowrap;
+            border-bottom: 2px solid #666666;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+        td {
+            padding: 14px 12px;
+            border-bottom: 1px solid #333333;
+            color: #dddddd;
+        }
+        tr:hover td {
+            background: #151515;
+        }
+        .stars {
+            color: #ffffff;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+        .badge {
+            background: #222222;
+            color: #cccccc;
+            padding: 4px 10px;
+            border-radius: 40px;
+            font-size: 13px;
+            border: 1px solid #555555;
+            display: inline-block;
+        }
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #777777;
+            font-size: 14px;
+            border-top: 1px solid #333333;
+            padding-top: 20px;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 16px; }
+            .title-section h1 { font-size: 22px; }
+            .logo { width: 55px; height: 55px; }
+            .logo span { font-size: 34px; }
+            .tab { padding: 8px 16px; font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <span>R</span>
+            </div>
+            <div class="title-section">
+                <h1>Reznov FAMQ · Уголовный кодекс</h1>
+                <div class="tagline">Закон есть закон. Мы — Reznov</div>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" onclick="showTab(1)">🔫 Тяжкие преступления</button>
+            <button class="tab" onclick="showTab(2)">📦 Имущество / Наркотики / Должностные</button>
+        </div>
+
+        <div id="tab1" class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Статья</th>
+                        <th>Нарушение</th>
+                        <th>Звёзды</th>
+                        <th>Наказание</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>5.11</td><td>Лишение лицензии за оружие</td><td>—</td><td><span class="badge">Лишение</span></td></tr>
+                    <tr><td>6.1.1</td><td>Побои с предметом</td><td class="stars">★★★</td><td>3 года / $35,000</td></tr>
+                    <tr><td>6.1.2</td><td>Побои руками</td><td class="stars">★★</td><td>2 года / $45,000</td></tr>
+                    <tr><td>6.2</td><td>Убийство (1 человек)</td><td class="stars">★★★★</td><td>4 года</td></tr>
+                    <tr><td>6.3</td><td>Убийство 2+ / близкие госслужащего</td><td class="stars">★★★★★</td><td>5 лет</td></tr>
+                    <tr><td>6.4</td><td>Групповое / с особой жестокостью</td><td class="stars">★★★★★</td><td>5 лет</td></tr>
+                    <tr><td>6.5</td><td>Смерть по неосторожности</td><td class="stars">★★★</td><td>3 года / $35,000</td></tr>
+                    <tr><td>6.7.1</td><td>Угроза госслужащему / близким</td><td class="stars">★★★★</td><td>4 года / $45,000</td></tr>
+                    <tr><td>6.7.2</td><td>Угроза с целью запугать</td><td class="stars">★★★</td><td>3 года / $35,000</td></tr>
+                    <tr><td>6.7.3</td><td>Угроза с оружием</td><td class="stars">★★★★</td><td>4 года / $60,000</td></tr>
+                    <tr><td>17.1</td><td>Посягательство на жизнь сотрудника</td><td class="stars">★★★★★</td><td>5 лет</td></tr>
+                    <tr><td>17.2</td><td>Побои / угроза насилия власти</td><td class="stars">★★★★</td><td>4 года</td></tr>
+                    <tr><td>17.3</td><td>Оскорбление представителя власти</td><td class="stars">★★★</td><td>3 года / $20-60k</td></tr>
+                    <tr><td>17.6</td><td>Неподчинение / отказ остановиться</td><td class="stars">★★★</td><td>3 года / $20-60k</td></tr>
+                    <tr><td>17.7</td><td>Отказ оплатить штраф</td><td class="stars">★★★</td><td>3 года</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="tab2" class="table-wrapper" style="display: none;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Статья</th>
+                        <th>Нарушение</th>
+                        <th>Звёзды</th>
+                        <th>Наказание</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>7.2.1</td><td>Клевета в СМИ / с должности</td><td class="stars">★★</td><td>2 года / $25,000</td></tr>
+                    <tr><td>7.2.2</td><td>Клевета с обвинением в преступлении</td><td class="stars">★★★</td><td>3 года / $35,000</td></tr>
+                    <tr><td>7.2.3</td><td>Клевета оскорбительная</td><td class="stars">★★★</td><td>3 года / $35,000</td></tr>
+                    <tr><td>12.7.1</td><td>Проникновение на закрытый объект</td><td class="stars">★★★★</td><td>4 года / $50,000</td></tr>
+                    <tr><td>12.7.2</td><td>Проникновение на режимный (SANG/FIB/GOV)</td><td class="stars">★★★★★</td><td>5 лет / $75,000</td></tr>
+                    <tr><td>12.7.3</td><td>Нарушение регламента на гос.объекте</td><td class="stars">★★</td><td>2 года / $25,000</td></tr>
+                    <tr><td>12.8.1</td><td>Хранение / ношение оружия</td><td class="stars">★★★★</td><td>4 года / $40,000</td></tr>
+                    <tr><td>12.8.2</td><td>Гос.оружие / спецсредства у гражданского</td><td class="stars">★★★★★</td><td>5 лет</td></tr>
+                    <tr><td>12.8.3</td><td>Нарушение правил оборота оружия</td><td class="stars">★★★</td><td>3 года / $30,000</td></tr>
+                    <tr><td>12.8.4</td><td>Подделка транспортной накладной</td><td class="stars">★★★</td><td>3 года / $25,000</td></tr>
+                    <tr><td>13.1.1</td><td>Наркотики 6–10 гр</td><td class="stars">★★★</td><td>3 года / $50,000</td></tr>
+                    <tr><td>13.1.2</td><td>Наркотики 11+ гр</td><td class="stars">★★★★★</td><td>5 лет</td></tr>
+                    <tr><td>13.2</td><td>Кустарное производство наркотиков</td><td class="stars">★★★★★</td><td>5 лет / $60,000</td></tr>
+                    <tr><td>15.1.1</td><td>Превышение полномочий (любой)</td><td class="stars">★★★★</td><td>4 года / $50,000</td></tr>
+                    <tr><td>15.1.2</td><td>Превышение (руководство, не GOV)</td><td class="stars">★★★★</td><td>4 года / $200,000</td></tr>
+                    <tr><td>15.1.3</td><td>Превышение (GOV)</td><td class="stars">★★★★★</td><td>5 лет / $500,000</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="footer">
+            Reznov FAMQ · Семейный кодекс · Majestic RP
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabId) {
+            document.getElementById('tab1').style.display = tabId === 1 ? 'block' : 'none';
+            document.getElementById('tab2').style.display = tabId === 2 ? 'block' : 'none';
+            
+            let tabs = document.querySelectorAll('.tab');
+            tabs[0].classList.toggle('active', tabId === 1);
+            tabs[1].classList.toggle('active', tabId === 2);
+        }
+    </script>
+</body>
+</html>
