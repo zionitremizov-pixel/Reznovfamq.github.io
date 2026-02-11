@@ -20,7 +20,273 @@
             min-height: 100vh;
         }
         
-        /* ЛЕТЯЩИЕ НАДПИСИ НА ЗАДНЕМ ФОНЕ */
+        /* ========== ТЁМНАЯ ТЕМА (ВСЁ БЕЛОЕ) ========== */
+        body.dark-theme {
+            background: #000000;
+            color: #ffffff;
+        }
+        body.dark-theme .container {
+            background: rgba(10, 10, 10, 0.96);
+            border: 1px solid #333333;
+        }
+        body.dark-theme .logo {
+            background: #111111;
+            border: 1px solid #888888;
+        }
+        body.dark-theme .logo span {
+            color: #ffffff;
+        }
+        body.dark-theme .title-section h1 {
+            color: #ffffff;
+        }
+        body.dark-theme .tagline {
+            color: #cccccc;
+            border-left-color: #888888;
+        }
+        body.dark-theme .tab {
+            color: #cccccc;
+            background: transparent;
+        }
+        body.dark-theme .tab.active {
+            background: #333333;
+            color: white;
+        }
+        body.dark-theme .table-wrapper {
+            border: 1px solid #333333;
+            background: #0a0a0a;
+        }
+        body.dark-theme table {
+            background: #0a0a0a;
+        }
+        body.dark-theme th {
+            background: #1a1a1a;
+            color: white;
+            border-bottom: 2px solid #666666;
+        }
+        body.dark-theme td {
+            color: white;
+            border-bottom: 1px solid #333333;
+        }
+        body.dark-theme tr:hover td {
+            background: #1a1a1a;
+        }
+        body.dark-theme .stars {
+            color: white;
+        }
+        body.dark-theme .badge {
+            background: #222222;
+            color: white;
+            border: 1px solid #555555;
+        }
+        body.dark-theme .search-input {
+            background: #111111;
+            border: 1px solid #444444;
+            color: white;
+        }
+        body.dark-theme .search-input::placeholder {
+            color: #999999;
+        }
+        body.dark-theme .search-clear {
+            background: #222222;
+            border: 1px solid #555555;
+            color: white;
+        }
+        body.dark-theme .voice-btn {
+            background: #222222;
+            border: 1px solid #555555;
+            color: white;
+        }
+        body.dark-theme .theme-toggle {
+            background: #222222;
+            border: 1px solid #555555;
+            color: white;
+        }
+        body.dark-theme .color-selector {
+            background: #222222;
+            border: 1px solid #555555;
+            color: white;
+        }
+        body.dark-theme .member-card {
+            background: #111111;
+            border: 1px solid #444444;
+        }
+        body.dark-theme .member-name {
+            color: white;
+        }
+        body.dark-theme .role-name {
+            color: white;
+        }
+        body.dark-theme .role-count {
+            background: #222222;
+            color: white;
+            border: 1px solid #555555;
+        }
+        body.dark-theme .info-block {
+            background: #111111;
+            border: 1px solid #444444;
+        }
+        body.dark-theme .info-title {
+            color: white;
+            border-bottom-color: #444444;
+        }
+        body.dark-theme .info-list li {
+            color: #dddddd;
+            border-bottom-color: #333333;
+        }
+        body.dark-theme .miranda-text {
+            background: #0a0a0a;
+            color: white;
+            border-left: 4px solid #888888;
+        }
+        body.dark-theme .footer {
+            color: #aaaaaa;
+            border-top-color: #333333;
+        }
+        body.dark-theme .results-info {
+            background: #1a1a1a;
+            color: white;
+            border: 1px solid #444444;
+        }
+        body.dark-theme [data-tooltip]:before {
+            background: #222222;
+            color: white;
+            border: 1px solid #666666;
+        }
+        
+        /* ========== СВЕТЛАЯ ТЕМА (ВСЁ ЧЁРНОЕ) ========== */
+        body.light-theme {
+            background: #f5f5f5;
+            color: #222222;
+        }
+        body.light-theme .container {
+            background: rgba(255, 255, 255, 0.96);
+            border: 1px solid #dddddd;
+        }
+        body.light-theme .logo {
+            background: #eeeeee;
+            border: 1px solid #cccccc;
+        }
+        body.light-theme .logo span {
+            color: #222222;
+        }
+        body.light-theme .title-section h1 {
+            color: #222222;
+        }
+        body.light-theme .tagline {
+            color: #555555;
+            border-left-color: #aaaaaa;
+        }
+        body.light-theme .tab {
+            color: #666666;
+            background: transparent;
+        }
+        body.light-theme .tab.active {
+            background: #dddddd;
+            color: #222222;
+        }
+        body.light-theme .table-wrapper {
+            border: 1px solid #dddddd;
+            background: #ffffff;
+        }
+        body.light-theme table {
+            background: #ffffff;
+        }
+        body.light-theme th {
+            background: #eaeaea;
+            color: #222222;
+            border-bottom: 2px solid #cccccc;
+        }
+        body.light-theme td {
+            color: #222222;
+            border-bottom: 1px solid #dddddd;
+        }
+        body.light-theme tr:hover td {
+            background: #f5f5f5;
+        }
+        body.light-theme .stars {
+            color: #222222;
+        }
+        body.light-theme .badge {
+            background: #e0e0e0;
+            color: #222222;
+            border: 1px solid #cccccc;
+        }
+        body.light-theme .search-input {
+            background: white;
+            border: 1px solid #cccccc;
+            color: #222222;
+        }
+        body.light-theme .search-input::placeholder {
+            color: #999999;
+        }
+        body.light-theme .search-clear {
+            background: #eaeaea;
+            border: 1px solid #cccccc;
+            color: #222222;
+        }
+        body.light-theme .voice-btn {
+            background: #eaeaea;
+            border: 1px solid #cccccc;
+            color: #222222;
+        }
+        body.light-theme .theme-toggle {
+            background: #eaeaea;
+            border: 1px solid #cccccc;
+            color: #222222;
+        }
+        body.light-theme .color-selector {
+            background: #eaeaea;
+            border: 1px solid #cccccc;
+            color: #222222;
+        }
+        body.light-theme .member-card {
+            background: #f5f5f5;
+            border: 1px solid #dddddd;
+        }
+        body.light-theme .member-name {
+            color: #222222;
+        }
+        body.light-theme .role-name {
+            color: #222222;
+        }
+        body.light-theme .role-count {
+            background: #eaeaea;
+            color: #222222;
+            border: 1px solid #cccccc;
+        }
+        body.light-theme .info-block {
+            background: #ffffff;
+            border: 1px solid #dddddd;
+        }
+        body.light-theme .info-title {
+            color: #222222;
+            border-bottom-color: #dddddd;
+        }
+        body.light-theme .info-list li {
+            color: #444444;
+            border-bottom-color: #dddddd;
+        }
+        body.light-theme .miranda-text {
+            background: #f5f5f5;
+            color: #222222;
+            border-left: 4px solid #aaaaaa;
+        }
+        body.light-theme .footer {
+            color: #777777;
+            border-top-color: #dddddd;
+        }
+        body.light-theme .results-info {
+            background: #eaeaea;
+            color: #222222;
+            border: 1px solid #cccccc;
+        }
+        body.light-theme [data-tooltip]:before {
+            background: #333333;
+            color: white;
+            border: 1px solid #666666;
+        }
+        
+        /* ЛЕТЯЩИЕ НАДПИСИ */
         .floating-text-container {
             position: fixed;
             top: 0;
@@ -34,35 +300,36 @@
         
         .floating-text {
             position: absolute;
-            color: rgba(150, 150, 150, 0.15);
-            font-size: 24px;
+            color: rgba(150, 150, 150, 0.12);
+            font-size: 26px;
             font-weight: 800;
             text-transform: uppercase;
             white-space: nowrap;
             user-select: none;
             animation: floatDown linear infinite;
-            text-shadow: 0 0 10px rgba(255,255,255,0.1);
-            letter-spacing: 8px;
+            text-shadow: 0 0 8px rgba(255,255,255,0.1);
+            letter-spacing: 10px;
+            opacity: 0.2;
         }
         
         body.light-theme .floating-text {
-            color: rgba(0, 0, 0, 0.1);
-            text-shadow: 0 0 10px rgba(0,0,0,0.05);
+            color: rgba(0, 0, 0, 0.08);
+            text-shadow: 0 0 8px rgba(0,0,0,0.05);
         }
         
         @keyframes floatDown {
             from {
-                transform: translateY(-100%) rotate(0deg);
+                transform: translateY(-100%) rotate(-10deg);
                 opacity: 0;
             }
-            10% {
-                opacity: 0.3;
+            20% {
+                opacity: 0.2;
             }
-            90% {
-                opacity: 0.3;
+            80% {
+                opacity: 0.2;
             }
             to {
-                transform: translateY(1000%) rotate(360deg);
+                transform: translateY(1200%) rotate(10deg);
                 opacity: 0;
             }
         }
@@ -78,24 +345,10 @@
             margin: 0 auto;
             border-radius: 24px;
             padding: 24px 20px;
-            transition: background-color 0.3s, border 0.3s, box-shadow 0.3s;
-            backdrop-filter: blur(2px);
+            transition: all 0.3s;
+            backdrop-filter: blur(5px);
             position: relative;
             z-index: 2;
-        }
-        
-        body.dark-theme .container {
-            background: rgba(10, 10, 10, 0.95);
-            border: 1px solid #333333;
-            box-shadow: 0 20px 35px -8px rgba(0,0,0,0.9);
-            backdrop-filter: blur(5px);
-        }
-        
-        body.light-theme .container {
-            background: rgba(255, 255, 255, 0.95);
-            border: 1px solid #dddddd;
-            box-shadow: 0 20px 35px -8px rgba(0,0,0,0.1);
-            backdrop-filter: blur(5px);
         }
         
         .header {
@@ -115,8 +368,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: background-color 0.3s, border 0.3s;
-            border: 1px solid;
+            transition: all 0.3s;
         }
         .logo span {
             font-size: 44px;
@@ -141,7 +393,7 @@
             border-left-width: 4px;
             border-left-style: solid;
             padding-left: 12px;
-            transition: color 0.3s, border-left-color 0.3s;
+            transition: all 0.3s;
         }
         .theme-controls {
             display: flex;
@@ -150,8 +402,6 @@
             flex-wrap: wrap;
         }
         .theme-toggle {
-            background: transparent;
-            border: 1px solid;
             padding: 12px 20px;
             border-radius: 40px;
             font-size: 16px;
@@ -161,10 +411,9 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            border: 1px solid;
         }
         .color-selector {
-            background: transparent;
-            border: 1px solid;
             padding: 12px 20px;
             border-radius: 40px;
             font-size: 16px;
@@ -172,6 +421,7 @@
             cursor: pointer;
             transition: 0.2s;
             outline: none;
+            border: 1px solid;
         }
         .color-selector option {
             background: #1a1a1a;
@@ -195,7 +445,8 @@
             padding: 14px 20px;
             font-size: 16px;
             outline: none;
-            transition: background-color 0.3s, border 0.3s, color 0.3s;
+            transition: all 0.3s;
+            border: 1px solid;
         }
         .voice-btn {
             padding: 14px 24px;
@@ -252,7 +503,7 @@
             overflow-x: auto;
             border-radius: 16px;
             margin-top: 10px;
-            transition: background-color 0.3s, border 0.3s;
+            transition: all 0.3s;
         }
         table {
             width: 100%;
@@ -267,12 +518,11 @@
             text-transform: uppercase;
             font-size: 14px;
             letter-spacing: 1px;
-            transition: background-color 0.3s, color 0.3s;
+            transition: all 0.3s;
         }
         td {
             padding: 14px 12px;
-            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-            border-bottom: 1px solid;
+            transition: all 0.3s;
         }
         .stars {
             letter-spacing: 2px;
@@ -284,8 +534,7 @@
             border-radius: 40px;
             font-size: 13px;
             display: inline-block;
-            transition: background-color 0.3s, color 0.3s, border 0.3s;
-            border: 1px solid;
+            transition: all 0.3s;
         }
         
         [data-tooltip] {
@@ -300,8 +549,6 @@
             bottom: 130%;
             left: 50%;
             transform: translateX(-50%);
-            background: #222222;
-            color: white;
             padding: 10px 16px;
             border-radius: 8px;
             font-size: 13px;
@@ -309,7 +556,6 @@
             min-width: 250px;
             max-width: 350px;
             width: max-content;
-            border: 1px solid #666666;
             box-shadow: 0 5px 20px rgba(0,0,0,0.5);
             z-index: 1000;
             pointer-events: none;
@@ -367,7 +613,7 @@
             padding: 4px 12px;
             border-radius: 40px;
             font-size: 14px;
-            transition: background-color 0.3s, color 0.3s, border 0.3s;
+            transition: all 0.3s;
             border: 1px solid;
         }
         .members-grid {
@@ -378,7 +624,7 @@
         .member-card {
             border-radius: 12px;
             padding: 14px 18px;
-            transition: background-color 0.3s, border 0.3s;
+            transition: all 0.3s;
             border: 1px solid;
         }
         .member-name {
@@ -389,7 +635,7 @@
         .info-block {
             border-radius: 16px;
             padding: 24px;
-            transition: background-color 0.3s, border 0.3s;
+            transition: all 0.3s;
             border: 1px solid;
         }
         .info-title {
@@ -398,7 +644,7 @@
             margin-bottom: 20px;
             border-bottom: 1px solid;
             padding-bottom: 12px;
-            transition: color 0.3s, border-color 0.3s;
+            transition: all 0.3s;
         }
         .info-list {
             list-style: none;
@@ -409,7 +655,7 @@
             display: flex;
             align-items: flex-start;
             gap: 12px;
-            transition: color 0.3s, border-color 0.3s;
+            transition: all 0.3s;
         }
         .info-list li:last-child {
             border-bottom: none;
@@ -419,7 +665,15 @@
             padding: 20px;
             margin-bottom: 24px;
             border-radius: 0 12px 12px 0;
-            transition: background-color 0.3s, border-left-color 0.3s;
+            transition: all 0.3s;
+        }
+        .miranda-text {
+            padding: 16px;
+            border-left: 4px solid;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 16px;
+            line-height: 1.6;
+            transition: all 0.3s;
         }
         .footer {
             margin-top: 40px;
@@ -427,7 +681,7 @@
             font-size: 14px;
             border-top: 1px solid;
             padding-top: 20px;
-            transition: color 0.3s, border-color 0.3s;
+            transition: all 0.3s;
         }
         
         /* ЭКРАН ВХОДА */
@@ -453,7 +707,7 @@
             max-width: 400px;
             width: 90%;
             text-align: center;
-            transition: background-color 0.3s, border 0.3s;
+            transition: all 0.3s;
             border: 1px solid;
             position: relative;
             z-index: 10000;
@@ -486,7 +740,7 @@
             font-size: 16px;
             margin-bottom: 20px;
             outline: none;
-            transition: background-color 0.3s, border 0.3s, color 0.3s;
+            transition: all 0.3s;
             border: 1px solid;
         }
         .login-button {
@@ -520,8 +774,8 @@
                 font-size: 12px;
             }
             .floating-text {
-                font-size: 18px;
-                letter-spacing: 4px;
+                font-size: 20px;
+                letter-spacing: 6px;
             }
         }
     </style>
@@ -539,7 +793,7 @@
         </div>
     </div>
 
-    <!-- ЛЕТЯЩИЕ НАДПИСИ НА ЗАДНЕМ ФОНЕ -->
+    <!-- ЛЕТЯЩИЕ НАДПИСИ -->
     <div id="floatingTextContainer" class="floating-text-container" style="display: none;"></div>
 
     <!-- ОСНОВНОЙ КОНТЕНТ -->
@@ -567,7 +821,7 @@
                 </div>
             </div>
 
-            <!-- ПОИСК + ГОЛОСОВОЙ ПОИСК -->
+            <!-- ПОИСК -->
             <div class="search-box">
                 <input type="text" id="searchInput" class="search-input" placeholder="🔍 Введи статью или название..." onkeyup="searchArticles()">
                 <button id="voiceBtn" class="voice-btn" onclick="startVoiceSearch()">
@@ -575,7 +829,7 @@
                 </button>
                 <button class="search-clear" onclick="clearSearch()">✕ Сбросить</button>
             </div>
-            <div id="resultsCount" class="results-info" style="display: none; padding: 8px 16px; border-radius: 40px; background: #1a1a1a; color: #cccccc; display: inline-block; border: 1px solid #444444;"></div>
+            <div id="resultsCount" class="results-info" style="display: none;"></div>
 
             <!-- ВКЛАДКИ -->
             <div class="tabs" id="mainTabs">
@@ -591,7 +845,7 @@
             </div>
 
             <!-- ТАБ 1: Общая часть -->
-            <div id="tab1" class="table-wrapper" data-tab="1">
+            <div id="tab1" class="table-wrapper">
                 <table id="table1">
                     <thead>
                         <tr>
@@ -622,7 +876,7 @@
             </div>
 
             <!-- ТАБ 2: Тяжкие преступления -->
-            <div id="tab2" class="table-wrapper" style="display: none;" data-tab="2">
+            <div id="tab2" class="table-wrapper" style="display: none;">
                 <table id="table2">
                     <thead>
                         <tr>
@@ -658,7 +912,7 @@
             </div>
 
             <!-- ТАБ 3: Имущество / Экономика -->
-            <div id="tab3" class="table-wrapper" style="display: none;" data-tab="3">
+            <div id="tab3" class="table-wrapper" style="display: none;">
                 <table id="table3">
                     <thead>
                         <tr>
@@ -695,7 +949,7 @@
             </div>
 
             <!-- ТАБ 4: Наркотики / Оружие -->
-            <div id="tab4" class="table-wrapper" style="display: none;" data-tab="4">
+            <div id="tab4" class="table-wrapper" style="display: none;">
                 <table id="table4">
                     <thead>
                         <tr>
@@ -726,7 +980,7 @@
             </div>
 
             <!-- ТАБ 5: Должностные / Власть -->
-            <div id="tab5" class="table-wrapper" style="display: none;" data-tab="5">
+            <div id="tab5" class="table-wrapper" style="display: none;">
                 <table id="table5">
                     <thead>
                         <tr>
@@ -755,7 +1009,7 @@
             </div>
 
             <!-- ТАБ 6: Правосудие / Порядок -->
-            <div id="tab6" class="table-wrapper" style="display: none;" data-tab="6">
+            <div id="tab6" class="table-wrapper" style="display: none;">
                 <table id="table6">
                     <thead>
                         <tr>
@@ -799,7 +1053,7 @@
             </div>
 
             <!-- ТАБ 7: Военные / Госбезопасность -->
-            <div id="tab7" class="table-wrapper" style="display: none;" data-tab="7">
+            <div id="tab7" class="table-wrapper" style="display: none;">
                 <table id="table7">
                     <thead>
                         <tr>
@@ -863,32 +1117,32 @@
                     <div class="miranda-box">
                         <p style="font-size: 18px; font-weight: 600; margin-bottom: 12px;">📋 ПРАВИЛА ЗАЧИТЫВАНИЯ МИРАНДЫ</p>
                         <p style="margin-bottom: 8px;"><span style="font-weight: 600;">1.</span> Миранда зачитывается <span style="font-weight: 600;">ОДИН раз</span> за задержание.</p>
-                        <p style="margin-bottom: 8px;"><span style="font-weight: 600;">2.</span> Зачитывается <span style="font-weight: 600;">СРАЗУ после задержания</span> (после того как надел наручники).</p>
+                        <p style="margin-bottom: 8px;"><span style="font-weight: 600;">2.</span> Зачитывается <span style="font-weight: 600;">СРАЗУ после задержания</span> (после надевания наручников).</p>
                         <p style="margin-bottom: 8px;"><span style="font-weight: 600;">3.</span> Если задержанный отключился/вышел — при возвращении зачитывать <span style="font-weight: 600;">ПОВТОРНО</span>.</p>
-                        <p style="margin-bottom: 8px;"><span style="font-weight: 600;">4.</span> Если задержанный был передан другому сотруднику — <span style="font-weight: 600;">ПОВТОРНО зачитывать НЕ НАДО</span>.</p>
+                        <p style="margin-bottom: 8px;"><span style="font-weight: 600;">4.</span> Если задержанный передан другому сотруднику — <span style="font-weight: 600;">ПОВТОРНО зачитывать НЕ НАДО</span>.</p>
                         <p style="margin-bottom: 8px;"><span style="font-weight: 600;">5.</span> Разрешено зачитывать <span style="font-weight: 600;">одну из двух</span> форм (полную или сокращенную).</p>
                     </div>
 
                     <div style="margin-bottom: 24px;">
                         <p style="font-size: 18px; font-weight: 600; margin-bottom: 12px;">📢 ПОЛНАЯ ФОРМА МИРАНДЫ:</p>
-                        <p style="background: #0a0a0a; padding: 16px; border-left: 4px solid; border-radius: 0 8px 8px 0;">
-                        «Вы имеете право хранить молчание. Всё, что вы скажете, может быть использовано против вас в суде. Вы имеете право на адвоката. Если вы не можете позволить себе адвоката, он будет назначен вам штатом. Вы понимаете свои права?»
-                        </p>
+                        <div class="miranda-text">
+                            «Вы имеете право хранить молчание. Всё, что вы скажете, может быть использовано против вас в суде. Вы имеете право на адвоката. Если вы не можете позволить себе адвоката, он будет назначен вам штатом. Вы понимаете свои права?»
+                        </div>
                     </div>
 
                     <div style="margin-bottom: 24px;">
                         <p style="font-size: 18px; font-weight: 600; margin-bottom: 12px;">📢 КРАТКАЯ ФОРМА МИРАНДЫ:</p>
-                        <p style="background: #0a0a0a; padding: 16px; border-left: 4px solid; border-radius: 0 8px 8px 0;">
-                        «Вы имеете право хранить молчание. Вы имеете право на адвоката. Если у вас нет денег — адвокат будет от штата. Вам ясны ваши права?»
-                        </p>
+                        <div class="miranda-text">
+                            «Вы имеете право хранить молчание. Вы имеете право на адвоката. Если у вас нет денег — адвокат будет от штата. Вам ясны ваши права?»
+                        </div>
                     </div>
 
                     <div style="margin-bottom: 24px;">
                         <p style="font-size: 18px; font-weight: 600; margin-bottom: 12px;">⚠️ ЕСЛИ ЗАДЕРЖАННЫЙ ОТВЕТИЛ «НЕТ»:</p>
-                        <p style="background: #0a0a0a; padding: 16px; border-left: 4px solid;">
-                        ➜ Разъяснить права еще раз (можно своими словами, но сохранить смысл).<br>
-                        ➜ Не начинать допрос, пока задержанный не подтвердит, что понял права.
-                        </p>
+                        <div class="miranda-text">
+                            ➜ Разъяснить права еще раз (можно своими словами, но сохранить смысл).<br>
+                            ➜ Не начинать допрос, пока задержанный не подтвердит, что понял права.
+                        </div>
                     </div>
 
                     <div style="margin-bottom: 24px;">
@@ -901,6 +1155,13 @@
                             <li><span style="font-weight: 600;">5.</span> Инкриминировать статьи</li>
                             <li><span style="font-weight: 600;">6.</span> Доставить в участок</li>
                         </ul>
+                    </div>
+                    
+                    <div style="margin-top: 24px; padding: 16px; border-left: 4px solid; border-radius: 0 8px 8px 0;">
+                        <p style="font-weight: 600; margin-bottom: 8px;">📌 ВАЖНО:</p>
+                        <p>• Отказ снять маску — не является неподчинением (17.6), но задержание до установки личности допустимо</p>
+                        <p style="margin-top: 4px;">• Отказ от оплаты штрафа — 17.7 (3 года)</p>
+                        <p style="margin-top: 4px;">• Оскорбление при исполнении — 17.3 (до 60k / 3 года)</p>
                     </div>
                 </div>
             </div>
@@ -980,29 +1241,29 @@
         // ФУНКЦИЯ СОЗДАНИЯ ЛЕТЯЩИХ НАДПИСЕЙ
         function createFloatingText() {
             const container = document.getElementById('floatingTextContainer');
+            if (!container) return;
+            
             container.innerHTML = '';
             container.style.display = 'block';
             
-            const textCount = 15; // Количество надписей
+            const textCount = 20;
             
             for (let i = 0; i < textCount; i++) {
                 const text = document.createElement('div');
                 text.className = 'floating-text';
                 text.textContent = 'REZNOV';
                 
-                // Случайные параметры
                 const left = Math.random() * 100;
-                const size = Math.floor(Math.random() * 20 + 18);
-                const duration = Math.floor(Math.random() * 15 + 15);
+                const size = Math.floor(Math.random() * 24 + 18);
+                const duration = Math.floor(Math.random() * 20 + 15);
                 const delay = Math.floor(Math.random() * 10);
-                const rotation = Math.floor(Math.random() * 360);
+                const rotation = Math.floor(Math.random() * 60 - 30);
                 
                 text.style.left = left + '%';
                 text.style.fontSize = size + 'px';
                 text.style.animationDuration = duration + 's';
                 text.style.animationDelay = delay + 's';
                 text.style.transform = `rotate(${rotation}deg)`;
-                text.style.opacity = '0.15';
                 
                 container.appendChild(text);
             }
@@ -1015,19 +1276,22 @@
                 document.getElementById('loginScreen').style.display = 'none';
                 document.getElementById('mainContent').style.display = 'block';
                 
-                // СОЗДАЕМ ЛЕТЯЩИЕ НАДПИСИ
-                createFloatingText();
+                setTimeout(() => {
+                    createFloatingText();
+                }, 100);
                 
-                // Загружаем сохраненный цвет или ставим классику
                 const savedColor = localStorage.getItem('reznovAccentColor') || 'classic';
-                document.getElementById('colorSelector').value = savedColor;
-                changeAccentColor(true);
+                const colorSelector = document.getElementById('colorSelector');
+                if (colorSelector) {
+                    colorSelector.value = savedColor;
+                }
+                changeAccentColor(false);
             } else {
                 document.getElementById('loginError').style.display = 'block';
             }
         }
 
-        // ПЕРЕКЛЮЧЕНИЕ ТЕМЫ
+        // ПЕРЕКЛЮЧЕНИЕ ТЕМЫ (ТЁМНАЯ/СВЕТЛАЯ)
         function toggleTheme() {
             const body = document.body;
             const themeIcon = document.getElementById('themeIcon');
@@ -1041,11 +1305,16 @@
                 body.classList.add('dark-theme');
                 themeIcon.textContent = '🌙';
             }
+            
+            createFloatingText();
         }
 
         // СМЕНА АКЦЕНТНОГО ЦВЕТА
         function changeAccentColor(save = false) {
-            const color = document.getElementById('colorSelector').value;
+            const colorSelector = document.getElementById('colorSelector');
+            if (!colorSelector) return;
+            
+            const color = colorSelector.value;
             
             if (save) {
                 localStorage.setItem('reznovAccentColor', color);
@@ -1063,7 +1332,7 @@
                 case 'classic':
                     accentColor = '#888888';
                     borderColor = '#666666';
-                    textColor = '#cccccc';
+                    textColor = document.body.classList.contains('dark-theme') ? '#cccccc' : '#333333';
                     bgColor = '#333333';
                     break;
                 case 'gold':
@@ -1092,60 +1361,62 @@
                     break;
             }
             
-            // Применяем цвета к основным элементам
             if (header) header.style.borderBottomColor = borderColor;
             if (tagline) tagline.style.borderLeftColor = accentColor;
             if (tabs) tabs.style.borderBottomColor = borderColor;
             if (footer) footer.style.borderTopColor = borderColor;
             if (logo) logo.style.borderColor = accentColor;
             
-            // Меняем цвет активных вкладок
             const activeTabs = document.querySelectorAll('.tab.active');
             activeTabs.forEach(tab => {
                 tab.style.background = bgColor;
                 tab.style.color = textColor;
             });
             
-            // Меняем цвет границ у карточек участников
             const memberCards = document.querySelectorAll('.member-card');
             memberCards.forEach(card => {
                 card.style.borderColor = accentColor + '66';
             });
             
-            // Меняем цвет рамки Миранды
             const mirandaBoxes = document.querySelectorAll('.miranda-box');
             mirandaBoxes.forEach(box => {
                 box.style.borderLeftColor = accentColor;
             });
             
-            // Меняем цвет кнопок
+            const mirandaTexts = document.querySelectorAll('.miranda-text');
+            mirandaTexts.forEach(text => {
+                text.style.borderLeftColor = accentColor;
+            });
+            
             const voiceBtn = document.getElementById('voiceBtn');
             const searchClear = document.querySelector('.search-clear');
             const themeToggle = document.getElementById('themeToggle');
-            const colorSelector = document.getElementById('colorSelector');
+            const colorSelectorEl = document.getElementById('colorSelector');
             
             if (voiceBtn) voiceBtn.style.borderColor = accentColor;
             if (searchClear) searchClear.style.borderColor = accentColor;
             if (themeToggle) themeToggle.style.borderColor = accentColor;
-            if (colorSelector) colorSelector.style.borderColor = accentColor;
+            if (colorSelectorEl) colorSelectorEl.style.borderColor = accentColor;
             
-            // Меняем цвет заголовков ролей
             const roleTitles = document.querySelectorAll('.role-title');
             roleTitles.forEach(title => {
                 title.style.borderBottomColor = borderColor;
             });
             
-            // Меняем цвет счетчиков ролей
             const roleCounts = document.querySelectorAll('.role-count');
             roleCounts.forEach(count => {
                 count.style.borderColor = accentColor;
             });
             
-            // Меняем цвет итоговой плашки участников
             const totalCards = document.querySelectorAll('div[style*="margin-top: 32px; padding: 16px; background: #0c0c0c;"]');
             totalCards.forEach(card => {
                 card.style.borderColor = accentColor;
             });
+            
+            const importantBox = document.querySelector('div[style*="margin-top: 24px; padding: 16px; border-left: 4px solid;"]');
+            if (importantBox) {
+                importantBox.style.borderLeftColor = accentColor;
+            }
         }
 
         // ПЕРЕКЛЮЧЕНИЕ ВКЛАДОК
@@ -1158,18 +1429,20 @@
             }
             
             const tabs = document.querySelectorAll('.tab');
+            const colorSelector = document.getElementById('colorSelector');
+            const color = colorSelector ? colorSelector.value : 'classic';
+            
+            let bgColor = '#333333';
+            switch(color) {
+                case 'gold': bgColor = '#665500'; break;
+                case 'red': bgColor = '#4A0C18'; break;
+                case 'blue': bgColor = '#002244'; break;
+                case 'khaki': bgColor = '#2A3422'; break;
+            }
+            
             tabs.forEach((tab, index) => {
                 if (index + 1 === tabId) {
                     tab.classList.add('active');
-                    // Обновляем цвет активной вкладки
-                    const color = document.getElementById('colorSelector').value;
-                    let bgColor = '#333333';
-                    switch(color) {
-                        case 'gold': bgColor = '#665500'; break;
-                        case 'red': bgColor = '#4A0C18'; break;
-                        case 'blue': bgColor = '#002244'; break;
-                        case 'khaki': bgColor = '#2A3422'; break;
-                    }
                     tab.style.background = bgColor;
                 } else {
                     tab.classList.remove('active');
@@ -1217,26 +1490,37 @@
                     }
                 });
                 
-                document.getElementById('tab' + i).style.display = tableResults > 0 ? 'block' : 'none';
+                const tabElement = document.getElementById('tab' + i);
+                if (tabElement) {
+                    tabElement.style.display = tableResults > 0 ? 'block' : 'none';
+                }
             }
             
             const resultsCount = document.getElementById('resultsCount');
-            resultsCount.textContent = totalResults > 0 ? `🔍 Найдено статей: ${totalResults}` : `🔍 Ничего не найдено`;
-            resultsCount.style.display = 'inline-block';
+            if (resultsCount) {
+                resultsCount.textContent = totalResults > 0 ? `🔍 Найдено статей: ${totalResults}` : `🔍 Ничего не найдено`;
+                resultsCount.style.display = 'inline-block';
+            }
             
             const tabs = document.querySelectorAll('.tab');
             tabs.forEach(tab => tab.classList.remove('active'));
             for (let i = 1; i <= 7; i++) {
-                if (document.getElementById('tab' + i).style.display === 'block') {
-                    tabs[i-1].classList.add('active');
+                const tabElement = document.getElementById('tab' + i);
+                if (tabElement && tabElement.style.display === 'block') {
+                    if (tabs[i-1]) {
+                        tabs[i-1].classList.add('active');
+                    }
                     break;
                 }
             }
         }
 
         function clearSearch() {
-            document.getElementById('searchInput').value = '';
-            document.getElementById('resultsCount').style.display = 'none';
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput) searchInput.value = '';
+            
+            const resultsCount = document.getElementById('resultsCount');
+            if (resultsCount) resultsCount.style.display = 'none';
             
             for (let i = 1; i <= 7; i++) {
                 const table = document.getElementById('table' + i);
@@ -1244,7 +1528,10 @@
                     const rows = table.querySelectorAll('tbody tr');
                     rows.forEach(row => row.style.display = '');
                 }
-                document.getElementById('tab' + i).style.display = i === 1 ? 'block' : 'none';
+                const tabElement = document.getElementById('tab' + i);
+                if (tabElement) {
+                    tabElement.style.display = i === 1 ? 'block' : 'none';
+                }
             }
             
             showTab(1);
@@ -1258,6 +1545,8 @@
             }
             
             const voiceBtn = document.getElementById('voiceBtn');
+            if (!voiceBtn) return;
+            
             voiceBtn.classList.add('listening');
             voiceBtn.textContent = '🎤 Слушаю...';
             
@@ -1270,7 +1559,10 @@
             
             recognition.onresult = function(event) {
                 const speechText = event.results[0][0].transcript;
-                document.getElementById('searchInput').value = speechText;
+                const searchInput = document.getElementById('searchInput');
+                if (searchInput) {
+                    searchInput.value = speechText;
+                }
                 searchArticles();
                 voiceBtn.classList.remove('listening');
                 voiceBtn.textContent = '🎤 Голосовой поиск';
