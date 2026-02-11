@@ -184,6 +184,65 @@
             font-weight: 500;
             color: white;
         }
+        .rules-section {
+            background: #0c0c0c;
+            border: 1px solid #444444;
+            border-radius: 16px;
+            padding: 24px;
+        }
+        .rule-item {
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+            padding: 12px 0;
+            border-bottom: 1px solid #333333;
+        }
+        .rule-item:last-child {
+            border-bottom: none;
+        }
+        .rule-number {
+            font-size: 20px;
+            font-weight: 700;
+            color: #888888;
+            min-width: 40px;
+        }
+        .rule-text {
+            font-size: 16px;
+            color: #ffffff;
+        }
+        .rule-desc {
+            font-size: 14px;
+            color: #aaaaaa;
+            margin-top: 4px;
+        }
+        .info-block {
+            background: #0c0c0c;
+            border: 1px solid #444444;
+            border-radius: 16px;
+            padding: 24px;
+        }
+        .info-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #444444;
+            padding-bottom: 12px;
+        }
+        .info-list {
+            list-style: none;
+        }
+        .info-list li {
+            padding: 10px 0;
+            color: #dddddd;
+            border-bottom: 1px solid #333333;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .info-list li:last-child {
+            border-bottom: none;
+        }
         .footer {
             margin-top: 40px;
             text-align: center;
@@ -216,8 +275,10 @@
 
         <div class="tabs">
             <button class="tab active" onclick="showTab(1)">🔫 Тяжкие преступления</button>
-            <button class="tab" onclick="showTab(2)">📦 Имущество / Наркотики / Должностные</button>
+            <button class="tab" onclick="showTab(2)">📦 Имущество / Наркотики</button>
             <button class="tab" onclick="showTab(3)">👥 Участники Reznov</button>
+            <button class="tab" onclick="showTab(4)">⚔️ Памятка бойца</button>
+            <button class="tab" onclick="showTab(5)">📜 Кодекс чести</button>
         </div>
 
         <!-- ТАБ 1: Тяжкие преступления -->
@@ -283,9 +344,8 @@
             </table>
         </div>
 
-        <!-- ТАБ 3: Участники Reznov FAMQ — ТОЛЬКО ИМЕНА -->
+        <!-- ТАБ 3: Участники Reznov FAMQ -->
         <div id="tab3" style="display: none;">
-            <!-- ЛИДЕР — 1 -->
             <div class="role-section">
                 <div class="role-title">
                     <span class="role-name">👑 Лидер</span>
@@ -295,8 +355,6 @@
                     <div class="member-card"><div class="member-name">Yaroslav Reznov</div></div>
                 </div>
             </div>
-
-            <!-- ЗАМЕСТИТЕЛЬ ЛИДЕРА — 3 -->
             <div class="role-section">
                 <div class="role-title">
                     <span class="role-name">⚜️ Заместитель лидера</span>
@@ -308,8 +366,6 @@
                     <div class="member-card"><div class="member-name">Tony Reznov</div></div>
                 </div>
             </div>
-
-            <!-- СОВЕТНИК ЛИДЕРА — 3 -->
             <div class="role-section">
                 <div class="role-title">
                     <span class="role-name">⚙️ Советник Лидера</span>
@@ -321,8 +377,6 @@
                     <div class="member-card"><div class="member-name">Mizzl XVII</div></div>
                 </div>
             </div>
-
-            <!-- ДОВЕРЕННОЕ ЛИЦО — 2 -->
             <div class="role-section">
                 <div class="role-title">
                     <span class="role-name">🤝 Доверенное лицо</span>
@@ -333,8 +387,6 @@
                     <div class="member-card"><div class="member-name">Rayden Reznov</div></div>
                 </div>
             </div>
-
-            <!-- НОВЕНЬКИЙ — 10 -->
             <div class="role-section">
                 <div class="role-title">
                     <span class="role-name">🌱 Новенький</span>
@@ -352,10 +404,102 @@
                     <div class="member-card"><div class="member-name">Vladislav Reznov</div></div>
                 </div>
             </div>
-
-            <!-- ИТОГО -->
             <div style="margin-top: 32px; padding: 16px; background: #0c0c0c; border-radius: 12px; border: 1px solid #444444; text-align: center;">
                 <span style="font-size: 18px; font-weight: 600; color: white;">Всего: 19 участников</span>
+            </div>
+        </div>
+
+        <!-- ТАБ 4: Памятка бойца -->
+        <div id="tab4" style="display: none;">
+            <div class="info-block">
+                <div class="info-title">⚔️ Памятка бойца Reznov</div>
+                <ul class="info-list">
+                    <li>🚫 <strong>NLR (New Life Rule):</strong> После смерти забываешь последние 15 минут. Не возвращайся на место смерти.</li>
+                    <li>💀 <strong>RK (Revenge Kill):</strong> Запрещено убивать за смерть в прошлой жизни. Ты новый человек.</li>
+                    <li>🟢 <strong>Зеленые зоны:</strong> Респ, мэрия, госпиталь, банк — стрельба запрещена. Бан автоматом.</li>
+                    <li>📞 <strong>MG (Meta Gaming):</strong> Не используй информацию из Discord в игре. Игра есть игра.</li>
+                    <li>🔫 <strong>DM (Death Match):</strong> Не убивай без RP-причины. Просто так нельзя.</li>
+                    <li>🎭 <strong>Маска:</strong> В маске не подходи к мэрии и госслужащим.</li>
+                    <li>🚔 <strong>Задержание:</strong> Не беги от госа, если нет оружия. 17.6 — 3 года.</li>
+                    <li>💰 <strong>Штрафы:</strong> Отказ платить = 3 года. Плати сразу.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ТАБ 5: Кодекс чести -->
+        <div id="tab5" style="display: none;">
+            <div class="rules-section">
+                <div class="info-title">📜 Кодекс чести Reznov FAMQ</div>
+                <div class="rule-item">
+                    <div class="rule-number">I</div>
+                    <div>
+                        <div class="rule-text">Слово лидера — закон.</div>
+                        <div class="rule-desc">Приказы руководства не обсуждаются, выполняются беспрекословно.</div>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <div class="rule-number">II</div>
+                    <div>
+                        <div class="rule-text">Своих не бросаем.</div>
+                        <div class="rule-desc">Попал в беду — семья придет на помощь. Ушел один — предал всех.</div>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <div class="rule-number">III</div>
+                    <div>
+                        <div class="rule-text">Уважение к семье.</div>
+                        <div class="rule-desc">Не позорь имя Reznov. Твои действия — лицо всей семьи.</div>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <div class="rule-number">IV</div>
+                    <div>
+                        <div class="rule-text">Не конфликтуй без причины.</div>
+                        <div class="rule-desc">Война — крайняя мера. Сначала переговоры, потом оружие.</div>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <div class="rule-number">V</div>
+                    <div>
+                        <div class="rule-text">Уважай союзников.</div>
+                        <div class="rule-desc">Дружественные семьи — наши братья. Не трогай, помогай.</div>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <div class="rule-number">VI</div>
+                    <div>
+                        <div class="rule-text">Дисциплина.</div>
+                        <div class="rule-desc">Сборы по расписанию, форма одежды, порядок в Discord.</div>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <div class="rule-number">VII</div>
+                    <div>
+                        <div class="rule-text">Развивайся.</div>
+                        <div class="rule-desc">Качаем навыки, фармим, растем. Слабые не нужны.</div>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <div class="rule-number">VIII</div>
+                    <div>
+                        <div class="rule-text">Честь дороже денег.</div>
+                        <div class="rule-desc">Не кидай своих ради выгоды. Предательство карается изгнанием.</div>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <div class="rule-number">IX</div>
+                    <div>
+                        <div class="rule-text">Помогай новичкам.</div>
+                        <div class="rule-desc">Каждый был зеленым. Научи — получишь преданного бойца.</div>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <div class="rule-number">X</div>
+                    <div>
+                        <div class="rule-text">Один за всех, и все за одного.</div>
+                        <div class="rule-desc">Мы — семья. Мы — Reznov.</div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -369,11 +513,13 @@
             document.getElementById('tab1').style.display = tabId === 1 ? 'block' : 'none';
             document.getElementById('tab2').style.display = tabId === 2 ? 'block' : 'none';
             document.getElementById('tab3').style.display = tabId === 3 ? 'block' : 'none';
+            document.getElementById('tab4').style.display = tabId === 4 ? 'block' : 'none';
+            document.getElementById('tab5').style.display = tabId === 5 ? 'block' : 'none';
             
             let tabs = document.querySelectorAll('.tab');
-            tabs[0].classList.toggle('active', tabId === 1);
-            tabs[1].classList.toggle('active', tabId === 2);
-            tabs[2].classList.toggle('active', tabId === 3);
+            for (let i = 0; i < tabs.length; i++) {
+                tabs[i].classList.toggle('active', i + 1 === tabId);
+            }
         }
     </script>
 </body>
