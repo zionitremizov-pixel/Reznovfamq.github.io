@@ -29,7 +29,6 @@
         }
         body.dark-theme .logo {
             background: #111111;
-            border: 1px solid #888888;
         }
         body.dark-theme .logo span {
             color: #ffffff;
@@ -236,6 +235,7 @@
             align-items: center;
             justify-content: center;
             transition: background-color 0.3s, border 0.3s;
+            border: 1px solid;
         }
         .logo span {
             font-size: 44px;
@@ -391,6 +391,7 @@
         td {
             padding: 14px 12px;
             transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+            border-bottom: 1px solid;
         }
         .stars {
             letter-spacing: 2px;
@@ -403,6 +404,7 @@
             font-size: 13px;
             display: inline-block;
             transition: background-color 0.3s, color 0.3s, border 0.3s;
+            border: 1px solid;
         }
         
         [data-tooltip] {
@@ -666,7 +668,7 @@
                     <div class="tagline" id="mainTagline">Закон есть закон. Мы — Reznov</div>
                 </div>
                 <div class="theme-controls">
-                    <select id="colorSelector" class="color-selector" onchange="changeAccentColor()">
+                    <select id="colorSelector" class="color-selector" onchange="changeAccentColor(true)">
                         <option value="classic">🎯 Классика (серый)</option>
                         <option value="gold">🥇 Золото</option>
                         <option value="red">🔴 Красный</option>
@@ -1095,6 +1097,11 @@
             if (password === 'reznov123') {
                 document.getElementById('loginScreen').style.display = 'none';
                 document.getElementById('mainContent').style.display = 'block';
+                
+                // Загружаем сохраненный цвет или ставим классику
+                const savedColor = localStorage.getItem('reznovAccentColor') || 'classic';
+                document.getElementById('colorSelector').value = savedColor;
+                changeAccentColor(true);
             } else {
                 document.getElementById('loginError').style.display = 'block';
             }
@@ -1116,60 +1123,70 @@
             }
         }
 
-        // СМЕНА АКЦЕНТНОГО ЦВЕТА
-        function changeAccentColor() {
+        // СМЕНА АКЦЕНТНОГО ЦВЕТА - ИСПРАВЛЕННАЯ ВЕРСИЯ
+        function changeAccentColor(save = false) {
             const color = document.getElementById('colorSelector').value;
+            
+            if (save) {
+                localStorage.setItem('reznovAccentColor', color);
+            }
+            
             const header = document.getElementById('mainHeader');
             const tagline = document.getElementById('mainTagline');
             const tabs = document.getElementById('mainTabs');
             const footer = document.getElementById('mainFooter');
             const logo = document.getElementById('mainLogo');
             
-            let accentColor, borderColor, textColor;
+            let accentColor, borderColor, textColor, bgColor;
             
             switch(color) {
                 case 'classic':
                     accentColor = '#888888';
                     borderColor = '#666666';
                     textColor = '#cccccc';
+                    bgColor = '#333333';
                     break;
                 case 'gold':
                     accentColor = '#FFD700';
                     borderColor = '#DAA520';
                     textColor = '#FFD700';
+                    bgColor = '#665500';
                     break;
                 case 'red':
                     accentColor = '#C41E3A';
                     borderColor = '#8B0000';
                     textColor = '#FF6B6B';
+                    bgColor = '#4A0C18';
                     break;
                 case 'blue':
                     accentColor = '#0A4C8C';
                     borderColor = '#003366';
                     textColor = '#6AB0FF';
+                    bgColor = '#002244';
                     break;
                 case 'khaki':
                     accentColor = '#4B5A3A';
                     borderColor = '#3A4A2A';
                     textColor = '#8A9A7A';
+                    bgColor = '#2A3422';
                     break;
             }
             
-            // Применяем цвета к элементам
-            header.style.borderBottomColor = borderColor;
-            tagline.style.borderLeftColor = accentColor;
-            tabs.style.borderBottomColor = borderColor;
-            footer.style.borderTopColor = borderColor;
-            logo.style.borderColor = accentColor;
+            // Применяем цвета к основным элементам
+            if (header) header.style.borderBottomColor = borderColor;
+            if (tagline) tagline.style.borderLeftColor = accentColor;
+            if (tabs) tabs.style.borderBottomColor = borderColor;
+            if (footer) footer.style.borderTopColor = borderColor;
+            if (logo) logo.style.borderColor = accentColor;
             
             // Меняем цвет активных вкладок
             const activeTabs = document.querySelectorAll('.tab.active');
             activeTabs.forEach(tab => {
-                tab.style.background = accentColor + '33';
+                tab.style.background = bgColor;
                 tab.style.color = textColor;
             });
             
-            // Меняем цвет границ у карточек
+            // Меняем цвет границ у карточек участников
             const memberCards = document.querySelectorAll('.member-card');
             memberCards.forEach(card => {
                 card.style.borderColor = accentColor + '66';
@@ -1191,9 +1208,27 @@
             if (searchClear) searchClear.style.borderColor = accentColor;
             if (themeToggle) themeToggle.style.borderColor = accentColor;
             if (colorSelector) colorSelector.style.borderColor = accentColor;
+            
+            // Меняем цвет заголовков ролей
+            const roleTitles = document.querySelectorAll('.role-title');
+            roleTitles.forEach(title => {
+                title.style.borderBottomColor = borderColor;
+            });
+            
+            // Меняем цвет счетчиков ролей
+            const roleCounts = document.querySelectorAll('.role-count');
+            roleCounts.forEach(count => {
+                count.style.borderColor = accentColor;
+            });
+            
+            // Меняем цвет итоговой плашки участников
+            const totalCards = document.querySelectorAll('div[style*="margin-top: 32px; padding: 16px; background: #0c0c0c;"]');
+            totalCards.forEach(card => {
+                card.style.borderColor = accentColor;
+            });
         }
 
-        // ПЕРЕКЛЮЧЕНИЕ ВКЛАДОК
+        // ПЕРЕКЛЮЧЕНИЕ ВКЛАДОК - ИСПРАВЛЕННАЯ ВЕРСИЯ
         function showTab(tabId) {
             for (let i = 1; i <= 9; i++) {
                 const tab = document.getElementById('tab' + i);
@@ -1208,14 +1243,14 @@
                     tab.classList.add('active');
                     // Обновляем цвет активной вкладки
                     const color = document.getElementById('colorSelector').value;
-                    let accentColor = '#888888';
+                    let bgColor = '#333333';
                     switch(color) {
-                        case 'gold': accentColor = '#FFD700'; break;
-                        case 'red': accentColor = '#C41E3A'; break;
-                        case 'blue': accentColor = '#0A4C8C'; break;
-                        case 'khaki': accentColor = '#4B5A3A'; break;
+                        case 'gold': bgColor = '#665500'; break;
+                        case 'red': bgColor = '#4A0C18'; break;
+                        case 'blue': bgColor = '#002244'; break;
+                        case 'khaki': bgColor = '#2A3422'; break;
                     }
-                    tab.style.background = accentColor + '33';
+                    tab.style.background = bgColor;
                 } else {
                     tab.classList.remove('active');
                     tab.style.background = '';
@@ -1334,6 +1369,18 @@
             
             recognition.start();
         }
+
+        // Инициализация при загрузке
+        window.onload = function() {
+            // Устанавливаем классический цвет по умолчанию
+            setTimeout(() => {
+                if (document.getElementById('mainContent').style.display === 'block') {
+                    const savedColor = localStorage.getItem('reznovAccentColor') || 'classic';
+                    document.getElementById('colorSelector').value = savedColor;
+                    changeAccentColor(false);
+                }
+            }, 100);
+        };
     </script>
 </body>
 </html>
