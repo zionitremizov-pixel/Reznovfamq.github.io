@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
-    <title>Reznov FAMQ — Уголовный кодекс</title>
+    <title>Reznov FAMQ — Состав семьи</title>
     <style>
         * {
             margin: 0;
@@ -96,54 +96,78 @@
             background: #333333;
             color: white;
         }
-        .table-wrapper {
-            overflow-x: auto;
-            border-radius: 16px;
-            border: 1px solid #333333;
-            background: #080808;
-            margin-top: 10px;
+        .role-section {
+            margin-bottom: 32px;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 15px;
-            min-width: 600px;
+        .role-title {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #444444;
         }
-        th {
-            background: #1a1a1a;
-            color: #ffffff;
-            font-weight: 600;
-            padding: 16px 12px;
-            white-space: nowrap;
-            border-bottom: 2px solid #666666;
+        .role-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
             text-transform: uppercase;
-            font-size: 14px;
-            letter-spacing: 1px;
-        }
-        td {
-            padding: 14px 12px;
-            border-bottom: 1px solid #333333;
-            color: #dddddd;
-        }
-        tr:hover td {
-            background: #151515;
-        }
-        .stars {
-            color: #ffffff;
             letter-spacing: 2px;
-            font-weight: 600;
         }
-        .badge {
+        .role-count {
             background: #222222;
             color: #cccccc;
-            padding: 4px 10px;
+            padding: 4px 12px;
             border-radius: 40px;
-            font-size: 13px;
+            font-size: 14px;
             border: 1px solid #555555;
-            display: inline-block;
+        }
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 16px;
+        }
+        .member-card {
+            background: #0c0c0c;
+            border: 1px solid #444444;
+            border-radius: 16px;
+            padding: 18px;
+            transition: 0.2s;
+        }
+        .member-card:hover {
+            background: #121212;
+            border-color: #777777;
+        }
+        .member-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 6px;
+        }
+        .member-status {
+            color: #aaaaaa;
+            font-size: 14px;
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px dashed #333333;
+        }
+        .member-extra {
+            color: #bbbbbb;
+            font-size: 13px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .extra-tag {
+            background: #1a1a1a;
+            padding: 2px 10px;
+            border-radius: 40px;
+            border: 1px solid #555555;
+            color: #dddddd;
+            font-size: 12px;
         }
         .footer {
-            margin-top: 30px;
+            margin-top: 40px;
             text-align: center;
             color: #777777;
             font-size: 14px;
@@ -156,6 +180,7 @@
             .logo { width: 55px; height: 55px; }
             .logo span { font-size: 34px; }
             .tab { padding: 8px 16px; font-size: 14px; }
+            .members-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -166,76 +191,144 @@
                 <span>R</span>
             </div>
             <div class="title-section">
-                <h1>Reznov FAMQ · Уголовный кодекс</h1>
+                <h1>Reznov FAMQ · Состав семьи</h1>
                 <div class="tagline">Закон есть закон. Мы — Reznov</div>
             </div>
         </div>
 
         <div class="tabs">
-            <button class="tab active" onclick="showTab(1)">🔫 Тяжкие преступления</button>
-            <button class="tab" onclick="showTab(2)">📦 Имущество / Наркотики / Должностные</button>
+            <button class="tab" onclick="showTab(1)">🔫 Тяжкие преступления</button>
+            <button class="tab" onclick="showTab(2)">📦 Имущество / Наркотики</button>
+            <button class="tab active" onclick="showTab(3)">👥 Участники Reznov</button>
         </div>
 
-        <div id="tab1" class="table-wrapper">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Статья</th>
-                        <th>Нарушение</th>
-                        <th>Звёзды</th>
-                        <th>Наказание</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>5.11</td><td>Лишение лицензии за оружие</td><td>—</td><td><span class="badge">Лишение</span></td></tr>
-                    <tr><td>6.1.1</td><td>Побои с предметом</td><td class="stars">★★★</td><td>3 года / $35,000</td></tr>
-                    <tr><td>6.1.2</td><td>Побои руками</td><td class="stars">★★</td><td>2 года / $45,000</td></tr>
-                    <tr><td>6.2</td><td>Убийство (1 человек)</td><td class="stars">★★★★</td><td>4 года</td></tr>
-                    <tr><td>6.3</td><td>Убийство 2+ / близкие госслужащего</td><td class="stars">★★★★★</td><td>5 лет</td></tr>
-                    <tr><td>6.4</td><td>Групповое / с особой жестокостью</td><td class="stars">★★★★★</td><td>5 лет</td></tr>
-                    <tr><td>6.5</td><td>Смерть по неосторожности</td><td class="stars">★★★</td><td>3 года / $35,000</td></tr>
-                    <tr><td>6.7.1</td><td>Угроза госслужащему / близким</td><td class="stars">★★★★</td><td>4 года / $45,000</td></tr>
-                    <tr><td>6.7.2</td><td>Угроза с целью запугать</td><td class="stars">★★★</td><td>3 года / $35,000</td></tr>
-                    <tr><td>6.7.3</td><td>Угроза с оружием</td><td class="stars">★★★★</td><td>4 года / $60,000</td></tr>
-                    <tr><td>17.1</td><td>Посягательство на жизнь сотрудника</td><td class="stars">★★★★★</td><td>5 лет</td></tr>
-                    <tr><td>17.2</td><td>Побои / угроза насилия власти</td><td class="stars">★★★★</td><td>4 года</td></tr>
-                    <tr><td>17.3</td><td>Оскорбление представителя власти</td><td class="stars">★★★</td><td>3 года / $20-60k</td></tr>
-                    <tr><td>17.6</td><td>Неподчинение / отказ остановиться</td><td class="stars">★★★</td><td>3 года / $20-60k</td></tr>
-                    <tr><td>17.7</td><td>Отказ оплатить штраф</td><td class="stars">★★★</td><td>3 года</td></tr>
-                </tbody>
-            </table>
+        <!-- ТАБ 1: Законы (скрыт по умолчанию) -->
+        <div id="tab1" style="display: none;">
+            <div style="color: #cccccc; text-align: center; padding: 40px;">
+                ⚖️ Уголовный кодекс Majestic RP · Скоро будет обновление
+            </div>
         </div>
 
-        <div id="tab2" class="table-wrapper" style="display: none;">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Статья</th>
-                        <th>Нарушение</th>
-                        <th>Звёзды</th>
-                        <th>Наказание</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>7.2.1</td><td>Клевета в СМИ / с должности</td><td class="stars">★★</td><td>2 года / $25,000</td></tr>
-                    <tr><td>7.2.2</td><td>Клевета с обвинением в преступлении</td><td class="stars">★★★</td><td>3 года / $35,000</td></tr>
-                    <tr><td>7.2.3</td><td>Клевета оскорбительная</td><td class="stars">★★★</td><td>3 года / $35,000</td></tr>
-                    <tr><td>12.7.1</td><td>Проникновение на закрытый объект</td><td class="stars">★★★★</td><td>4 года / $50,000</td></tr>
-                    <tr><td>12.7.2</td><td>Проникновение на режимный (SANG/FIB/GOV)</td><td class="stars">★★★★★</td><td>5 лет / $75,000</td></tr>
-                    <tr><td>12.7.3</td><td>Нарушение регламента на гос.объекте</td><td class="stars">★★</td><td>2 года / $25,000</td></tr>
-                    <tr><td>12.8.1</td><td>Хранение / ношение оружия</td><td class="stars">★★★★</td><td>4 года / $40,000</td></tr>
-                    <tr><td>12.8.2</td><td>Гос.оружие / спецсредства у гражданского</td><td class="stars">★★★★★</td><td>5 лет</td></tr>
-                    <tr><td>12.8.3</td><td>Нарушение правил оборота оружия</td><td class="stars">★★★</td><td>3 года / $30,000</td></tr>
-                    <tr><td>12.8.4</td><td>Подделка транспортной накладной</td><td class="stars">★★★</td><td>3 года / $25,000</td></tr>
-                    <tr><td>13.1.1</td><td>Наркотики 6–10 гр</td><td class="stars">★★★</td><td>3 года / $50,000</td></tr>
-                    <tr><td>13.1.2</td><td>Наркотики 11+ гр</td><td class="stars">★★★★★</td><td>5 лет</td></tr>
-                    <tr><td>13.2</td><td>Кустарное производство наркотиков</td><td class="stars">★★★★★</td><td>5 лет / $60,000</td></tr>
-                    <tr><td>15.1.1</td><td>Превышение полномочий (любой)</td><td class="stars">★★★★</td><td>4 года / $50,000</td></tr>
-                    <tr><td>15.1.2</td><td>Превышение (руководство, не GOV)</td><td class="stars">★★★★</td><td>4 года / $200,000</td></tr>
-                    <tr><td>15.1.3</td><td>Превышение (GOV)</td><td class="stars">★★★★★</td><td>5 лет / $500,000</td></tr>
-                </tbody>
-            </table>
+        <!-- ТАБ 2: Имущество (скрыт по умолчанию) -->
+        <div id="tab2" style="display: none;">
+            <div style="color: #cccccc; text-align: center; padding: 40px;">
+                📦 Раздел законов · Скоро будет обновление
+            </div>
         </div>
+
+        <!-- ТАБ 3: Участники Reznov FAMQ (ПОЛНЫЙ СОСТАВ) -->
+        <div id="tab3">
+            <!-- ЛИДЕР — 1 -->
+            <div class="role-section">
+                <div class="role-title">
+                    <span class="role-name">👑 Лидер</span>
+                    <span class="role-count">1</span>
+                </div>
+                <div class="members-grid">
+                    <div class="member-card">
+                        <div class="member-name">Yaroslav Reznov</div>
+                        <div class="member-status">🔊 В голосовом чате</div>
+                        <div class="member-extra"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ЗАМЕСТИТЕЛЬ ЛИДЕРА — 3 -->
+            <div class="role-section">
+                <div class="role-title">
+                    <span class="role-name">⚜️ Заместитель лидера</span>
+                    <span class="role-count">3</span>
+                </div>
+                <div class="members-grid">
+                    <div class="member-card">
+                        <div class="member-name">Ekaterina Reznova</div>
+                        <div class="member-status">+1 · 🟢 ⚪ ⚫</div>
+                        <div class="member-extra"></div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-name">Michael Reznov ADLR</div>
+                        <div class="member-status">Любовь на аве.</div>
+                        <div class="member-extra"></div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-name">Tony Reznov</div>
+                        <div class="member-status">🍺 ПИВО</div>
+                        <div class="member-extra"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- СОВЕТНИК ЛИДЕРА — 3 -->
+            <div class="role-section">
+                <div class="role-title">
+                    <span class="role-name">⚙️ Советник Лидера</span>
+                    <span class="role-count">3</span>
+                </div>
+                <div class="members-grid">
+                    <div class="member-card">
+                        <div class="member-name">Artem Reznov famq</div>
+                        <div class="member-status">Grand Theft Auto V Leg... +1</div>
+                        <div class="member-extra"></div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-name">Boris Reznov</div>
+                        <div class="member-status">🔊 В голосовом чате</div>
+                        <div class="member-extra"></div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-name">Mizzl XVII</div>
+                        <div class="member-status">truth yandere</div>
+                        <div class="member-extra"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ДОВЕРЕННОЕ ЛИЦО — 2 -->
+            <div class="role-section">
+                <div class="role-title">
+                    <span class="role-name">🤝 Доверенное лицо</span>
+                    <span class="role-count">2</span>
+                </div>
+                <div class="members-grid">
+                    <div class="member-card">
+                        <div class="member-name">Danny Reznov MJRP</div>
+                        <div class="member-status">+1 · 🟠 Melancholie by Opfer</div>
+                        <div class="member-extra"></div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-name">Rayden Reznov</div>
+                        <div class="member-status">Grand Theft Auto V Legacy +1</div>
+                        <div class="member-extra"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- НОВЕНЬКИЙ — 10 -->
+            <div class="role-section">
+                <div class="role-title">
+                    <span class="role-name">🌱 Новенький</span>
+                    <span class="role-count">10</span>
+                </div>
+                <div class="members-grid">
+                    <div class="member-card"><div class="member-name">Alen Reznov MJRP</div><div class="member-status"></div><div class="member-extra"></div></div>
+                    <div class="member-card"><div class="member-name">Antonio Reznov</div><div class="member-status">Роблок</div><div class="member-extra"></div></div>
+                    <div class="member-card"><div class="member-name">Bob Reznov SURP</div><div class="member-status">Grand Theft Auto V Legacy</div><div class="member-extra"></div></div>
+                    <div class="member-card"><div class="member-name">Kirill Reznov</div><div class="member-status">Grand Theft Auto V Legacy</div><div class="member-extra"></div></div>
+                    <div class="member-card"><div class="member-name">Maiden Reznov</div><div class="member-status"></div><div class="member-extra"></div></div>
+                    <div class="member-card"><div class="member-name">Ronnie Reznov +888</div><div class="member-status">🔊 В голосовом чате</div><div class="member-extra"></div></div>
+                    <div class="member-card"><div class="member-name">Sebastyan Reznov</div><div class="member-status"></div><div class="member-extra"></div></div>
+                    <div class="member-card"><div class="member-name">Timan Reznov</div><div class="member-status">Counter-Strike 2</div><div class="member-extra"></div></div>
+                    <div class="member-card"><div class="member-name">Vladislav Reznov</div><div class="member-status"></div><div class="member-extra"></div></div>
+                </div>
+            </div>
+
+            <!-- ИТОГО -->
+            <div style="margin-top: 32px; padding: 20px; background: #0c0c0c; border-radius: 16px; border: 1px solid #444444; text-align: center;">
+                <span style="font-size: 20px; font-weight: 700; color: white;">Всего: 19 участников</span>
+                <span style="margin-left: 16px; color: #aaaaaa;">👥 Reznov FAMQ</span>
+            </div>
+        </div>
+
         <div class="footer">
             Reznov FAMQ · Семейный кодекс · Majestic RP
         </div>
@@ -245,10 +338,12 @@
         function showTab(tabId) {
             document.getElementById('tab1').style.display = tabId === 1 ? 'block' : 'none';
             document.getElementById('tab2').style.display = tabId === 2 ? 'block' : 'none';
+            document.getElementById('tab3').style.display = tabId === 3 ? 'block' : 'none';
             
             let tabs = document.querySelectorAll('.tab');
             tabs[0].classList.toggle('active', tabId === 1);
             tabs[1].classList.toggle('active', tabId === 2);
+            tabs[2].classList.toggle('active', tabId === 3);
         }
     </script>
 </body>
