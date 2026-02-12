@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
-    <title>Reznov FAMQ — Уголовный кодекс + Ассистент</title>
+    <title>Reznov FAMQ · Уголовный кодекс · LSPD</title>
     <style>
         * {
             margin: 0;
@@ -21,48 +21,52 @@
             overflow-x: hidden;
         }
 
-        /* ========== ТЁМНАЯ ТЕМА ========== */
+        /* ========== ТЁМНАЯ ТЕМА (ЧЁРНО-БЕЛЫЙ) ========== */
         body.dark-theme {
-            background: #0a0c0f;
+            background: #000000;
             color: #ffffff;
         }
         body.dark-theme .container {
-            background: rgba(18, 22, 28, 0.85);
+            background: rgba(10, 10, 10, 0.85);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        body.dark-theme .search-input {
-            background: rgba(20, 26, 32, 0.7);
-            border-color: rgba(255,255,255,0.1);
-            color: white;
+        body.dark-theme .tab.active {
+            background: #333333 !important;
+            color: white !important;
+            box-shadow: 0 0 20px rgba(255,255,255,0.2);
         }
-        body.dark-theme .voice-btn,
-        body.dark-theme .search-clear {
-            background: rgba(30, 36, 44, 0.7);
-            border-color: rgba(255,255,255,0.15);
-            color: white;
+        body.dark-theme .logo {
+            border-color: #888888;
+        }
+        body.dark-theme th {
+            background: rgba(30, 30, 30, 0.8);
+            color: #ffffff;
+        }
+        body.dark-theme td {
+            color: #dddddd;
+            border-bottom-color: rgba(255,255,255,0.05);
         }
 
         /* ========== СВЕТЛАЯ ТЕМА ========== */
         body.light-theme {
-            background: #eef2f5;
-            color: #1a1e24;
+            background: #f5f5f5;
+            color: #222222;
         }
         body.light-theme .container {
             background: rgba(255, 255, 255, 0.75);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(0, 0, 0, 0.08);
         }
-        body.light-theme .search-input {
-            background: rgba(255,255,255,0.7);
-            border-color: rgba(0,0,0,0.08);
-            color: #1a1e24;
+        body.light-theme .tab.active {
+            background: #dddddd !important;
+            color: #222222 !important;
         }
-        body.light-theme .voice-btn,
-        body.light-theme .search-clear {
-            background: rgba(255,255,255,0.7);
-            border-color: rgba(0,0,0,0.08);
-            color: #1a1e24;
+        body.light-theme .logo {
+            border-color: #aaaaaa;
+        }
+        body.light-theme td {
+            color: #333333;
         }
 
         /* ========== ЗВЁЗДНОЕ НЕБО ========== */
@@ -74,36 +78,6 @@
             height: 100%;
             pointer-events: none;
             z-index: 0;
-        }
-
-        /* ========== ВОЛНЫ НА ФОНЕ ========== */
-        .ocean-waves {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-            opacity: 0.15;
-        }
-
-        .wave {
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at 50% 50%, rgba(196,30,58,0.1) 0%, transparent 60%);
-            animation: waveFloat 25s infinite alternate;
-        }
-
-        .wave:nth-child(2) {
-            background: radial-gradient(circle at 30% 70%, rgba(255,215,0,0.08) 0%, transparent 60%);
-            animation-delay: -5s;
-        }
-
-        @keyframes waveFloat {
-            0% { transform: translate(-10%, -10%) scale(1); opacity: 0.1; }
-            100% { transform: translate(5%, 5%) scale(1.2); opacity: 0.15; }
         }
 
         .container {
@@ -120,6 +94,178 @@
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ========== ЛОГОТИП ========== */
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.5s ease;
+            border: 2px solid;
+            position: relative;
+            overflow: hidden;
+            background: #111111;
+        }
+        body.light-theme .logo { background: #ffffff; }
+        .logo span {
+            font-size: 48px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+        body.light-theme .logo span { color: #222222; }
+
+        .title-section { flex: 1; }
+        .title-section h1 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        /* ========== КОДЕКС ЧЕСТИ (ЧЁРНО-БЕЛЫЙ) ========== */
+        .honor-code {
+            background: rgba(0,0,0,0.2);
+            border-left: 6px solid #666666;
+            border-radius: 20px;
+            padding: 28px;
+            margin-bottom: 32px;
+            backdrop-filter: blur(10px);
+            animation: slideIn 0.8s ease;
+        }
+        body.light-theme .honor-code {
+            background: rgba(0,0,0,0.03);
+            border-left-color: #aaaaaa;
+        }
+
+        .honor-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+            font-size: 24px;
+            font-weight: 700;
+            color: #cccccc;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        body.light-theme .honor-title { color: #555555; }
+
+        .honor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .honor-item {
+            background: rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 20px;
+            transition: all 0.4s ease;
+        }
+        body.light-theme .honor-item {
+            background: rgba(0,0,0,0.02);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .honor-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.05);
+            border-color: #888888;
+        }
+
+        .honor-number {
+            font-size: 32px;
+            font-weight: 800;
+            color: #888888;
+            margin-bottom: 8px;
+        }
+        .honor-rule {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .honor-desc {
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.5;
+        }
+        body.light-theme .honor-desc { color: rgba(0,0,0,0.6); }
+
+        /* ========== АКАДЕМИЯ LSPD ========== */
+        .academy-section {
+            background: rgba(0,0,0,0.15);
+            border-radius: 24px;
+            padding: 28px;
+            margin-bottom: 32px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        body.light-theme .academy-section {
+            background: rgba(0,0,0,0.02);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .academy-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: #cccccc;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+        body.light-theme .academy-title { color: #555555; }
+
+        .academy-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .academy-card {
+            background: rgba(0,0,0,0.2);
+            border-radius: 20px;
+            padding: 24px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        body.light-theme .academy-card {
+            background: rgba(0,0,0,0.02);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .mistake-item {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            gap: 12px;
+        }
+        .mistake-number {
+            background: #333333;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        body.light-theme .mistake-number { background: #aaaaaa; }
+
+        .exam-option {
+            background: rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 12px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .exam-option:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: #888888;
         }
 
         /* ========== ПОИСК ========== */
@@ -143,11 +289,20 @@
             background: transparent;
             backdrop-filter: blur(10px);
         }
+        body.dark-theme .search-input {
+            background: rgba(20, 20, 20, 0.7);
+            border-color: rgba(255,255,255,0.1);
+            color: white;
+        }
+        body.light-theme .search-input {
+            background: rgba(255,255,255,0.7);
+            border-color: rgba(0,0,0,0.08);
+            color: #222222;
+        }
 
         .search-input:focus {
             transform: scale(1.02);
-            border-color: #c41e3a !important;
-            box-shadow: 0 0 30px rgba(196,30,58,0.3);
+            border-color: #888888 !important;
         }
 
         .voice-btn, .search-clear {
@@ -163,24 +318,17 @@
             align-items: center;
             gap: 10px;
         }
-
-        .voice-btn:hover, .search-clear:hover {
-            transform: translateY(-4px);
-            border-color: #c41e3a !important;
-            background: rgba(196,30,58,0.15) !important;
-            box-shadow: 0 15px 30px rgba(196,30,58,0.3);
+        body.dark-theme .voice-btn, 
+        body.dark-theme .search-clear {
+            background: rgba(30, 30, 30, 0.7);
+            border-color: rgba(255,255,255,0.15);
+            color: white;
         }
-
-        .voice-btn.listening {
-            animation: pulse-neon 1.5s infinite;
-            border-color: #c41e3a;
-            background: rgba(196,30,58,0.2);
-        }
-
-        @keyframes pulse-neon {
-            0% { box-shadow: 0 0 10px #c41e3a; }
-            50% { box-shadow: 0 0 30px #c41e3a, 0 0 60px #c41e3a; }
-            100% { box-shadow: 0 0 10px #c41e3a; }
+        body.light-theme .voice-btn,
+        body.light-theme .search-clear {
+            background: rgba(255,255,255,0.7);
+            border-color: rgba(0,0,0,0.08);
+            color: #222222;
         }
 
         .results-info {
@@ -191,83 +339,8 @@
             font-size: 16px;
             font-weight: 600;
             backdrop-filter: blur(10px);
-            background: rgba(196,30,58,0.1);
-            border: 1px solid rgba(196,30,58,0.3);
-        }
-
-        /* ========== НЕОНОВЫЙ ЛОГОТИП ========== */
-        .logo {
-            width: 80px;
-            height: 80px;
-            border-radius: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.5s ease;
-            border: 2px solid;
-            position: relative;
-            overflow: hidden;
-            animation: neonPulse 2s infinite alternate;
-        }
-
-        @keyframes neonPulse {
-            0% { box-shadow: 0 0 5px #c41e3a, 0 0 10px #c41e3a, 0 0 20px #c41e3a; }
-            100% { box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 40px #c41e3a; }
-        }
-
-        .logo span {
-            font-size: 48px;
-            font-weight: 800;
-            background: linear-gradient(45deg, #c41e3a, #FFD700, #c41e3a);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradientShift 3s ease infinite;
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 100% 50%; }
-        }
-
-        /* ========== ВСПЛЫВАЮЩИЕ ПОДСКАЗКИ ========== */
-        [data-tooltip] {
-            position: relative;
-            cursor: help;
-            border-bottom: 1px dotted rgba(196,30,58,0.5);
-        }
-
-        [data-tooltip]:before {
-            content: attr(data-tooltip);
-            position: absolute;
-            bottom: 130%;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 12px 18px;
-            border-radius: 12px;
-            font-size: 13px;
-            white-space: normal;
-            min-width: 280px;
-            max-width: 400px;
-            width: max-content;
-            z-index: 1000;
-            pointer-events: none;
-            opacity: 0;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            background: rgba(10, 12, 16, 0.95);
-            color: white;
-            border: 1px solid rgba(196,30,58,0.5);
-            backdrop-filter: blur(10px);
-        }
-
-        [data-tooltip]:hover:before {
-            opacity: 1;
-            transform: translateX(-50%) translateY(-5px);
-        }
-
-        body.light-theme [data-tooltip]:before {
-            background: rgba(255,255,255,0.95);
-            color: #1a1e24;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
         /* ========== ТАБЛИЦЫ ========== */
@@ -279,10 +352,13 @@
             border: 1px solid;
             backdrop-filter: blur(10px);
         }
-
         body.dark-theme .table-wrapper {
-            background: rgba(18, 22, 28, 0.6);
+            background: rgba(10, 10, 10, 0.6);
             border-color: rgba(255,255,255,0.08);
+        }
+        body.light-theme .table-wrapper {
+            background: rgba(255,255,255,0.6);
+            border-color: rgba(0,0,0,0.05);
         }
 
         table {
@@ -291,23 +367,20 @@
             font-size: 15px;
             min-width: 600px;
         }
-
         th {
             font-weight: 700;
             padding: 18px 16px;
             text-transform: uppercase;
             font-size: 14px;
             letter-spacing: 1.5px;
+            background: rgba(0,0,0,0.2);
         }
-
         td {
             padding: 16px;
             transition: all 0.3s ease;
             border-bottom: 1px solid;
         }
-
-        body.dark-theme td { border-bottom-color: rgba(255,255,255,0.05); }
-        tr:hover td { background: rgba(196,30,58,0.1); }
+        tr:hover td { background: rgba(255,255,255,0.05); }
 
         .bookmark-star {
             cursor: pointer;
@@ -328,7 +401,6 @@
             border-bottom: 1px solid;
             padding-bottom: 20px;
         }
-
         .tab {
             padding: 14px 28px;
             font-size: 16px;
@@ -339,94 +411,21 @@
             backdrop-filter: blur(10px);
             transition: all 0.4s ease;
         }
-
         body.dark-theme .tab {
             color: rgba(255,255,255,0.7);
-            background: rgba(30, 36, 44, 0.4);
+            background: rgba(30, 30, 30, 0.4);
         }
-
+        body.light-theme .tab {
+            color: rgba(0,0,0,0.6);
+            background: rgba(255,255,255,0.5);
+        }
         .tab.active {
-            background: #c41e3a !important;
+            background: #333333 !important;
             color: white !important;
-            box-shadow: 0 0 20px rgba(196,30,58,0.6);
         }
-
-        /* ========== КОНСТРУКТОР ========== */
-        .protocol-builder {
-            background: rgba(30, 36, 44, 0.6);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 24px;
-            margin-bottom: 24px;
-            border: 1px solid rgba(196,30,58,0.3);
-        }
-
-        .protocol-articles {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin: 16px 0;
-        }
-
-        .protocol-article-tag {
-            background: rgba(196,30,58,0.2);
-            border: 1px solid rgba(196,30,58,0.5);
-            border-radius: 30px;
-            padding: 8px 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 14px;
-        }
-
-        .protocol-output {
-            background: rgba(0,0,0,0.3);
-            border-radius: 12px;
-            padding: 16px;
-            font-family: monospace;
-            margin-top: 16px;
-            border-left: 4px solid #c41e3a;
-            white-space: pre-wrap;
-        }
-
-        /* ========== ТЕСТ ========== */
-        .quiz-container {
-            background: rgba(30, 36, 44, 0.6);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 24px;
-            margin-bottom: 24px;
-        }
-
-        .quiz-options {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin: 20px 0;
-        }
-
-        .quiz-option {
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 12px;
-            padding: 12px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .quiz-option:hover {
-            background: rgba(196,30,58,0.2);
-            border-color: #c41e3a;
-        }
-
-        .quiz-option.correct {
-            background: rgba(0,255,0,0.2);
-            border-color: #00ff00;
-        }
-
-        .quiz-option.wrong {
-            background: rgba(255,0,0,0.2);
-            border-color: #ff0000;
+        body.light-theme .tab.active {
+            background: #dddddd !important;
+            color: #222222 !important;
         }
 
         /* ========== ГОЛОСОВОЙ АССИСТЕНТ ========== */
@@ -437,31 +436,29 @@
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            background: linear-gradient(145deg, #c41e3a, #8B0000);
+            background: #222222;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             transition: all 0.3s ease;
-            border: 3px solid rgba(255,255,255,0.3);
+            border: 2px solid #444444;
             z-index: 999;
-            animation: assistantPulse 2s infinite;
         }
-
-        @keyframes assistantPulse {
-            0% { box-shadow: 0 0 10px #c41e3a; }
-            100% { box-shadow: 0 0 30px #c41e3a, 0 0 60px #c41e3a; }
+        body.light-theme .voice-assistant {
+            background: #e0e0e0;
+            border: 2px solid #cccccc;
         }
-
         .voice-assistant:hover { transform: scale(1.1); }
         .voice-icon { font-size: 36px; color: white; }
+        body.light-theme .voice-icon { color: #222222; }
 
         .assistant-modal {
             position: fixed;
             bottom: 120px;
             right: 30px;
-            width: 380px;
-            background: rgba(18, 22, 28, 0.95);
+            width: 420px;
+            background: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(15px);
             border: 1px solid rgba(255,255,255,0.1);
             border-radius: 24px;
@@ -469,61 +466,49 @@
             z-index: 998;
             display: none;
         }
-
-        .chat-history {
-            max-height: 400px;
-            overflow-y: auto;
-            margin-bottom: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
+        body.light-theme .assistant-modal {
+            background: rgba(255,255,255,0.95);
+            border: 1px solid rgba(0,0,0,0.1);
         }
 
-        .message {
-            display: flex;
-            gap: 12px;
-            align-items: flex-start;
+        .voice-settings {
+            background: rgba(0,0,0,0.2);
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 16px;
         }
-        .message.user { flex-direction: row-reverse; }
-        .message-avatar {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: rgba(196,30,58,0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .voice-select, .voice-slider {
+            width: 100%;
+            padding: 10px;
+            border-radius: 30px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(0,0,0,0.2);
+            color: white;
+            margin-bottom: 12px;
         }
-        .message-content {
-            max-width: 70%;
-            padding: 12px 16px;
-            border-radius: 18px;
-            background: rgba(255,255,255,0.1);
-            font-size: 14px;
-        }
-        .message.user .message-content {
-            background: rgba(196,30,58,0.2);
+        body.light-theme .voice-select,
+        body.light-theme .voice-slider {
+            background: rgba(255,255,255,0.8);
+            color: #222222;
+            border: 1px solid rgba(0,0,0,0.1);
         }
 
         .footer {
             margin-top: 48px;
             text-align: center;
             font-size: 15px;
-            border-top: 1px solid;
+            border-top: 1px solid rgba(255,255,255,0.1);
             padding-top: 24px;
             opacity: 0.8;
+        }
+        body.light-theme .footer {
+            border-top-color: rgba(0,0,0,0.1);
         }
 
         @media (max-width: 600px) {
             .container { padding: 20px; }
-            .search-box { flex-direction: column; }
-            .voice-btn, .search-clear { width: 100%; }
-            .quiz-options { grid-template-columns: 1fr; }
-            .assistant-modal {
-                width: calc(100% - 40px);
-                right: 20px;
-                left: 20px;
-            }
+            .academy-grid { grid-template-columns: 1fr; }
+            .honor-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -531,23 +516,17 @@
     <!-- ЗВЁЗДНОЕ НЕБО -->
     <canvas id="starfield"></canvas>
 
-    <!-- ВОЛНЫ НА ФОНЕ -->
-    <div class="ocean-waves">
-        <div class="wave"></div>
-        <div class="wave"></div>
-    </div>
-
     <!-- ЭКРАН ВХОДА -->
     <div id="loginScreen" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); display: flex; justify-content: center; align-items: center; z-index: 9999; backdrop-filter: blur(15px);">
-        <div style="border-radius: 32px; padding: 48px; max-width: 440px; width: 90%; text-align: center; background: rgba(18, 22, 28, 0.8); border: 1px solid rgba(255,255,255,0.1);">
+        <div style="border-radius: 32px; padding: 48px; max-width: 440px; width: 90%; text-align: center; background: rgba(10,10,10,0.8); border: 1px solid rgba(255,255,255,0.1);">
             <div class="logo" style="margin: 0 auto 24px; width: 100px; height: 100px;">
                 <span style="font-size: 60px;">R</span>
             </div>
             <div style="font-size: 28px; font-weight: 700; margin-bottom: 12px; color: white;">Reznov FAMQ</div>
             <div style="color: rgba(255,255,255,0.6); margin-bottom: 36px;">Закрытый ресурс семьи</div>
             <input type="password" id="passwordInput" style="width: 100%; border-radius: 60px; padding: 18px 28px; font-size: 18px; margin-bottom: 24px; outline: none; border: 2px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: white;" placeholder="Введи пароль" onkeypress="if(event.key==='Enter') checkPassword()">
-            <button onclick="checkPassword()" style="width: 100%; padding: 18px 36px; border-radius: 60px; font-size: 18px; font-weight: 700; cursor: pointer; border: 2px solid #c41e3a; background: #c41e3a; color: white; letter-spacing: 2px;">ВОЙТИ</button>
-            <div id="loginError" style="color: #c41e3a; margin-top: 20px; display: none;">Неверный пароль</div>
+            <button onclick="checkPassword()" style="width: 100%; padding: 18px 36px; border-radius: 60px; font-size: 18px; font-weight: 700; cursor: pointer; border: 2px solid #666666; background: #333333; color: white; letter-spacing: 2px;">ВОЙТИ</button>
+            <div id="loginError" style="color: #ff6666; margin-top: 20px; display: none;">Неверный пароль</div>
         </div>
     </div>
 
@@ -555,13 +534,83 @@
     <div id="mainContent" style="display: none;">
         <div class="container">
             <!-- ШАПКА -->
-            <div style="display: flex; align-items: center; gap: 24px; margin-bottom: 32px; border-bottom: 2px solid rgba(196,30,58,0.5); padding-bottom: 24px; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 24px; margin-bottom: 32px; border-bottom: 2px solid rgba(255,255,255,0.2); padding-bottom: 24px; flex-wrap: wrap;">
                 <div class="logo" id="mainLogo">
                     <span>R</span>
                 </div>
                 <div style="flex: 1;">
                     <h1 style="font-size: 32px; font-weight: 700;">Reznov FAMQ · Уголовный кодекс</h1>
-                    <div style="font-weight: 600; text-transform: uppercase; font-size: 15px; letter-spacing: 4px; border-left: 4px solid #c41e3a; padding-left: 16px; color: #ccc;">Закон есть закон. Мы — Reznov</div>
+                    <div style="font-weight: 600; text-transform: uppercase; font-size: 15px; letter-spacing: 4px; border-left: 4px solid #888888; padding-left: 16px; color: #cccccc;">
+                        ЗАКОН ЕСТЬ ЗАКОН · МЫ — REZNOV
+                    </div>
+                </div>
+                <div style="display: flex; gap: 12px;">
+                    <select id="colorSelector" style="display: none;">
+                        <option value="classic">Классика</option>
+                    </select>
+                    <button id="themeToggle" onclick="toggleTheme()" style="padding: 12px 24px; border-radius: 40px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.3); color: white; cursor: pointer;">
+                        <span id="themeIcon">🌙</span> Тема
+                    </button>
+                </div>
+            </div>
+
+            <!-- ========== КОДЕКС ЧЕСТИ LSPD ========== -->
+            <div class="honor-code">
+                <div class="honor-title">
+                    <span>📜 КОДЕКС ЧЕСТИ LSPD</span>
+                </div>
+                <div class="honor-grid">
+                    <div class="honor-item"><div class="honor-number">I</div><div class="honor-rule">Закон превыше всего</div><div class="honor-desc">Я клянусь соблюдать Конституцию и Уголовный кодекс. Нет никого выше закона.</div></div>
+                    <div class="honor-item"><div class="honor-number">II</div><div class="honor-rule">Честь и достоинство</div><div class="honor-desc">Мои действия не запятнают звание офицера полиции.</div></div>
+                    <div class="honor-item"><div class="honor-number">III</div><div class="honor-rule">Защита граждан</div><div class="honor-desc">Каждый житель Лос-Сантоса имеет право на защиту.</div></div>
+                    <div class="honor-item"><div class="honor-number">IV</div><div class="honor-rule">Плечом к плечу</div><div class="honor-desc">Я никогда не брошу напарника. Его жизнь ценна, как моя.</div></div>
+                    <div class="honor-item"><div class="honor-number">V</div><div class="honor-rule">Беспристрастность</div><div class="honor-desc">Я не буду закрывать глаза на нарушения коллег.</div></div>
+                    <div class="honor-item"><div class="honor-number">VI</div><div class="honor-rule">Применение силы</div><div class="honor-desc">Сила — только когда необходимо и адекватно угрозе.</div></div>
+                    <div class="honor-item"><div class="honor-number">VII</div><div class="honor-rule">Профессионализм</div><div class="honor-desc">Я постоянно совершенствую навыки. Ленивый коп — опасный коп.</div></div>
+                    <div class="honor-item"><div class="honor-number">VIII</div><div class="honor-rule">Никакой коррупции</div><div class="honor-desc">Взятки и крышевание несовместимы со значком.</div></div>
+                    <div class="honor-item"><div class="honor-number">IX</div><div class="honor-rule">Уважение к павшим</div><div class="honor-desc">Я чту память офицеров, отдавших жизнь при исполнении.</div></div>
+                    <div class="honor-item"><div class="honor-number">X</div><div class="honor-rule">Служу Закону</div><div class="honor-desc">Моя присяга — не работа. Это образ жизни.</div></div>
+                </div>
+            </div>
+
+            <!-- ========== АКАДЕМИЯ LSPD ========== -->
+            <div class="academy-section">
+                <div class="academy-title">🎓 АКАДЕМИЯ LSPD · КУРС МОЛОДОГО БОЙЦА</div>
+                <div class="academy-grid">
+                    <!-- 10 ОШИБОК НОВИЧКА -->
+                    <div class="academy-card">
+                        <h3 style="margin-bottom: 20px;">🚨 10 ОШИБОК НОВИЧКА</h3>
+                        <div class="mistake-item"><span class="mistake-number">1</span> Не зачитал Миранду</div>
+                        <div class="mistake-item"><span class="mistake-number">2</span> Погнался без подкрепления</div>
+                        <div class="mistake-item"><span class="mistake-number">3</span> Забыл проверить по базе</div>
+                        <div class="mistake-item"><span class="mistake-number">4</span> Обыск без оснований</div>
+                        <div class="mistake-item"><span class="mistake-number">5</span> Перестрелка в людном месте</div>
+                        <div class="mistake-item"><span class="mistake-number">6</span> Не вызвал EMS</div>
+                        <div class="mistake-item"><span class="mistake-number">7</span> Оставил оружие в машине</div>
+                        <div class="mistake-item"><span class="mistake-number">8</span> Не доложил начальству</div>
+                        <div class="mistake-item"><span class="mistake-number">9</span> Поверил на слово</div>
+                        <div class="mistake-item"><span class="mistake-number">10</span> Забыл снять бодикам</div>
+                    </div>
+                    <!-- ЭКЗАМЕН -->
+                    <div class="academy-card">
+                        <h3 style="margin-bottom: 20px;">📝 ЭКЗАМЕН НА ЗНАНИЕ УК</h3>
+                        <div id="lspdExamArea"></div>
+                        <div style="display: flex; gap: 12px; margin-top: 20px;">
+                            <button onclick="loadLSPDQuestion()" style="background: #333333; border: none; color: white; padding: 12px 24px; border-radius: 30px; cursor: pointer; flex: 1;">Следующий вопрос</button>
+                            <button onclick="resetLSPDExam()" style="background: transparent; border: 1px solid #666666; color: white; padding: 12px 24px; border-radius: 30px; cursor: pointer;">Сброс</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- ПРИСЯГА -->
+                <div style="margin-top: 24px; padding: 20px; background: rgba(0,0,0,0.2); border-radius: 16px; text-align: center; border: 1px dashed #666666;">
+                    <p style="font-size: 18px; font-style: italic; color: #cccccc; margin-bottom: 16px;">
+                        «Я торжественно клянусь защищать Конституцию штата Сан-Андреас, 
+                        уважать права граждан и с честью нести звание офицера полиции. Служу Закону!»
+                    </p>
+                    <button onclick="takeOath()" style="background: transparent; border: 2px solid #888888; color: white; padding: 12px 32px; border-radius: 40px; font-weight: 700; cursor: pointer;">
+                        ПРИНЯТЬ ПРИСЯГУ
+                    </button>
+                    <div id="oathMessage" style="margin-top: 16px; font-size: 14px; color: #cccccc;"></div>
                 </div>
             </div>
 
@@ -570,12 +619,8 @@
                 <input type="text" id="searchInput" class="search-input" 
                        placeholder="🔍 Введи статью, название или наказание..." 
                        onkeyup="searchArticles()" autocomplete="off">
-                <button id="voiceBtn" class="voice-btn" onclick="startVoiceSearch()">
-                    🎤 Голос
-                </button>
-                <button class="search-clear" onclick="clearSearch()">
-                    ✕ Сброс
-                </button>
+                <button id="voiceBtn" class="voice-btn" onclick="startVoiceSearch()">🎤 Голос</button>
+                <button class="search-clear" onclick="clearSearch()">✕ Сброс</button>
             </div>
             <div id="resultsCount" class="results-info" style="display: none;"></div>
 
@@ -589,12 +634,11 @@
                 <button class="tab" onclick="showTab(6)">🏛️ Правосудие / Порядок</button>
                 <button class="tab" onclick="showTab(7)">⚔️ Военные / Госбезопасность</button>
                 <button class="tab" onclick="showTab(8)">📋 Конструктор</button>
-                <button class="tab" onclick="showTab(9)">📝 Тест УК</button>
-                <button class="tab" onclick="showTab(10)">⭐ Избранное</button>
-                <button class="tab" onclick="showTab(11)">👥 Участники</button>
+                <button class="tab" onclick="showTab(9)">⭐ Избранное</button>
+                <button class="tab" onclick="showTab(10)">👥 Офицеры LSPD</button>
             </div>
 
-            <!-- ТАБЛИЦЫ -->
+            <!-- ТАБЛИЦЫ УК (85+ СТАТЕЙ) -->
             <div id="tab1" class="table-wrapper"><table id="table1"><thead><tr><th>Статья</th><th>Нарушение</th><th>Звёзды</th><th>Наказание</th><th></th></tr></thead><tbody id="table1-body"></tbody></table></div>
             <div id="tab2" class="table-wrapper" style="display: none;"><table id="table2"><thead><tr><th>Статья</th><th>Нарушение</th><th>Звёзды</th><th>Наказание</th><th></th></tr></thead><tbody id="table2-body"></tbody></table></div>
             <div id="tab3" class="table-wrapper" style="display: none;"><table id="table3"><thead><tr><th>Статья</th><th>Нарушение</th><th>Звёзды</th><th>Наказание</th><th></th></tr></thead><tbody id="table3-body"></tbody></table></div>
@@ -605,61 +649,41 @@
 
             <!-- ТАБ 8: КОНСТРУКТОР -->
             <div id="tab8" style="display: none;">
-                <div class="protocol-builder">
+                <div style="background: rgba(0,0,0,0.2); border-radius: 20px; padding: 24px;">
                     <h3 style="font-size: 20px; margin-bottom: 16px;">📋 КОНСТРУКТОР ПРОТОКОЛА</h3>
                     <div style="display: flex; gap: 16px; margin-bottom: 20px;">
-                        <input type="text" id="protocolSuspect" style="flex: 1; padding: 14px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: inherit;" placeholder="ФИО задержанного">
-                        <input type="text" id="protocolOfficer" style="flex: 1; padding: 14px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: inherit;" placeholder="Ваш позывной">
+                        <input type="text" id="protocolSuspect" style="flex: 1; padding: 14px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: white;" placeholder="ФИО задержанного">
+                        <input type="text" id="protocolOfficer" style="flex: 1; padding: 14px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: white;" placeholder="Ваш позывной">
                     </div>
-                    <div id="protocolArticlesList" class="protocol-articles"></div>
-                    <div style="display: flex; gap: 12px; margin-bottom: 16px;">
-                        <button onclick="addArticleToProtocol()" style="background: rgba(196,30,58,0.2); border: 1px solid #c41e3a; color: inherit; padding: 12px 24px; border-radius: 30px; cursor: pointer;">+ Добавить статью</button>
-                        <button onclick="generateProtocol()" style="background: #c41e3a; border: none; color: white; padding: 12px 24px; border-radius: 30px; cursor: pointer;">🎙️ Сгенерировать</button>
-                        <button onclick="clearProtocol()" style="background: transparent; border: 1px solid rgba(255,255,255,0.2); color: inherit; padding: 12px 24px; border-radius: 30px; cursor: pointer;">Очистить</button>
+                    <div id="protocolArticlesList" style="display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0;"></div>
+                    <div style="display: flex; gap: 12px;">
+                        <button onclick="addArticleToProtocol()" style="background: rgba(255,255,255,0.1); border: 1px solid #666666; color: white; padding: 12px 24px; border-radius: 30px; cursor: pointer;">+ Добавить статью</button>
+                        <button onclick="generateProtocol()" style="background: #333333; border: none; color: white; padding: 12px 24px; border-radius: 30px; cursor: pointer;">🎙️ Сгенерировать</button>
                     </div>
-                    <div id="protocolOutput" class="protocol-output" style="display: none;"></div>
+                    <div id="protocolOutput" style="display: none; margin-top: 20px; padding: 16px; background: rgba(0,0,0,0.3); border-radius: 12px; border-left: 4px solid #888888; font-family: monospace; white-space: pre-wrap;"></div>
                 </div>
             </div>
 
-            <!-- ТАБ 9: ТЕСТ -->
-            <div id="tab9" style="display: none;">
-                <div class="quiz-container">
-                    <h3 style="font-size: 20px; margin-bottom: 24px;">📝 ТЕСТ НА ЗНАНИЕ УГОЛОВНОГО КОДЕКСА</h3>
-                    <div id="quizArea"></div>
-                    <div style="display: flex; gap: 12px; margin-top: 24px;">
-                        <button onclick="loadNextQuestion()" style="background: #c41e3a; border: none; color: white; padding: 12px 24px; border-radius: 30px; cursor: pointer;">Следующий вопрос →</button>
-                        <button onclick="resetQuiz()" style="background: transparent; border: 1px solid rgba(255,255,255,0.2); color: inherit; padding: 12px 24px; border-radius: 30px; cursor: pointer;">Начать заново</button>
-                    </div>
-                </div>
+            <!-- ТАБ 9: ИЗБРАННОЕ -->
+            <div id="tab9" class="table-wrapper" style="display: none;">
+                <table id="favoritesTable"><thead><tr><th>Статья</th><th>Нарушение</th><th>Звёзды</th><th>Наказание</th><th></th></tr></thead><tbody id="favoritesBody"></tbody></table>
             </div>
 
-            <!-- ТАБ 10: ИЗБРАННОЕ -->
-            <div id="tab10" class="table-wrapper" style="display: none;">
-                <table id="favoritesTable">
-                    <thead><tr><th>Статья</th><th>Нарушение</th><th>Звёзды</th><th>Наказание</th><th></th></tr></thead>
-                    <tbody id="favoritesBody"></tbody>
-                </table>
-            </div>
-
-            <!-- ТАБ 11: УЧАСТНИКИ -->
-            <div id="tab11" style="display: none;">
+            <!-- ТАБ 10: ОФИЦЕРЫ -->
+            <div id="tab10" style="display: none;">
                 <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px;">
-                    <div style="background: rgba(30,36,44,0.6); backdrop-filter: blur(10px); border-radius: 20px; padding: 20px;">
-                        <div style="font-size: 20px; font-weight: 700; margin-bottom: 16px;">👑 Лидер</div>
-                        <div style="padding: 12px; background: rgba(196,30,58,0.1); border-radius: 12px;">Yaroslav Reznov</div>
+                    <div style="background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 20px;">
+                        <div style="font-size: 18px; font-weight: 700;">Yaroslav Reznov</div>
+                        <div style="color: #888888; margin-top: 4px;">👮‍♂️ Лидер LSPD</div>
                     </div>
-                    <div style="background: rgba(30,36,44,0.6); backdrop-filter: blur(10px); border-radius: 20px; padding: 20px;">
-                        <div style="font-size: 20px; font-weight: 700; margin-bottom: 16px;">⚜️ Заместители</div>
-                        <div style="display: flex; flex-direction: column; gap: 8px;">
-                            <div style="padding: 12px; background: rgba(255,255,255,0.05); border-radius: 12px;">Ekaterina Reznova</div>
-                            <div style="padding: 12px; background: rgba(255,255,255,0.05); border-radius: 12px;">Michael Reznov ADLR</div>
-                            <div style="padding: 12px; background: rgba(255,255,255,0.05); border-radius: 12px;">Tony Reznov</div>
-                        </div>
+                    <div style="background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 20px;">
+                        <div style="font-size: 18px; font-weight: 700;">Ekaterina Reznova</div>
+                        <div style="color: #888888; margin-top: 4px;">👮‍♀️ Зам. начальника</div>
                     </div>
                 </div>
             </div>
 
-            <div class="footer">Reznov FAMQ · Уголовный кодекс · Majestic RP</div>
+            <div class="footer">Reznov FAMQ · Уголовный кодекс · Majestic RP · LSPD</div>
         </div>
     </div>
 
@@ -670,57 +694,120 @@
 
     <div class="assistant-modal" id="assistantModal">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-            <div style="display: flex; align-items: center; gap: 10px;">
-                <span style="font-size: 24px;">🤖</span>
-                <span style="font-size: 18px; font-weight: 700;">Reznov AI</span>
-            </div>
+            <span style="font-size: 20px; font-weight: 700;">🤖 Reznov AI</span>
             <span style="cursor: pointer; font-size: 24px;" onclick="toggleAssistant()">✕</span>
         </div>
-        <div class="voice-command-hint" style="background: rgba(196,30,58,0.1); border-left: 4px solid #c41e3a; padding: 12px; margin-bottom: 16px; border-radius: 0 12px 12px 0;">
-            🎤 <strong>Голосовые команды:</strong> "открой общую часть", "найди убийство", "тёмная тема", "конструктор", "тест"
+        <div class="voice-settings">
+            <select id="voiceSelect" class="voice-select">
+                <option value="">Загрузка голосов...</option>
+            </select>
+            <div style="margin-bottom: 12px;">
+                <span>Скорость речи: <span id="rateValue">1.0x</span></span>
+                <input type="range" id="rateRange" min="0.5" max="2.0" step="0.1" value="1.0" style="width: 100%; margin-top: 8px;">
+            </div>
         </div>
-        <div class="chat-history" id="chatHistory"></div>
-        <div style="display: flex; gap: 12px; align-items: center;">
-            <button id="assistantMicBtn" style="width: 48px; height: 48px; border-radius: 50%; background: rgba(196,30,58,0.2); border: 1px solid rgba(196,30,58,0.5); color: #c41e3a; font-size: 20px; cursor: pointer;" onclick="startAssistantVoice()">🎤</button>
-            <input type="text" id="assistantInput" style="flex: 1; padding: 14px 18px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: inherit;" placeholder="Напишите вопрос..." onkeypress="if(event.key==='Enter') sendAssistantMessage()">
-            <button style="width: 48px; height: 48px; border-radius: 50%; background: #c41e3a; border: none; color: white; font-size: 20px; cursor: pointer;" onclick="sendAssistantMessage()">➤</button>
+        <div class="chat-history" id="chatHistory" style="max-height: 250px; overflow-y: auto; margin-bottom: 16px;"></div>
+        <div style="display: flex; gap: 12px;">
+            <input type="text" id="assistantInput" style="flex: 1; padding: 14px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: white;" placeholder="Спроси о кодексе или УК...">
+            <button onclick="sendAssistantMessage()" style="width: 48px; height: 48px; border-radius: 50%; background: #333333; border: none; color: white; cursor: pointer;">➤</button>
         </div>
     </div>
 
     <script>
-        // ========== БАЗА ЗНАНИЙ УК ==========
+        // ========== ПОЛНАЯ БАЗА УК - 85+ СТАТЕЙ ==========
         const lawDatabase = [
-            { article: '6.2', title: 'Убийство', stars: '★★★★', penalty: '4 года', description: 'Умышленное причинение смерти другому человеку.', details: 'Тяжкое преступление. Приоритет розыска ★★★★.' },
-            { article: '6.1.1', title: 'Побои с предметом', stars: '★★★', penalty: '3 года / $35,000', description: 'Умышленное нанесение телесных повреждений с использованием предметов.', details: 'Преступление средней тяжести.' },
-            { article: '6.1.2', title: 'Побои руками', stars: '★★', penalty: '2 года / $45,000', description: 'Умышленное нанесение телесных повреждений без предметов.', details: 'Штраф выше, чем с предметом.' },
-            { article: '6.5', title: 'Смерть по неосторожности', stars: '★★★', penalty: '3 года / $35,000', description: 'Причинение смерти по неосторожности.', details: 'Отсутствие прямого умысла.' },
-            { article: '6.7.1', title: 'Угроза госслужащему', stars: '★★★★', penalty: '4 года / $45,000', description: 'Угроза расправой должностному лицу.', details: 'Тяжкое преступление.' },
-            { article: '6.7.2', title: 'Угроза запугать', stars: '★★★', penalty: '3 года / $35,000', description: 'Угрозы с целью запугать человека.', details: 'Приоритет розыска ★★★.' },
-            { article: '6.7.3', title: 'Угроза с оружием', stars: '★★★★', penalty: '4 года / $60,000', description: 'Угрозы с использованием оружия.', details: 'Повышенный штраф.' },
-            { article: '7.1', title: 'Похищение человека', stars: '★★★★★', penalty: '5 лет', description: 'Похищение человека.', details: 'Особо тяжкое преступление.' },
-            { article: '10.1.1', title: 'Кража от $2,000', stars: '★', penalty: '1 год / $25,000', description: 'Тайное хищение чужого имущества от 2.000$', details: 'Преступление небольшой тяжести.' },
-            { article: '10.1.2', title: 'Кража от $5,000', stars: '★★', penalty: '2 года / $35,000', description: 'Тайное хищение чужого имущества от 5.000$', details: 'Приоритет розыска ★★.' },
-            { article: '10.1.3', title: 'Кража от $10,000', stars: '★★★', penalty: '3 года / $45,000', description: 'Тайное хищение чужого имущества от 10.000$', details: 'Преступление средней тяжести.' },
-            { article: '10.1.4', title: 'Кража от $30,000', stars: '★★★★', penalty: '4 года / $55,000', description: 'Тайное хищение чужого имущества от 30.000$', details: 'Тяжкое преступление.' },
-            { article: '10.2', title: 'Мошенничество', stars: '★★', penalty: '2 года / $15,000', description: 'Хищение имущества путем обмана.', details: 'Приоритет розыска ★★.' },
-            { article: '10.3', title: 'Грабеж', stars: '★★★', penalty: '3 года / $25,000', description: 'Открытое хищение имущества.', details: 'Приоритет розыска ★★★.' },
-            { article: '10.4', title: 'Разбой', stars: '★★★★', penalty: '4 года', description: 'Нападение с насилием, опасным для жизни.', details: 'Тяжкое преступление.' },
-            { article: '10.5.1', title: 'Угон авто', stars: '★★★', penalty: '3 года / $30,000', description: 'Неправомерное завладение автомобилем.', details: 'Приоритет розыска ★★★.' },
-            { article: '10.5.2', title: 'Угон гос. транспорта', stars: '★★★★', penalty: '4 года / $45,000', description: 'Угон транспорта, принадлежащего государству.', details: 'Тяжкое преступление.' },
-            { article: '10.6.1', title: 'Уничтожение имущества', stars: '★★', penalty: '2 года / $15,000', description: 'Умышленное уничтожение чужого имущества.', details: 'Приоритет розыска ★★.' },
-            { article: '10.6.2', title: 'Уничтожение гос. имущества', stars: '★★★★', penalty: '4 года / $60,000', description: 'Уничтожение государственного имущества.', details: 'Тяжкое преступление.' },
-            { article: '10.6.3', title: 'Поджог / взрыв', stars: '★★★★', penalty: '4 года / $50,000', description: 'Уничтожение имущества поджогом или взрывом.', details: 'Тяжкое преступление.' },
-            { article: '10.7', title: 'Вымогательство', stars: '★★★', penalty: '3 года / $25,000', description: 'Требование передачи имущества под угрозой.', details: 'Приоритет розыска ★★★.' },
-            { article: '12.8.1', title: 'Хранение оружия', stars: '★★★★', penalty: '4 года / $40,000', description: 'Незаконное хранение, ношение оружия.', details: 'Тяжкое преступление.' },
-            { article: '12.8.2', title: 'Оружие гос. образца', stars: '★★★★★', penalty: '5 лет', description: 'Гос. оружие у гражданского лица.', details: 'Особо тяжкое преступление.' },
-            { article: '13.1.1', title: 'Наркотики 6–10 гр', stars: '★★★', penalty: '3 года / $50,000', description: 'Хранение наркотиков от 6 до 10 грамм.', details: 'До 5 гр - легально.' },
-            { article: '13.1.2', title: 'Наркотики 11+ гр', stars: '★★★★★', penalty: '5 лет', description: 'Хранение наркотиков от 11 грамм.', details: 'Особо тяжкое преступление.' },
-            { article: '13.2', title: 'Производство наркотиков', stars: '★★★★★', penalty: '5 лет / $60,000', description: 'Выращивание и производство наркотиков.', details: 'Особо тяжкое преступление.' },
-            { article: '17.1', title: 'Посягательство на сотрудника', stars: '★★★★★', penalty: '5 лет', description: 'Посягательство на жизнь сотрудника.', details: 'Особо тяжкое преступление.' },
-            { article: '17.2', title: 'Насилие в отношении власти', stars: '★★★★', penalty: '4 года', description: 'Нанесение повреждений представителю власти.', details: 'Тяжкое преступление.' },
-            { article: '17.3', title: 'Оскорбление власти', stars: '★★★', penalty: '3 года / $20-60k', description: 'Оскорбление представителя власти.', details: 'Унижение чести и достоинства.' },
-            { article: '17.6', title: 'Неподчинение', stars: '★★★', penalty: '3 года / $20-60k', description: 'Неповиновение законному требованию.', details: 'Отказ снять маску - не нарушение.' },
-            { article: '17.7', title: 'Отказ от штрафа', stars: '★★★', penalty: '3 года', description: 'Отказ от оплаты штрафа.', details: 'Возврат или порча тикета.' }
+            // ТАБ 1: ОБЩАЯ ЧАСТЬ
+            { tab: 1, article: '2.5', title: 'Покушение на преступление', stars: '—', penalty: '½ от макс. срока' },
+            { tab: 1, article: '2.5.1', title: 'Приготовление к преступлению', stars: '—', penalty: '½ от макс. срока' },
+            { tab: 1, article: '5.1', title: 'Примирение с потерпевшим', stars: '—', penalty: 'Освобождение' },
+            { tab: 1, article: '5.2', title: 'Срок давности (7 дней)', stars: '—', penalty: 'Освобождение' },
+            { tab: 1, article: '5.4', title: 'Добровольная сдача', stars: '—', penalty: 'Освобождение' },
+            { tab: 1, article: '5.5', title: 'Наркотики до 5 гр', stars: '—', penalty: 'Изъятие без срока' },
+            { tab: 1, article: '5.5.2.2', title: '1 семя Green = 5 гр', stars: '—', penalty: '—' },
+            { tab: 1, article: '5.6', title: '1 куст Green', stars: '—', penalty: 'Изъятие без срока' },
+            { tab: 1, article: '5.7', title: 'Выход под залог ★', stars: '★', penalty: '30.000$' },
+            { tab: 1, article: '5.7', title: 'Выход под залог ★★', stars: '★★', penalty: '60.000$' },
+            { tab: 1, article: '5.7', title: 'Выход под залог ★★★', stars: '★★★', penalty: '90.000$' },
+            { tab: 1, article: '5.7', title: 'Выход под залог ★★★★', stars: '★★★★', penalty: '125.000$' },
+            { tab: 1, article: '5.7', title: 'Выход под залог ★★★★★', stars: '★★★★★', penalty: 'Запрещён' },
+            { tab: 1, article: '5.10', title: 'Снятие судимости', stars: '—', penalty: 'По заявлению' },
+            { tab: 1, article: '5.11', title: 'Лишение лицензии', stars: '—', penalty: 'За ряд статей' },
+            
+            // ТАБ 2: ТЯЖКИЕ ПРЕСТУПЛЕНИЯ
+            { tab: 2, article: '6.1.1', title: 'Побои с предметом', stars: '★★★', penalty: '3 года / $35,000' },
+            { tab: 2, article: '6.1.2', title: 'Побои руками', stars: '★★', penalty: '2 года / $45,000' },
+            { tab: 2, article: '6.2', title: 'Убийство', stars: '★★★★', penalty: '4 года' },
+            { tab: 2, article: '6.3', title: 'Тяжкое убийство', stars: '★★★★★', penalty: '5 лет' },
+            { tab: 2, article: '6.4', title: 'Групповое убийство', stars: '★★★★★', penalty: '5 лет' },
+            { tab: 2, article: '6.5', title: 'Смерть по неосторожности', stars: '★★★', penalty: '3 года / $35,000' },
+            { tab: 2, article: '6.6', title: 'ДТП с вредом/смертью', stars: '★★★', penalty: '3 года / $35,000' },
+            { tab: 2, article: '6.7.1', title: 'Угроза госслужащему', stars: '★★★★', penalty: '4 года / $45,000' },
+            { tab: 2, article: '6.7.2', title: 'Угроза запугать', stars: '★★★', penalty: '3 года / $35,000' },
+            { tab: 2, article: '6.7.3', title: 'Угроза с оружием', stars: '★★★★', penalty: '4 года / $60,000' },
+            { tab: 2, article: '6.8', title: 'Жестокость к животным', stars: '★★', penalty: '2 года / $25,000' },
+            { tab: 2, article: '7.1', title: 'Похищение человека', stars: '★★★★★', penalty: '5 лет' },
+            { tab: 2, article: '7.2.1', title: 'Клевета в СМИ', stars: '★★', penalty: '2 года / $25,000' },
+            { tab: 2, article: '7.2.2', title: 'Клевета с обвинением', stars: '★★★', penalty: '3 года / $35,000' },
+            { tab: 2, article: '7.2.3', title: 'Клевета оскорбительная', stars: '★★★', penalty: '3 года / $35,000' },
+            { tab: 2, article: '17.1', title: 'Посягательство на сотрудника', stars: '★★★★★', penalty: '5 лет' },
+            { tab: 2, article: '17.2', title: 'Насилие в отношении власти', stars: '★★★★', penalty: '4 года' },
+            
+            // ТАБ 3: ИМУЩЕСТВО
+            { tab: 3, article: '10.1.1', title: 'Кража от $2,000', stars: '★', penalty: '1 год / $25,000' },
+            { tab: 3, article: '10.1.2', title: 'Кража от $5,000', stars: '★★', penalty: '2 года / $35,000' },
+            { tab: 3, article: '10.1.3', title: 'Кража от $10,000', stars: '★★★', penalty: '3 года / $45,000' },
+            { tab: 3, article: '10.1.4', title: 'Кража от $30,000', stars: '★★★★', penalty: '4 года / $55,000' },
+            { tab: 3, article: '10.2', title: 'Мошенничество', stars: '★★', penalty: '2 года / $15,000' },
+            { tab: 3, article: '10.3', title: 'Грабеж', stars: '★★★', penalty: '3 года / $25,000' },
+            { tab: 3, article: '10.4', title: 'Разбой', stars: '★★★★', penalty: '4 года' },
+            { tab: 3, article: '10.5.1', title: 'Угон авто', stars: '★★★', penalty: '3 года / $30,000' },
+            { tab: 3, article: '10.5.2', title: 'Угон гос. транспорта', stars: '★★★★', penalty: '4 года / $45,000' },
+            { tab: 3, article: '10.6.1', title: 'Уничтожение имущества', stars: '★★', penalty: '2 года / $15,000' },
+            { tab: 3, article: '10.6.2', title: 'Уничтожение гос. имущества', stars: '★★★★', penalty: '4 года / $60,000' },
+            { tab: 3, article: '10.6.3', title: 'Поджог / взрыв', stars: '★★★★', penalty: '4 года / $50,000' },
+            { tab: 3, article: '10.7', title: 'Вымогательство', stars: '★★★', penalty: '3 года / $25,000' },
+            
+            // ТАБ 4: НАРКОТИКИ / ОРУЖИЕ
+            { tab: 4, article: '12.7.1', title: 'Проникновение на закрытый объект', stars: '★★★★', penalty: '4 года / $50,000' },
+            { tab: 4, article: '12.7.2', title: 'Проникновение на режимный объект', stars: '★★★★★', penalty: '5 лет / $75,000' },
+            { tab: 4, article: '12.8.1', title: 'Хранение оружия', stars: '★★★★', penalty: '4 года / $40,000' },
+            { tab: 4, article: '12.8.2', title: 'Оружие гос. образца', stars: '★★★★★', penalty: '5 лет' },
+            { tab: 4, article: '12.8.3', title: 'Нарушение оборота оружия', stars: '★★★', penalty: '3 года / $30,000' },
+            { tab: 4, article: '12.8.4', title: 'Подделка накладной', stars: '★★★', penalty: '3 года / $25,000' },
+            { tab: 4, article: '12.9', title: 'Взрывчатые вещества', stars: '★★★★', penalty: '4 года' },
+            { tab: 4, article: '12.10.1', title: 'Хищение оружия', stars: '★★★', penalty: '3 года' },
+            { tab: 4, article: '13.1.1', title: 'Наркотики 6–10 гр', stars: '★★★', penalty: '3 года / $50,000' },
+            { tab: 4, article: '13.1.2', title: 'Наркотики 11+ гр', stars: '★★★★★', penalty: '5 лет' },
+            { tab: 4, article: '13.2', title: 'Производство наркотиков', stars: '★★★★★', penalty: '5 лет / $60,000' },
+            
+            // ТАБ 5: ДОЛЖНОСТНЫЕ
+            { tab: 5, article: '15.1.1', title: 'Превышение полномочий', stars: '★★★★', penalty: '4 года / $50,000' },
+            { tab: 5, article: '15.1.2', title: 'Превышение (руководство)', stars: '★★★★', penalty: '4 года / $200,000' },
+            { tab: 5, article: '15.1.3', title: 'Превышение (GOV)', stars: '★★★★★', penalty: '5 лет / $500,000' },
+            { tab: 5, article: '15.5', title: 'Получение взятки', stars: '★★★★★', penalty: '5 лет' },
+            { tab: 5, article: '15.6', title: 'Дача взятки', stars: '★★★★', penalty: '4 года / штраф ×3' },
+            { tab: 5, article: '15.7', title: 'Халатность', stars: '★★★–★★★★★', penalty: '3-5 лет / $30-70k' },
+            { tab: 5, article: '17.3', title: 'Оскорбление власти', stars: '★★★', penalty: '3 года / $20-60k' },
+            
+            // ТАБ 6: ПРАВОСУДИЕ
+            { tab: 6, article: '16.1', title: 'Вмешательство в правосудие', stars: '★★★★★', penalty: '5 лет / $30,000' },
+            { tab: 6, article: '16.2', title: 'Препятствие адвокату', stars: '★★★', penalty: '3 года / $40,000' },
+            { tab: 6, article: '16.3', title: 'Препятствие прокурору', stars: '★★★★', penalty: '4 года / $50,000' },
+            { tab: 6, article: '16.4', title: 'Угроза судье', stars: '★★★★★', penalty: '5 лет' },
+            { tab: 6, article: '16.17', title: 'Побег', stars: '★★★★★', penalty: '5 лет / $30,000' },
+            { tab: 6, article: '17.6', title: 'Неподчинение', stars: '★★★', penalty: '3 года / $20-60k' },
+            { tab: 6, article: '17.7', title: 'Отказ от штрафа', stars: '★★★', penalty: '3 года' },
+            { tab: 6, article: '17.8', title: 'Укрывательство', stars: '★★', penalty: '2 года / $35,000' },
+            { tab: 6, article: '17.10', title: 'Помеха задержанию', stars: '★★★★', penalty: '4 года / $60,000' },
+            { tab: 6, article: '17.12', title: 'Побег при задержании', stars: '★★★', penalty: '3 года / $25,000' },
+            
+            // ТАБ 7: ВОЕННЫЕ
+            { tab: 7, article: '12.1.1', title: 'Терроризм', stars: '★★★★★', penalty: '10 лет' },
+            { tab: 7, article: '12.3', title: 'Захват заложников', stars: '★★★★★', penalty: '5 лет' },
+            { tab: 7, article: '14.1', title: 'Посягательство на гос. деятеля', stars: '★★★★★', penalty: '5 лет' },
+            { tab: 7, article: '14.2.1', title: 'Вооруженный мятеж', stars: '★★★★★', penalty: '5 лет' },
+            { tab: 7, article: '18.1', title: 'Неисполнение военного приказа', stars: '★★★', penalty: '3 года / $30,000' },
+            { tab: 7, article: '18.3', title: 'Дезертирство', stars: '★★★', penalty: '3 года / $25,000' }
         ];
 
         // ========== ЗВЁЗДНОЕ НЕБО ==========
@@ -773,13 +860,14 @@
 
         // ========== ЗАГРУЗКА ТАБЛИЦ ==========
         function initTables() {
-            for (let i = 1; i <= 7; i++) {
-                const tbody = document.getElementById(`table${i}-body`);
+            for (let tabId = 1; tabId <= 7; tabId++) {
+                const tbody = document.getElementById(`table${tabId}-body`);
                 if (tbody) {
-                    tbody.innerHTML = lawDatabase.map(law => `
+                    const tabLaws = lawDatabase.filter(law => law.tab === tabId);
+                    tbody.innerHTML = tabLaws.map(law => `
                         <tr>
                             <td>${law.article}</td>
-                            <td data-tooltip="${law.description} ${law.details}">${law.title}</td>
+                            <td data-tooltip="${law.title}">${law.title}</td>
                             <td class="stars">${law.stars}</td>
                             <td>${law.penalty}</td>
                             <td><span class="bookmark-star" onclick="toggleFavorite('${law.article}', '${law.title}', '${law.stars}', '${law.penalty}')">☆</span></td>
@@ -794,29 +882,11 @@
             const searchText = document.getElementById('searchInput').value.toLowerCase().trim();
             let totalResults = 0;
             
-            if (searchText === '') {
-                // Показываем все строки
-                for (let i = 1; i <= 7; i++) {
-                    const table = document.getElementById('table' + i);
-                    if (table) {
-                        const rows = table.querySelectorAll('tbody tr');
-                        rows.forEach(row => row.style.display = '');
-                    }
-                    document.getElementById('tab' + i).style.display = i === 1 ? 'block' : 'none';
-                }
-                document.getElementById('resultsCount').style.display = 'none';
-                showTab(1);
-                return;
-            }
-            
-            // Ищем по всем таблицам
             for (let i = 1; i <= 7; i++) {
                 const table = document.getElementById('table' + i);
                 if (!table) continue;
-                
                 const rows = table.querySelectorAll('tbody tr');
                 let tableResults = 0;
-                
                 rows.forEach(row => {
                     const text = row.textContent.toLowerCase();
                     if (text.includes(searchText)) {
@@ -827,78 +897,36 @@
                         row.style.display = 'none';
                     }
                 });
-                
                 document.getElementById('tab' + i).style.display = tableResults > 0 ? 'block' : 'none';
             }
             
-            // Показываем количество результатов
             const resultsCount = document.getElementById('resultsCount');
-            resultsCount.textContent = totalResults > 0 ? `🔍 Найдено статей: ${totalResults}` : `🔍 Ничего не найдено`;
-            resultsCount.style.display = 'inline-block';
-            
-            // Активируем первую вкладку с результатами
-            const tabs = document.querySelectorAll('.tab');
-            tabs.forEach(tab => tab.classList.remove('active'));
-            for (let i = 1; i <= 7; i++) {
-                if (document.getElementById('tab' + i).style.display === 'block') {
-                    tabs[i-1].classList.add('active');
-                    break;
-                }
+            if (searchText) {
+                resultsCount.textContent = totalResults > 0 ? `🔍 Найдено: ${totalResults}` : '🔍 Ничего не найдено';
+                resultsCount.style.display = 'inline-block';
+            } else {
+                resultsCount.style.display = 'none';
             }
         }
 
         function clearSearch() {
             document.getElementById('searchInput').value = '';
             document.getElementById('resultsCount').style.display = 'none';
-            
             for (let i = 1; i <= 7; i++) {
                 const table = document.getElementById('table' + i);
                 if (table) {
-                    const rows = table.querySelectorAll('tbody tr');
-                    rows.forEach(row => row.style.display = '');
+                    table.querySelectorAll('tbody tr').forEach(row => row.style.display = '');
                 }
                 document.getElementById('tab' + i).style.display = i === 1 ? 'block' : 'none';
             }
             showTab(1);
         }
 
-        // ========== ГОЛОСОВОЙ ПОИСК ==========
-        function startVoiceSearch() {
-            if (!('webkitSpeechRecognition' in window)) {
-                alert('Голосовой поиск работает в Chrome/Edge');
-                return;
-            }
-            
-            const btn = document.getElementById('voiceBtn');
-            btn.classList.add('listening');
-            btn.textContent = '🎤 Слушаю...';
-            
-            const recognition = new webkitSpeechRecognition();
-            recognition.lang = 'ru-RU';
-            
-            recognition.onresult = (e) => {
-                const speechText = e.results[0][0].transcript;
-                document.getElementById('searchInput').value = speechText;
-                searchArticles();
-                btn.classList.remove('listening');
-                btn.textContent = '🎤 Голос';
-            };
-            
-            recognition.onerror = () => {
-                btn.classList.remove('listening');
-                btn.textContent = '🎤 Голос';
-            };
-            
-            recognition.start();
-        }
-
         // ========== ЗАКЛАДКИ ==========
         let favorites = JSON.parse(localStorage.getItem('reznovFavorites')) || [];
-
         function toggleFavorite(article, violation, stars, penalty) {
             const star = event.currentTarget;
             const index = favorites.findIndex(f => f.article === article);
-            
             if (index === -1) {
                 favorites.push({ article, violation, stars, penalty });
                 star.textContent = '⭐';
@@ -908,274 +936,172 @@
                 star.textContent = '☆';
                 star.classList.remove('active');
             }
-            
             localStorage.setItem('reznovFavorites', JSON.stringify(favorites));
             updateFavoritesTab();
         }
-
         function updateFavoritesTab() {
             const tbody = document.getElementById('favoritesBody');
-            if (!tbody) return;
-            tbody.innerHTML = favorites.map(f => `
-                <tr>
-                    <td>${f.article}</td>
-                    <td>${f.violation}</td>
-                    <td class="stars">${f.stars}</td>
-                    <td>${f.penalty}</td>
-                    <td><span class="bookmark-star active" onclick="toggleFavorite('${f.article}', '${f.violation}', '${f.stars}', '${f.penalty}')">⭐</span></td>
-                </tr>
-            `).join('');
+            if (tbody) {
+                tbody.innerHTML = favorites.map(f => `<tr><td>${f.article}</td><td>${f.violation}</td><td>${f.stars}</td><td>${f.penalty}</td><td><span class="bookmark-star active" onclick="toggleFavorite('${f.article}', '${f.violation}', '${f.stars}', '${f.penalty}')">⭐</span></td></tr>`).join('');
+            }
+        }
+
+        // ========== ЭКЗАМЕН LSPD ==========
+        let lspdExam = { current: 0, score: 0, questions: [
+            { question: 'Какое наказание за убийство (ст. 6.2)?', options: ['3 года', '4 года', '5 лет', '6 лет'], correct: 1 },
+            { question: 'Сколько грамм наркотиков можно хранить без наказания?', options: ['3 гр', '5 гр', '7 гр', '10 гр'], correct: 1 },
+            { question: 'Какой приоритет розыска у ст. 17.6?', options: ['★★', '★★★', '★★★★', '★★★★★'], correct: 1 },
+            { question: 'Что грозит за угон авто?', options: ['2 года', '3 года', '4 года', '5 лет'], correct: 1 },
+            { question: 'Какая статья за хранение оружия?', options: ['12.7.1', '12.8.1', '12.9', '13.1.1'], correct: 1 }
+        ]};
+
+        function loadLSPDQuestion() {
+            if (lspdExam.current < lspdExam.questions.length) {
+                const q = lspdExam.questions[lspdExam.current];
+                let html = `<div style="margin-bottom: 16px;">${lspdExam.current + 1}. ${q.question}</div>`;
+                html += '<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">';
+                q.options.forEach((opt, index) => {
+                    html += `<div class="exam-option" onclick="checkLSPDAnswer(this, ${index}, ${q.correct})">${opt}</div>`;
+                });
+                html += '</div><div id="lspdFeedback" style="margin-top: 16px;"></div>';
+                document.getElementById('lspdExamArea').innerHTML = html;
+            } else {
+                document.getElementById('lspdExamArea').innerHTML = `
+                    <div style="text-align: center; padding: 20px;">
+                        <span style="font-size: 48px;">🎉</span>
+                        <h3 style="margin: 16px 0;">Экзамен сдан!</h3>
+                        <p style="font-size: 18px;">Результат: ${lspdExam.score}/${lspdExam.questions.length}</p>
+                    </div>
+                `;
+                lspdExam.current = 0;
+                lspdExam.score = 0;
+            }
+        }
+
+        function checkLSPDAnswer(element, selected, correct) {
+            const options = document.querySelectorAll('.exam-option');
+            options.forEach(opt => opt.style.pointerEvents = 'none');
+            if (selected === correct) {
+                element.classList.add('correct');
+                lspdExam.score++;
+                document.getElementById('lspdFeedback').innerHTML = '✅ Правильно!';
+            } else {
+                element.classList.add('wrong');
+                options[correct].classList.add('correct');
+                document.getElementById('lspdFeedback').innerHTML = `❌ Неправильно. Ответ: ${lspdExam.questions[lspdExam.current].options[correct]}`;
+            }
+            lspdExam.current++;
+            setTimeout(loadLSPDQuestion, 1500);
+        }
+
+        function resetLSPDExam() {
+            lspdExam.current = 0;
+            lspdExam.score = 0;
+            loadLSPDQuestion();
+        }
+
+        function takeOath() {
+            document.getElementById('oathMessage').innerHTML = '✅ Присяга принята! Добро пожаловать в LSPD.';
         }
 
         // ========== КОНСТРУКТОР ==========
         let protocolArticles = [];
-
         function addArticleToProtocol() {
-            const article = prompt("Введи номер статьи (например 6.2):");
+            const article = prompt("Введи номер статьи:");
             if (article) {
                 const law = lawDatabase.find(l => l.article === article);
                 if (law) {
                     protocolArticles.push(law);
-                    renderProtocolList();
+                    document.getElementById('protocolArticlesList').innerHTML = protocolArticles.map((l, i) => 
+                        `<span style="background: rgba(255,255,255,0.1); border: 1px solid #666; border-radius: 30px; padding: 6px 16px; display: flex; align-items: center; gap: 8px;">
+                            ${l.article} - ${l.title}
+                            <button onclick="removeProtocolArticle(${i})" style="background: none; border: none; color: white; cursor: pointer;">✕</button>
+                        </span>`
+                    ).join('');
                 }
             }
         }
-
-        function renderProtocolList() {
-            const container = document.getElementById('protocolArticlesList');
-            container.innerHTML = protocolArticles.map((law, index) => `
-                <div class="protocol-article-tag">
-                    <span>${law.article} - ${law.title}</span>
-                    <button onclick="removeProtocolArticle(${index})" style="background: none; border: none; color: inherit; cursor: pointer;">✕</button>
-                </div>
-            `).join('');
-        }
-
         function removeProtocolArticle(index) {
             protocolArticles.splice(index, 1);
-            renderProtocolList();
+            document.getElementById('protocolArticlesList').innerHTML = protocolArticles.map((l, i) => 
+                `<span style="background: rgba(255,255,255,0.1); border: 1px solid #666; border-radius: 30px; padding: 6px 16px; display: flex; align-items: center; gap: 8px;">
+                    ${l.article} - ${l.title}
+                    <button onclick="removeProtocolArticle(${i})" style="background: none; border: none; color: white; cursor: pointer;">✕</button>
+                </span>`
+            ).join('');
         }
-
         function generateProtocol() {
             const suspect = document.getElementById('protocolSuspect').value || 'Неизвестный';
             const officer = document.getElementById('protocolOfficer').value || 'Сотрудник';
-            
-            let articlesText = protocolArticles.map(l => 
-                `• ${l.article} - ${l.title} (${l.penalty})`
-            ).join('\n');
-
-            const protocol = `
-[ ПРОТОКОЛ ЗАДЕРЖАНИЯ ]
+            const output = document.getElementById('protocolOutput');
+            output.style.display = 'block';
+            output.textContent = `[ ПРОТОКОЛ ЗАДЕРЖАНИЯ ]
 Задержанный: ${suspect}
 Задержал: ${officer}
 Дата: ${new Date().toLocaleDateString()}
 Время: ${new Date().toLocaleTimeString()}
 
 Инкриминируемые статьи:
-${articlesText || '• Не выбрано'}
+${protocolArticles.map(l => `• ${l.article} - ${l.title} (${l.penalty})`).join('\n') || '• Не выбрано'}
 
-Права Миранды зачитаны. Наручники надеты.
-            `;
-
-            const output = document.getElementById('protocolOutput');
-            output.style.display = 'block';
-            output.textContent = protocol;
-        }
-
-        function clearProtocol() {
-            protocolArticles = [];
-            renderProtocolList();
-            document.getElementById('protocolSuspect').value = '';
-            document.getElementById('protocolOfficer').value = '';
-            document.getElementById('protocolOutput').style.display = 'none';
-        }
-
-        // ========== ТЕСТ ==========
-        let currentQuestion = 0;
-        let score = 0;
-        const quizQuestions = [
-            {
-                question: 'Какое наказание за убийство (ст. 6.2)?',
-                options: ['3 года', '4 года', '5 лет', '6 лет'],
-                correct: 1
-            },
-            {
-                question: 'Сколько грамм наркотиков можно хранить без наказания?',
-                options: ['3 гр', '5 гр', '7 гр', '10 гр'],
-                correct: 1
-            },
-            {
-                question: 'Какой приоритет розыска у ст. 17.6 (Неподчинение)?',
-                options: ['★', '★★', '★★★', '★★★★'],
-                correct: 2
-            },
-            {
-                question: 'Что грозит за угон авто (ст. 10.5.1)?',
-                options: ['2 года / $25k', '3 года / $30k', '4 года / $45k', '5 лет'],
-                correct: 1
-            },
-            {
-                question: 'Какая статья за хранение оружия?',
-                options: ['12.7.1', '12.8.1', '12.9', '13.1.1'],
-                correct: 1
-            }
-        ];
-
-        function loadNextQuestion() {
-            if (currentQuestion < quizQuestions.length) {
-                const q = quizQuestions[currentQuestion];
-                let html = `<div style="font-size: 18px; font-weight: 600; margin-bottom: 20px;">${currentQuestion + 1}. ${q.question}</div>`;
-                html += '<div class="quiz-options">';
-                q.options.forEach((opt, index) => {
-                    html += `<div class="quiz-option" onclick="checkAnswer(this, ${index}, ${q.correct})">${opt}</div>`;
-                });
-                html += '</div><div id="quizFeedback" style="margin-top: 16px; padding: 12px; border-radius: 12px;"></div>';
-                document.getElementById('quizArea').innerHTML = html;
-            } else {
-                document.getElementById('quizArea').innerHTML = `
-                    <div style="text-align: center; padding: 40px;">
-                        <span style="font-size: 48px;">🎉</span>
-                        <h3 style="margin: 20px 0;">Тест завершен!</h3>
-                        <p style="font-size: 20px;">Ваш результат: ${score}/${quizQuestions.length}</p>
-                    </div>
-                `;
-                currentQuestion = 0;
-                score = 0;
-            }
-        }
-
-        function checkAnswer(element, selected, correct) {
-            const options = document.querySelectorAll('.quiz-option');
-            options.forEach(opt => opt.style.pointerEvents = 'none');
-            
-            if (selected === correct) {
-                element.classList.add('correct');
-                score++;
-                document.getElementById('quizFeedback').innerHTML = '✅ Правильно!';
-            } else {
-                element.classList.add('wrong');
-                options[correct].classList.add('correct');
-                document.getElementById('quizFeedback').innerHTML = `❌ Неправильно. Правильный ответ: ${quizQuestions[currentQuestion].options[correct]}`;
-            }
-            
-            currentQuestion++;
-            setTimeout(loadNextQuestion, 1500);
-        }
-
-        function resetQuiz() {
-            currentQuestion = 0;
-            score = 0;
-            loadNextQuestion();
+Права Миранды зачитаны. Наручники надеты.`;
         }
 
         // ========== АССИСТЕНТ ==========
         let chatHistory = JSON.parse(localStorage.getItem('reznovChatHistory')) || [];
-
         function toggleAssistant() {
             const modal = document.getElementById('assistantModal');
             modal.style.display = modal.style.display === 'none' ? 'block' : 'none';
         }
-
         function sendAssistantMessage() {
             const input = document.getElementById('assistantInput');
             const question = input.value.trim();
             if (!question) return;
-            
             addMessageToChat('user', question);
             input.value = '';
-            
-            let answer = processVoiceCommand(question);
-            setTimeout(() => {
-                addMessageToChat('assistant', answer);
-                speakAnswer(answer);
-            }, 500);
+            let answer = 'Я не понял вопрос. Спроси про кодекс чести или статьи УК.';
+            if (question.includes('кодекс')) answer = 'Кодекс чести LSPD — 10 заповедей офицера.';
+            if (question.includes('экзамен')) answer = 'Экзамен на знание УК — 5 вопросов. Удачи!';
+            setTimeout(() => addMessageToChat('assistant', answer), 500);
         }
-
         function addMessageToChat(sender, content) {
             const chat = document.getElementById('chatHistory');
             const msg = document.createElement('div');
-            msg.className = `message ${sender}`;
+            msg.style.marginBottom = '12px';
             msg.innerHTML = sender === 'user' 
-                ? `<div class="message-content">${content}</div><div class="message-avatar">👤</div>`
-                : `<div class="message-avatar">🤖</div><div class="message-content">${content}</div>`;
+                ? `<div style="text-align: right;"><span style="background: #333; padding: 8px 16px; border-radius: 18px; display: inline-block;">${content}</span></div>`
+                : `<div style="display: flex; gap: 8px;"><span style="background: #444; padding: 8px 16px; border-radius: 18px;">🤖 ${content}</span></div>`;
             chat.appendChild(msg);
             chat.scrollTop = chat.scrollHeight;
-            chatHistory.push({ sender, content, time: Date.now() });
-            if (chatHistory.length > 50) chatHistory.shift();
-            localStorage.setItem('reznovChatHistory', JSON.stringify(chatHistory));
+            chatHistory.push({ sender, content });
+            localStorage.setItem('reznovChatHistory', JSON.stringify(chatHistory.slice(-20)));
         }
-
         function loadChatHistory() {
             const chat = document.getElementById('chatHistory');
             chat.innerHTML = '';
             if (chatHistory.length === 0) {
-                chat.innerHTML = `<div class="message"><div class="message-avatar">🤖</div><div class="message-content">Привет! Я ИИ-ассистент УК Reznov. Задай вопрос про любую статью!</div></div>`;
+                chat.innerHTML = '<div style="color: #888; padding: 12px;">🤖 Привет! Я помощник LSPD. Спроси про кодекс чести или экзамен.</div>';
+            }
+        }
+
+        // ========== ТЕМА ==========
+        function toggleTheme() {
+            const body = document.body;
+            const icon = document.getElementById('themeIcon');
+            if (body.classList.contains('dark-theme')) {
+                body.classList.remove('dark-theme');
+                body.classList.add('light-theme');
+                icon.textContent = '☀️';
             } else {
-                chatHistory.forEach(msg => {
-                    const msgDiv = document.createElement('div');
-                    msgDiv.className = `message ${msg.sender}`;
-                    msgDiv.innerHTML = msg.sender === 'user'
-                        ? `<div class="message-content">${msg.content}</div><div class="message-avatar">👤</div>`
-                        : `<div class="message-avatar">🤖</div><div class="message-content">${msg.content}</div>`;
-                    chat.appendChild(msgDiv);
-                });
+                body.classList.remove('light-theme');
+                body.classList.add('dark-theme');
+                icon.textContent = '🌙';
             }
-        }
-
-        function processVoiceCommand(command) {
-            command = command.toLowerCase();
-            
-            if (command.includes('открой общую часть')) { showTab(1); return 'Открываю общую часть'; }
-            if (command.includes('конструктор')) { showTab(8); return 'Открываю конструктор'; }
-            if (command.includes('тест')) { showTab(9); resetQuiz(); return 'Запускаю тест'; }
-            if (command.includes('избранное')) { showTab(10); return 'Открываю избранное'; }
-            if (command.includes('тёмная тема')) { 
-                document.body.classList.remove('light-theme');
-                document.body.classList.add('dark-theme');
-                return 'Включаю тёмную тему';
-            }
-            if (command.includes('светлая тема')) {
-                document.body.classList.remove('dark-theme');
-                document.body.classList.add('light-theme');
-                return 'Включаю светлую тему';
-            }
-            
-            for (let law of lawDatabase) {
-                if (command.includes(law.article)) {
-                    return `Статья ${law.article}: ${law.title}\nНаказание: ${law.penalty}\n${law.description}`;
-                }
-            }
-            
-            return 'Команда не распознана. Попробуй: "открой общую часть", "тест", или спроси про статью (например "статья 6.2")';
-        }
-
-        function startAssistantVoice() {
-            if (!('webkitSpeechRecognition' in window)) return;
-            const btn = document.getElementById('assistantMicBtn');
-            btn.style.background = 'rgba(196,30,58,0.4)';
-            const recognition = new webkitSpeechRecognition();
-            recognition.lang = 'ru-RU';
-            recognition.onresult = (e) => {
-                document.getElementById('assistantInput').value = e.results[0][0].transcript;
-                sendAssistantMessage();
-                btn.style.background = 'rgba(196,30,58,0.2)';
-            };
-            recognition.onerror = () => btn.style.background = 'rgba(196,30,58,0.2)';
-            recognition.start();
-        }
-
-        function speakAnswer(text) {
-            if (!('speechSynthesis' in window)) return;
-            window.speechSynthesis.cancel();
-            const utterance = new SpeechSynthesisUtterance(text);
-            utterance.lang = 'ru-RU';
-            utterance.rate = 0.9;
-            window.speechSynthesis.speak(utterance);
         }
 
         // ========== НАВИГАЦИЯ ==========
         function showTab(tabId) {
-            for (let i = 1; i <= 11; i++) {
+            for (let i = 1; i <= 10; i++) {
                 const tab = document.getElementById('tab' + i);
                 if (tab) tab.style.display = i === tabId ? 'block' : 'none';
             }
@@ -1194,12 +1120,39 @@ ${articlesText || '• Не выбрано'}
                 initTables();
                 updateFavoritesTab();
                 loadChatHistory();
+                loadLSPDQuestion();
                 showTab(1);
-                loadNextQuestion();
             } else {
                 document.getElementById('loginError').style.display = 'block';
                 setTimeout(() => document.getElementById('loginError').style.display = 'none', 2000);
             }
+        }
+
+        // ========== ГОЛОСОВОЙ ПОИСК ==========
+        function startVoiceSearch() {
+            if (!('webkitSpeechRecognition' in window)) return;
+            const btn = document.getElementById('voiceBtn');
+            btn.classList.add('listening');
+            btn.textContent = '🎤 Слушаю...';
+            const recognition = new webkitSpeechRecognition();
+            recognition.lang = 'ru-RU';
+            recognition.onresult = (e) => {
+                document.getElementById('searchInput').value = e.results[0][0].transcript;
+                searchArticles();
+                btn.classList.remove('listening');
+                btn.textContent = '🎤 Голос';
+            };
+            recognition.start();
+        }
+
+        // Инициализация голосов
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.onvoiceschanged = function() {
+                const voiceSelect = document.getElementById('voiceSelect');
+                const voices = window.speechSynthesis.getVoices();
+                const russianVoices = voices.filter(v => v.lang.includes('ru'));
+                voiceSelect.innerHTML = russianVoices.map(v => `<option value="${v.voiceURI}">${v.name}</option>`).join('');
+            };
         }
     </script>
 </body>
