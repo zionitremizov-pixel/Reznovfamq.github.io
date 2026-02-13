@@ -21,7 +21,7 @@
             overflow-x: hidden;
         }
 
-        /* ========== ТЁМНАЯ ТЕМА (ЧЁРНО-БЕЛЫЙ) ========== */
+        /* ========== ТЁМНАЯ ТЕМА ========== */
         body.dark-theme {
             background: #000000;
             color: #ffffff;
@@ -30,22 +30,6 @@
             background: rgba(10, 10, 10, 0.85);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        body.dark-theme .tab.active {
-            background: #333333 !important;
-            color: white !important;
-            box-shadow: 0 0 20px rgba(255,255,255,0.2);
-        }
-        body.dark-theme .logo {
-            border-color: #888888;
-        }
-        body.dark-theme th {
-            background: rgba(30, 30, 30, 0.8);
-            color: #ffffff;
-        }
-        body.dark-theme td {
-            color: #dddddd;
-            border-bottom-color: rgba(255,255,255,0.05);
         }
 
         /* ========== СВЕТЛАЯ ТЕМА ========== */
@@ -57,16 +41,6 @@
             background: rgba(255, 255, 255, 0.75);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(0, 0, 0, 0.08);
-        }
-        body.light-theme .tab.active {
-            background: #dddddd !important;
-            color: #222222 !important;
-        }
-        body.light-theme .logo {
-            border-color: #aaaaaa;
-        }
-        body.light-theme td {
-            color: #333333;
         }
 
         /* ========== ЗВЁЗДНОЕ НЕБО ========== */
@@ -126,221 +100,50 @@
             margin-bottom: 8px;
         }
 
-        /* ========== КОДЕКС ЧЕСТИ (ЧЁРНО-БЕЛЫЙ) ========== */
-        .honor-code {
-            background: rgba(0,0,0,0.2);
-            border-left: 6px solid #666666;
-            border-radius: 20px;
-            padding: 28px;
-            margin-bottom: 32px;
-            backdrop-filter: blur(10px);
-            animation: slideIn 0.8s ease;
+        /* ========== ВСПЛЫВАЮЩИЕ ПОДСКАЗКИ ========== */
+        [data-tooltip] {
+            position: relative;
+            cursor: help;
+            border-bottom: 1px dotted rgba(255,255,255,0.3);
         }
-        body.light-theme .honor-code {
-            background: rgba(0,0,0,0.03);
-            border-left-color: #aaaaaa;
+        body.light-theme [data-tooltip] {
+            border-bottom: 1px dotted rgba(0,0,0,0.2);
         }
 
-        .honor-title {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 24px;
-            font-size: 24px;
-            font-weight: 700;
-            color: #cccccc;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
-        body.light-theme .honor-title { color: #555555; }
-
-        .honor-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .honor-item {
-            background: rgba(0,0,0,0.2);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 16px;
-            padding: 20px;
-            transition: all 0.4s ease;
-        }
-        body.light-theme .honor-item {
-            background: rgba(0,0,0,0.02);
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-        .honor-item:hover {
-            transform: translateY(-5px);
-            background: rgba(255,255,255,0.05);
-            border-color: #888888;
-        }
-
-        .honor-number {
-            font-size: 32px;
-            font-weight: 800;
-            color: #888888;
-            margin-bottom: 8px;
-        }
-        .honor-rule {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-        .honor-desc {
-            font-size: 14px;
-            color: rgba(255,255,255,0.6);
-            line-height: 1.5;
-        }
-        body.light-theme .honor-desc { color: rgba(0,0,0,0.6); }
-
-        /* ========== АКАДЕМИЯ LSPD ========== */
-        .academy-section {
-            background: rgba(0,0,0,0.15);
-            border-radius: 24px;
-            padding: 28px;
-            margin-bottom: 32px;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        body.light-theme .academy-section {
-            background: rgba(0,0,0,0.02);
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .academy-title {
-            font-size: 26px;
-            font-weight: 700;
-            color: #cccccc;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-        }
-        body.light-theme .academy-title { color: #555555; }
-
-        .academy-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-        }
-
-        .academy-card {
-            background: rgba(0,0,0,0.2);
-            border-radius: 20px;
-            padding: 24px;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        body.light-theme .academy-card {
-            background: rgba(0,0,0,0.02);
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .mistake-item {
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            display: flex;
-            gap: 12px;
-        }
-        .mistake-number {
-            background: #333333;
-            color: white;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            font-weight: 700;
-            flex-shrink: 0;
-        }
-        body.light-theme .mistake-number { background: #aaaaaa; }
-
-        .exam-option {
-            background: rgba(0,0,0,0.2);
-            border: 1px solid rgba(255,255,255,0.1);
+        [data-tooltip]:before {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 130%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 12px 18px;
             border-radius: 12px;
-            padding: 12px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .exam-option:hover {
-            background: rgba(255,255,255,0.1);
-            border-color: #888888;
-        }
-
-        /* ========== ПОИСК ========== */
-        .search-box {
-            margin-bottom: 32px;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .search-input {
-            flex: 1;
-            min-width: 300px;
-            border-radius: 60px;
-            padding: 20px 32px;
-            font-size: 18px;
-            outline: none;
-            transition: all 0.5s ease;
-            border: 2px solid;
-            background: transparent;
-            backdrop-filter: blur(10px);
-        }
-        body.dark-theme .search-input {
-            background: rgba(20, 20, 20, 0.7);
-            border-color: rgba(255,255,255,0.1);
+            font-size: 13px;
+            white-space: normal;
+            min-width: 280px;
+            max-width: 400px;
+            width: max-content;
+            z-index: 1000;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            background: rgba(20, 20, 20, 0.95);
             color: white;
-        }
-        body.light-theme .search-input {
-            background: rgba(255,255,255,0.7);
-            border-color: rgba(0,0,0,0.08);
-            color: #222222;
-        }
-
-        .search-input:focus {
-            transform: scale(1.02);
-            border-color: #888888 !important;
-        }
-
-        .voice-btn, .search-clear {
-            padding: 18px 32px;
-            border-radius: 50px;
-            font-size: 17px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            border: 1.5px solid;
+            border: 1px solid rgba(255,255,255,0.2);
             backdrop-filter: blur(10px);
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            line-height: 1.5;
+            text-align: left;
         }
-        body.dark-theme .voice-btn, 
-        body.dark-theme .search-clear {
-            background: rgba(30, 30, 30, 0.7);
-            border-color: rgba(255,255,255,0.15);
-            color: white;
-        }
-        body.light-theme .voice-btn,
-        body.light-theme .search-clear {
-            background: rgba(255,255,255,0.7);
-            border-color: rgba(0,0,0,0.08);
+        body.light-theme [data-tooltip]:before {
+            background: rgba(255,255,255,0.95);
             color: #222222;
+            border: 1px solid rgba(0,0,0,0.1);
         }
 
-        .results-info {
-            padding: 12px 24px;
-            border-radius: 50px;
-            display: inline-block;
-            margin-bottom: 20px;
-            font-size: 16px;
-            font-weight: 600;
-            backdrop-filter: blur(10px);
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
+        [data-tooltip]:hover:before {
+            opacity: 1;
+            transform: translateX(-50%) translateY(-5px);
         }
 
         /* ========== ТАБЛИЦЫ ========== */
@@ -428,69 +231,293 @@
             color: #222222 !important;
         }
 
-        /* ========== ГОЛОСОВОЙ АССИСТЕНТ ========== */
+        /* ========== ПОИСК ========== */
+        .search-box {
+            margin-bottom: 32px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .search-input {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 60px;
+            padding: 20px 32px;
+            font-size: 18px;
+            outline: none;
+            transition: all 0.5s ease;
+            border: 2px solid;
+            background: transparent;
+            backdrop-filter: blur(10px);
+        }
+        body.dark-theme .search-input {
+            background: rgba(20, 20, 20, 0.7);
+            border-color: rgba(255,255,255,0.1);
+            color: white;
+        }
+        body.light-theme .search-input {
+            background: rgba(255,255,255,0.7);
+            border-color: rgba(0,0,0,0.08);
+            color: #222222;
+        }
+
+        /* ========== ТЕСТ 2.0 ========== */
+        .quiz-container {
+            background: rgba(0,0,0,0.2);
+            border-radius: 24px;
+            padding: 28px;
+            margin-bottom: 32px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        body.light-theme .quiz-container {
+            background: rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+        .quiz-title {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        .quiz-score {
+            font-size: 18px;
+            background: rgba(255,255,255,0.1);
+            padding: 8px 20px;
+            border-radius: 40px;
+        }
+
+        .quiz-question {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .quiz-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .quiz-option {
+            background: rgba(0,0,0,0.2);
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            text-align: center;
+        }
+        .quiz-option:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: #888888;
+            transform: translateY(-3px);
+        }
+        .quiz-option.correct {
+            background: rgba(0,255,0,0.1);
+            border-color: #00ff00;
+        }
+        .quiz-option.wrong {
+            background: rgba(255,0,0,0.1);
+            border-color: #ff0000;
+        }
+
+        .quiz-feedback {
+            font-size: 18px;
+            padding: 16px;
+            border-radius: 16px;
+            text-align: center;
+            margin-top: 16px;
+        }
+
+        /* ========== ГОЛОСОВОЙ АССИСТЕНТ (SIRI) ========== */
         .voice-assistant {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            width: 80px;
-            height: 80px;
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
             background: #222222;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: all 0.3s ease;
-            border: 2px solid #444444;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 3px solid #444444;
             z-index: 999;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            animation: siriPulse 3s infinite;
         }
         body.light-theme .voice-assistant {
             background: #e0e0e0;
-            border: 2px solid #cccccc;
+            border: 3px solid #cccccc;
         }
-        .voice-assistant:hover { transform: scale(1.1); }
-        .voice-icon { font-size: 36px; color: white; }
+
+        @keyframes siriPulse {
+            0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.2); }
+            50% { box-shadow: 0 0 30px 10px rgba(255,255,255,0.4); }
+            100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.2); }
+        }
+
+        .voice-assistant:hover {
+            transform: scale(1.1);
+            border-color: #888888;
+        }
+
+        .voice-assistant.listening {
+            animation: siriListening 1.5s infinite;
+        }
+        @keyframes siriListening {
+            0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.5); }
+            50% { box-shadow: 0 0 50px 20px rgba(255,255,255,0.8); }
+            100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.5); }
+        }
+
+        .voice-icon {
+            font-size: 42px;
+            color: white;
+            filter: drop-shadow(0 0 10px rgba(255,255,255,0.5));
+            transition: all 0.3s ease;
+        }
         body.light-theme .voice-icon { color: #222222; }
 
         .assistant-modal {
             position: fixed;
-            bottom: 120px;
+            bottom: 140px;
             right: 30px;
             width: 420px;
             background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(15px);
+            backdrop-filter: blur(20px);
             border: 1px solid rgba(255,255,255,0.1);
             border-radius: 24px;
             padding: 24px;
             z-index: 998;
             display: none;
+            animation: slideInUp 0.3s ease;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
         }
         body.light-theme .assistant-modal {
             background: rgba(255,255,255,0.95);
             border: 1px solid rgba(0,0,0,0.1);
         }
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-        .voice-settings {
-            background: rgba(0,0,0,0.2);
-            border-radius: 16px;
-            padding: 16px;
-            margin-bottom: 16px;
+        .assistant-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
-        .voice-select, .voice-slider {
-            width: 100%;
-            padding: 10px;
-            border-radius: 30px;
-            border: 1px solid rgba(255,255,255,0.2);
+        .assistant-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .assistant-close {
+            cursor: pointer;
+            font-size: 24px;
+            opacity: 0.7;
+            transition: 0.3s;
+        }
+        .assistant-close:hover { opacity: 1; }
+
+        .assistant-messages {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding-right: 8px;
+        }
+
+        .message {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+        .message-user {
+            flex-direction: row-reverse;
+        }
+        .message-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #333333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        .message-content {
+            max-width: 70%;
+            padding: 14px 18px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.1);
+            font-size: 15px;
+            line-height: 1.5;
+            border-bottom-left-radius: 4px;
+        }
+        .message-user .message-content {
+            background: #333333;
+            border-bottom-right-radius: 4px;
+            border-bottom-left-radius: 20px;
+        }
+
+        .assistant-input-area {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        .assistant-input {
+            flex: 1;
+            padding: 16px 20px;
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.1);
             background: rgba(0,0,0,0.2);
+            color: inherit;
+            font-size: 15px;
+        }
+        .assistant-input:focus {
+            outline: none;
+            border-color: #888888;
+        }
+        .assistant-send {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: #333333;
+            border: none;
             color: white;
-            margin-bottom: 12px;
+            font-size: 22px;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        body.light-theme .voice-select,
-        body.light-theme .voice-slider {
-            background: rgba(255,255,255,0.8);
-            color: #222222;
-            border: 1px solid rgba(0,0,0,0.1);
+        .assistant-send:hover {
+            transform: scale(1.1);
+            background: #444444;
         }
 
         .footer {
@@ -501,14 +528,15 @@
             padding-top: 24px;
             opacity: 0.8;
         }
-        body.light-theme .footer {
-            border-top-color: rgba(0,0,0,0.1);
-        }
 
         @media (max-width: 600px) {
-            .container { padding: 20px; }
-            .academy-grid { grid-template-columns: 1fr; }
-            .honor-grid { grid-template-columns: 1fr; }
+            .quiz-options { grid-template-columns: 1fr; }
+            .assistant-modal {
+                width: calc(100% - 40px);
+                right: 20px;
+                left: 20px;
+                bottom: 120px;
+            }
         }
     </style>
 </head>
@@ -544,74 +572,9 @@
                         ЗАКОН ЕСТЬ ЗАКОН · МЫ — REZNOV
                     </div>
                 </div>
-                <div style="display: flex; gap: 12px;">
-                    <select id="colorSelector" style="display: none;">
-                        <option value="classic">Классика</option>
-                    </select>
-                    <button id="themeToggle" onclick="toggleTheme()" style="padding: 12px 24px; border-radius: 40px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.3); color: white; cursor: pointer;">
-                        <span id="themeIcon">🌙</span> Тема
-                    </button>
-                </div>
-            </div>
-
-            <!-- ========== КОДЕКС ЧЕСТИ LSPD ========== -->
-            <div class="honor-code">
-                <div class="honor-title">
-                    <span>📜 КОДЕКС ЧЕСТИ LSPD</span>
-                </div>
-                <div class="honor-grid">
-                    <div class="honor-item"><div class="honor-number">I</div><div class="honor-rule">Закон превыше всего</div><div class="honor-desc">Я клянусь соблюдать Конституцию и Уголовный кодекс. Нет никого выше закона.</div></div>
-                    <div class="honor-item"><div class="honor-number">II</div><div class="honor-rule">Честь и достоинство</div><div class="honor-desc">Мои действия не запятнают звание офицера полиции.</div></div>
-                    <div class="honor-item"><div class="honor-number">III</div><div class="honor-rule">Защита граждан</div><div class="honor-desc">Каждый житель Лос-Сантоса имеет право на защиту.</div></div>
-                    <div class="honor-item"><div class="honor-number">IV</div><div class="honor-rule">Плечом к плечу</div><div class="honor-desc">Я никогда не брошу напарника. Его жизнь ценна, как моя.</div></div>
-                    <div class="honor-item"><div class="honor-number">V</div><div class="honor-rule">Беспристрастность</div><div class="honor-desc">Я не буду закрывать глаза на нарушения коллег.</div></div>
-                    <div class="honor-item"><div class="honor-number">VI</div><div class="honor-rule">Применение силы</div><div class="honor-desc">Сила — только когда необходимо и адекватно угрозе.</div></div>
-                    <div class="honor-item"><div class="honor-number">VII</div><div class="honor-rule">Профессионализм</div><div class="honor-desc">Я постоянно совершенствую навыки. Ленивый коп — опасный коп.</div></div>
-                    <div class="honor-item"><div class="honor-number">VIII</div><div class="honor-rule">Никакой коррупции</div><div class="honor-desc">Взятки и крышевание несовместимы со значком.</div></div>
-                    <div class="honor-item"><div class="honor-number">IX</div><div class="honor-rule">Уважение к павшим</div><div class="honor-desc">Я чту память офицеров, отдавших жизнь при исполнении.</div></div>
-                    <div class="honor-item"><div class="honor-number">X</div><div class="honor-rule">Служу Закону</div><div class="honor-desc">Моя присяга — не работа. Это образ жизни.</div></div>
-                </div>
-            </div>
-
-            <!-- ========== АКАДЕМИЯ LSPD ========== -->
-            <div class="academy-section">
-                <div class="academy-title">🎓 АКАДЕМИЯ LSPD · КУРС МОЛОДОГО БОЙЦА</div>
-                <div class="academy-grid">
-                    <!-- 10 ОШИБОК НОВИЧКА -->
-                    <div class="academy-card">
-                        <h3 style="margin-bottom: 20px;">🚨 10 ОШИБОК НОВИЧКА</h3>
-                        <div class="mistake-item"><span class="mistake-number">1</span> Не зачитал Миранду</div>
-                        <div class="mistake-item"><span class="mistake-number">2</span> Погнался без подкрепления</div>
-                        <div class="mistake-item"><span class="mistake-number">3</span> Забыл проверить по базе</div>
-                        <div class="mistake-item"><span class="mistake-number">4</span> Обыск без оснований</div>
-                        <div class="mistake-item"><span class="mistake-number">5</span> Перестрелка в людном месте</div>
-                        <div class="mistake-item"><span class="mistake-number">6</span> Не вызвал EMS</div>
-                        <div class="mistake-item"><span class="mistake-number">7</span> Оставил оружие в машине</div>
-                        <div class="mistake-item"><span class="mistake-number">8</span> Не доложил начальству</div>
-                        <div class="mistake-item"><span class="mistake-number">9</span> Поверил на слово</div>
-                        <div class="mistake-item"><span class="mistake-number">10</span> Забыл снять бодикам</div>
-                    </div>
-                    <!-- ЭКЗАМЕН -->
-                    <div class="academy-card">
-                        <h3 style="margin-bottom: 20px;">📝 ЭКЗАМЕН НА ЗНАНИЕ УК</h3>
-                        <div id="lspdExamArea"></div>
-                        <div style="display: flex; gap: 12px; margin-top: 20px;">
-                            <button onclick="loadLSPDQuestion()" style="background: #333333; border: none; color: white; padding: 12px 24px; border-radius: 30px; cursor: pointer; flex: 1;">Следующий вопрос</button>
-                            <button onclick="resetLSPDExam()" style="background: transparent; border: 1px solid #666666; color: white; padding: 12px 24px; border-radius: 30px; cursor: pointer;">Сброс</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- ПРИСЯГА -->
-                <div style="margin-top: 24px; padding: 20px; background: rgba(0,0,0,0.2); border-radius: 16px; text-align: center; border: 1px dashed #666666;">
-                    <p style="font-size: 18px; font-style: italic; color: #cccccc; margin-bottom: 16px;">
-                        «Я торжественно клянусь защищать Конституцию штата Сан-Андреас, 
-                        уважать права граждан и с честью нести звание офицера полиции. Служу Закону!»
-                    </p>
-                    <button onclick="takeOath()" style="background: transparent; border: 2px solid #888888; color: white; padding: 12px 32px; border-radius: 40px; font-weight: 700; cursor: pointer;">
-                        ПРИНЯТЬ ПРИСЯГУ
-                    </button>
-                    <div id="oathMessage" style="margin-top: 16px; font-size: 14px; color: #cccccc;"></div>
-                </div>
+                <button id="themeToggle" onclick="toggleTheme()" style="padding: 12px 24px; border-radius: 40px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.3); color: white; cursor: pointer;">
+                    <span id="themeIcon">🌙</span> Тема
+                </button>
             </div>
 
             <!-- ПОИСК -->
@@ -619,10 +582,25 @@
                 <input type="text" id="searchInput" class="search-input" 
                        placeholder="🔍 Введи статью, название или наказание..." 
                        onkeyup="searchArticles()" autocomplete="off">
-                <button id="voiceBtn" class="voice-btn" onclick="startVoiceSearch()">🎤 Голос</button>
-                <button class="search-clear" onclick="clearSearch()">✕ Сброс</button>
+                <button id="voiceBtn" class="voice-btn" style="padding: 18px 32px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.3); color: white; cursor: pointer;" onclick="startVoiceSearch()">🎤 Голос</button>
+                <button class="search-clear" style="padding: 18px 32px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.3); color: white; cursor: pointer;" onclick="clearSearch()">✕ Сброс</button>
             </div>
-            <div id="resultsCount" class="results-info" style="display: none;"></div>
+            <div id="resultsCount" style="display: none; padding: 12px 24px; border-radius: 40px; background: rgba(255,255,255,0.05); margin-bottom: 20px;"></div>
+
+            <!-- ========== ТЕСТ НА ЗНАНИЕ УК (РАСШИРЕННЫЙ) ========== -->
+            <div class="quiz-container">
+                <div class="quiz-header">
+                    <span class="quiz-title">📝 ТЕСТ НА ЗНАНИЕ УК · LSPD</span>
+                    <span class="quiz-score" id="quizScoreDisplay">0/20</span>
+                </div>
+                <div id="quizArea">
+                    <!-- Генерируется скриптом -->
+                </div>
+                <div style="display: flex; gap: 16px; justify-content: center; margin-top: 24px;">
+                    <button onclick="loadQuizQuestion()" style="background: #333333; border: none; color: white; padding: 14px 32px; border-radius: 40px; cursor: pointer; font-weight: 600;">Следующий вопрос</button>
+                    <button onclick="resetQuiz()" style="background: transparent; border: 1px solid #666666; color: white; padding: 14px 32px; border-radius: 40px; cursor: pointer; font-weight: 600;">Начать заново</button>
+                </div>
+            </div>
 
             <!-- ВКЛАДКИ -->
             <div class="tabs" id="mainTabs">
@@ -687,127 +665,204 @@
         </div>
     </div>
 
-    <!-- ГОЛОСОВОЙ АССИСТЕНТ -->
+    <!-- ========== ГОЛОСОВОЙ АССИСТЕНТ (SIRI) ========== -->
     <div class="voice-assistant" id="voiceAssistantBtn" onclick="toggleAssistant()">
-        <span class="voice-icon">🤖</span>
+        <span class="voice-icon">🎤</span>
     </div>
 
     <div class="assistant-modal" id="assistantModal">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-            <span style="font-size: 20px; font-weight: 700;">🤖 Reznov AI</span>
-            <span style="cursor: pointer; font-size: 24px;" onclick="toggleAssistant()">✕</span>
+        <div class="assistant-header">
+            <div class="assistant-title">
+                <span>🎤 SIRI · Reznov AI</span>
+            </div>
+            <span class="assistant-close" onclick="toggleAssistant()">✕</span>
         </div>
-        <div class="voice-settings">
-            <select id="voiceSelect" class="voice-select">
-                <option value="">Загрузка голосов...</option>
-            </select>
-            <div style="margin-bottom: 12px;">
-                <span>Скорость речи: <span id="rateValue">1.0x</span></span>
-                <input type="range" id="rateRange" min="0.5" max="2.0" step="0.1" value="1.0" style="width: 100%; margin-top: 8px;">
+        <div class="assistant-messages" id="assistantMessages">
+            <div class="message">
+                <div class="message-avatar">🤖</div>
+                <div class="message-content">
+                    Привет! Я голосовой помощник Reznov.<br>
+                    Спроси меня про любую статью, например:<br>
+                    <span style="color: #888888;">«Что за статья 6.2?»</span>
+                </div>
             </div>
         </div>
-        <div class="chat-history" id="chatHistory" style="max-height: 250px; overflow-y: auto; margin-bottom: 16px;"></div>
-        <div style="display: flex; gap: 12px;">
-            <input type="text" id="assistantInput" style="flex: 1; padding: 14px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: white;" placeholder="Спроси о кодексе или УК...">
-            <button onclick="sendAssistantMessage()" style="width: 48px; height: 48px; border-radius: 50%; background: #333333; border: none; color: white; cursor: pointer;">➤</button>
+        <div class="assistant-input-area">
+            <input type="text" id="assistantInput" class="assistant-input" placeholder="Спроси о законе..." onkeypress="if(event.key==='Enter') sendAssistantMessage()">
+            <button class="assistant-send" onclick="sendAssistantMessage()">➤</button>
+        </div>
+        <div style="margin-top: 12px; text-align: center; font-size: 12px; opacity: 0.6;">
+            Нажми на микрофон и говори
         </div>
     </div>
 
     <script>
-        // ========== ПОЛНАЯ БАЗА УК - 85+ СТАТЕЙ ==========
+        // ========== ПОЛНАЯ БАЗА УК С ОПИСАНИЯМИ ==========
         const lawDatabase = [
             // ТАБ 1: ОБЩАЯ ЧАСТЬ
-            { tab: 1, article: '2.5', title: 'Покушение на преступление', stars: '—', penalty: '½ от макс. срока' },
-            { tab: 1, article: '2.5.1', title: 'Приготовление к преступлению', stars: '—', penalty: '½ от макс. срока' },
-            { tab: 1, article: '5.1', title: 'Примирение с потерпевшим', stars: '—', penalty: 'Освобождение' },
-            { tab: 1, article: '5.2', title: 'Срок давности (7 дней)', stars: '—', penalty: 'Освобождение' },
-            { tab: 1, article: '5.4', title: 'Добровольная сдача', stars: '—', penalty: 'Освобождение' },
-            { tab: 1, article: '5.5', title: 'Наркотики до 5 гр', stars: '—', penalty: 'Изъятие без срока' },
-            { tab: 1, article: '5.5.2.2', title: '1 семя Green = 5 гр', stars: '—', penalty: '—' },
-            { tab: 1, article: '5.6', title: '1 куст Green', stars: '—', penalty: 'Изъятие без срока' },
-            { tab: 1, article: '5.7', title: 'Выход под залог ★', stars: '★', penalty: '30.000$' },
-            { tab: 1, article: '5.7', title: 'Выход под залог ★★', stars: '★★', penalty: '60.000$' },
-            { tab: 1, article: '5.7', title: 'Выход под залог ★★★', stars: '★★★', penalty: '90.000$' },
-            { tab: 1, article: '5.7', title: 'Выход под залог ★★★★', stars: '★★★★', penalty: '125.000$' },
-            { tab: 1, article: '5.7', title: 'Выход под залог ★★★★★', stars: '★★★★★', penalty: 'Запрещён' },
-            { tab: 1, article: '5.10', title: 'Снятие судимости', stars: '—', penalty: 'По заявлению' },
-            { tab: 1, article: '5.11', title: 'Лишение лицензии', stars: '—', penalty: 'За ряд статей' },
+            { tab: 1, article: '2.5', title: 'Покушение на преступление', stars: '—', penalty: '½ от макс. срока', 
+              desc: 'Умышленные действия, непосредственно направленные на совершение преступления, если оно не было доведено до конца по не зависящим от лица обстоятельствам. Наказывается с учетом степени тяжести.' },
+            { tab: 1, article: '2.5.1', title: 'Приготовление к преступлению', stars: '—', penalty: '½ от макс. срока',
+              desc: 'Предварительный сговор, приискание средств, изготовление орудий или иное умышленное создание условий для совершения преступления.' },
+            { tab: 1, article: '5.1', title: 'Примирение с потерпевшим', stars: '—', penalty: 'Освобождение',
+              desc: 'Освобождение от ответственности при примирении с потерпевшим и заглаживании вреда. Применяется только при первом преступлении.' },
+            { tab: 1, article: '5.2', title: 'Срок давности (7 дней)', stars: '—', penalty: 'Освобождение',
+              desc: 'Если с момента преступления прошло 7 дней и не была применена мера наказания, лицо освобождается от ответственности.' },
+            { tab: 1, article: '5.4', title: 'Добровольная сдача', stars: '—', penalty: 'Освобождение',
+              desc: 'Добровольная выдача оружия, боеприпасов, взрывчатки или наркотиков освобождает от ответственности.' },
+            { tab: 1, article: '5.5', title: 'Наркотики до 5 гр', stars: '—', penalty: 'Изъятие без срока',
+              desc: 'Хранение наркотиков до 5 грамм включительно - изъятие без привлечения к ответственности. Количество до 5 грамм нарушением не считается.' },
+            { tab: 1, article: '5.5.2.2', title: '1 семя Green = 5 гр', stars: '—', penalty: '—',
+              desc: 'Одно семя Green приравнивается к 5 граммам наркотических веществ для расчета общей массы.' },
+            { tab: 1, article: '5.6', title: '1 куст Green', stars: '—', penalty: 'Изъятие без срока',
+              desc: 'Один куст Green изымается без привлечения к ответственности. Приравнивается к 5 граммам.' },
+            { tab: 1, article: '5.7', title: 'Выход под залог ★', stars: '★', penalty: '30.000$', desc: 'Выход под залог для статей с приоритетом розыска ★. Стоимость фиксированная.' },
+            { tab: 1, article: '5.7', title: 'Выход под залог ★★', stars: '★★', penalty: '60.000$', desc: 'Выход под залог для статей с приоритетом розыска ★★.' },
+            { tab: 1, article: '5.7', title: 'Выход под залог ★★★', stars: '★★★', penalty: '90.000$', desc: 'Выход под залог для статей с приоритетом розыска ★★★.' },
+            { tab: 1, article: '5.7', title: 'Выход под залог ★★★★', stars: '★★★★', penalty: '125.000$', desc: 'Выход под залог для статей с приоритетом розыска ★★★★.' },
+            { tab: 1, article: '5.7', title: 'Выход под залог ★★★★★', stars: '★★★★★', penalty: 'Запрещён', desc: 'Выход под залог для особо тяжких преступлений запрещен.' },
+            { tab: 1, article: '5.10', title: 'Снятие судимости', stars: '—', penalty: 'По заявлению', desc: 'Снятие судимости через правительство штата или суд, при уплате пошлины. Доступно при отсутствии рецидива.' },
+            { tab: 1, article: '5.11', title: 'Лишение лицензии', stars: '—', penalty: 'За ряд статей', desc: 'Лишение лицензии на оружие при совершении преступлений с использованием оружия (ст. 12.8, 12.10, 14.6 и др.).' },
             
             // ТАБ 2: ТЯЖКИЕ ПРЕСТУПЛЕНИЯ
-            { tab: 2, article: '6.1.1', title: 'Побои с предметом', stars: '★★★', penalty: '3 года / $35,000' },
-            { tab: 2, article: '6.1.2', title: 'Побои руками', stars: '★★', penalty: '2 года / $45,000' },
-            { tab: 2, article: '6.2', title: 'Убийство', stars: '★★★★', penalty: '4 года' },
-            { tab: 2, article: '6.3', title: 'Тяжкое убийство', stars: '★★★★★', penalty: '5 лет' },
-            { tab: 2, article: '6.4', title: 'Групповое убийство', stars: '★★★★★', penalty: '5 лет' },
-            { tab: 2, article: '6.5', title: 'Смерть по неосторожности', stars: '★★★', penalty: '3 года / $35,000' },
-            { tab: 2, article: '6.6', title: 'ДТП с вредом/смертью', stars: '★★★', penalty: '3 года / $35,000' },
-            { tab: 2, article: '6.7.1', title: 'Угроза госслужащему', stars: '★★★★', penalty: '4 года / $45,000' },
-            { tab: 2, article: '6.7.2', title: 'Угроза запугать', stars: '★★★', penalty: '3 года / $35,000' },
-            { tab: 2, article: '6.7.3', title: 'Угроза с оружием', stars: '★★★★', penalty: '4 года / $60,000' },
-            { tab: 2, article: '6.8', title: 'Жестокость к животным', stars: '★★', penalty: '2 года / $25,000' },
-            { tab: 2, article: '7.1', title: 'Похищение человека', stars: '★★★★★', penalty: '5 лет' },
-            { tab: 2, article: '7.2.1', title: 'Клевета в СМИ', stars: '★★', penalty: '2 года / $25,000' },
-            { tab: 2, article: '7.2.2', title: 'Клевета с обвинением', stars: '★★★', penalty: '3 года / $35,000' },
-            { tab: 2, article: '7.2.3', title: 'Клевета оскорбительная', stars: '★★★', penalty: '3 года / $35,000' },
-            { tab: 2, article: '17.1', title: 'Посягательство на сотрудника', stars: '★★★★★', penalty: '5 лет' },
-            { tab: 2, article: '17.2', title: 'Насилие в отношении власти', stars: '★★★★', penalty: '4 года' },
+            { tab: 2, article: '6.1.1', title: 'Побои с предметом', stars: '★★★', penalty: '3 года / $35,000',
+              desc: 'Умышленное или неоднократное нанесение телесных повреждений с использованием посторонних предметов. Приоритет розыска ★★★.' },
+            { tab: 2, article: '6.1.2', title: 'Побои руками', stars: '★★', penalty: '2 года / $45,000',
+              desc: 'Умышленное или неоднократное нанесение телесных повреждений без использования предметов. Штраф выше, чем с предметом.' },
+            { tab: 2, article: '6.2', title: 'Убийство', stars: '★★★★', penalty: '4 года',
+              desc: 'Умышленное причинение смерти другому человеку. Тяжкое преступление. Приоритет розыска ★★★★.' },
+            { tab: 2, article: '6.3', title: 'Тяжкое убийство', stars: '★★★★★', penalty: '5 лет',
+              desc: 'Убийство двух или более лиц, либо убийство близких госслужащего в связи с его деятельностью. Особо тяжкое преступление.' },
+            { tab: 2, article: '6.4', title: 'Групповое убийство', stars: '★★★★★', penalty: '5 лет',
+              desc: 'Убийство, совершенное группой лиц, либо с особой жестокостью. Особо тяжкое преступление.' },
+            { tab: 2, article: '6.5', title: 'Смерть по неосторожности', stars: '★★★', penalty: '3 года / $35,000',
+              desc: 'Причинение тяжкого вреда здоровью или смерти по неосторожности. Отсутствие прямого умысла.' },
+            { tab: 2, article: '6.6', title: 'ДТП с вредом/смертью', stars: '★★★', penalty: '3 года / $35,000',
+              desc: 'Нарушение правил вождения, повлекшее причинение вреда здоровью, тяжких телесных повреждений или смерти.' },
+            { tab: 2, article: '6.7.1', title: 'Угроза госслужащему', stars: '★★★★', penalty: '4 года / $45,000',
+              desc: 'Угроза расправой (прямая или косвенная) должностному лицу или его близким. Тяжкое преступление.' },
+            { tab: 2, article: '6.7.2', title: 'Угроза запугать', stars: '★★★', penalty: '3 года / $35,000',
+              desc: 'Угрозы с целью запугать человека. Приоритет розыска ★★★.' },
+            { tab: 2, article: '6.7.3', title: 'Угроза с оружием', stars: '★★★★', penalty: '4 года / $60,000',
+              desc: 'Угрозы жизни и здоровью с использованием холодного или огнестрельного оружия. Тяжкое преступление.' },
+            { tab: 2, article: '6.8', title: 'Жестокость к животным', stars: '★★', penalty: '2 года / $25,000',
+              desc: 'Умышленное нанесение телесных повреждений животному. Ловля рыбы и охота не являются нарушением.' },
+            { tab: 2, article: '7.1', title: 'Похищение человека', stars: '★★★★★', penalty: '5 лет',
+              desc: 'Похищение человека. Особо тяжкое преступление. Приоритет розыска ★★★★★.' },
+            { tab: 2, article: '7.2.1', title: 'Клевета в СМИ', stars: '★★', penalty: '2 года / $25,000',
+              desc: 'Клевета в публичном выступлении, СМИ либо с использованием служебного положения.' },
+            { tab: 2, article: '7.2.2', title: 'Клевета с обвинением', stars: '★★★', penalty: '3 года / $35,000',
+              desc: 'Клевета, соединенная с обвинением лица в совершении преступления.' },
+            { tab: 2, article: '7.2.3', title: 'Клевета оскорбительная', stars: '★★★', penalty: '3 года / $35,000',
+              desc: 'Клевета, несущая оскорбительный или унизительный характер.' },
+            { tab: 2, article: '17.1', title: 'Посягательство на сотрудника', stars: '★★★★★', penalty: '5 лет',
+              desc: 'Посягательство на жизнь сотрудника правоохранительного органа, военнослужащего или их близких. Особо тяжкое преступление.' },
+            { tab: 2, article: '17.2', title: 'Насилие в отношении власти', stars: '★★★★', penalty: '4 года',
+              desc: 'Умышленное нанесение телесных повреждений или угроза насилия представителю власти. Тяжкое преступление.' },
             
             // ТАБ 3: ИМУЩЕСТВО
-            { tab: 3, article: '10.1.1', title: 'Кража от $2,000', stars: '★', penalty: '1 год / $25,000' },
-            { tab: 3, article: '10.1.2', title: 'Кража от $5,000', stars: '★★', penalty: '2 года / $35,000' },
-            { tab: 3, article: '10.1.3', title: 'Кража от $10,000', stars: '★★★', penalty: '3 года / $45,000' },
-            { tab: 3, article: '10.1.4', title: 'Кража от $30,000', stars: '★★★★', penalty: '4 года / $55,000' },
-            { tab: 3, article: '10.2', title: 'Мошенничество', stars: '★★', penalty: '2 года / $15,000' },
-            { tab: 3, article: '10.3', title: 'Грабеж', stars: '★★★', penalty: '3 года / $25,000' },
-            { tab: 3, article: '10.4', title: 'Разбой', stars: '★★★★', penalty: '4 года' },
-            { tab: 3, article: '10.5.1', title: 'Угон авто', stars: '★★★', penalty: '3 года / $30,000' },
-            { tab: 3, article: '10.5.2', title: 'Угон гос. транспорта', stars: '★★★★', penalty: '4 года / $45,000' },
-            { tab: 3, article: '10.6.1', title: 'Уничтожение имущества', stars: '★★', penalty: '2 года / $15,000' },
-            { tab: 3, article: '10.6.2', title: 'Уничтожение гос. имущества', stars: '★★★★', penalty: '4 года / $60,000' },
-            { tab: 3, article: '10.6.3', title: 'Поджог / взрыв', stars: '★★★★', penalty: '4 года / $50,000' },
-            { tab: 3, article: '10.7', title: 'Вымогательство', stars: '★★★', penalty: '3 года / $25,000' },
+            { tab: 3, article: '10.1.1', title: 'Кража от $2,000', stars: '★', penalty: '1 год / $25,000',
+              desc: 'Тайное хищение чужого имущества стоимостью свыше 2.000$. Преступление небольшой тяжести.' },
+            { tab: 3, article: '10.1.2', title: 'Кража от $5,000', stars: '★★', penalty: '2 года / $35,000',
+              desc: 'Тайное хищение чужого имущества стоимостью свыше 5.000$. Приоритет розыска ★★.' },
+            { tab: 3, article: '10.1.3', title: 'Кража от $10,000', stars: '★★★', penalty: '3 года / $45,000',
+              desc: 'Тайное хищение чужого имущества стоимостью свыше 10.000$. Преступление средней тяжести.' },
+            { tab: 3, article: '10.1.4', title: 'Кража от $30,000', stars: '★★★★', penalty: '4 года / $55,000',
+              desc: 'Тайное хищение чужого имущества стоимостью свыше 30.000$. Тяжкое преступление.' },
+            { tab: 3, article: '10.2', title: 'Мошенничество', stars: '★★', penalty: '2 года / $15,000',
+              desc: 'Хищение имущества или приобретение права на имущество путем обмана или злоупотребления доверием.' },
+            { tab: 3, article: '10.3', title: 'Грабеж', stars: '★★★', penalty: '3 года / $25,000',
+              desc: 'Открытое хищение имущества, ограбление, разбойное нападение. Приоритет розыска ★★★.' },
+            { tab: 3, article: '10.4', title: 'Разбой', stars: '★★★★', penalty: '4 года',
+              desc: 'Нападение с целью хищения с применением насилия, опасного для жизни или здоровья. Тяжкое преступление.' },
+            { tab: 3, article: '10.5.1', title: 'Угон авто', stars: '★★★', penalty: '3 года / $30,000',
+              desc: 'Неправомерное завладение автомобилем или иным транспортным средством без цели хищения.' },
+            { tab: 3, article: '10.5.2', title: 'Угон гос. транспорта', stars: '★★★★', penalty: '4 года / $45,000',
+              desc: 'Угон транспорта, принадлежащего государству или государственному ведомству. Тяжкое преступление.' },
+            { tab: 3, article: '10.6.1', title: 'Уничтожение имущества', stars: '★★', penalty: '2 года / $15,000',
+              desc: 'Умышленное уничтожение или повреждение чужого имущества.' },
+            { tab: 3, article: '10.6.2', title: 'Уничтожение гос. имущества', stars: '★★★★', penalty: '4 года / $60,000',
+              desc: 'Умышленное уничтожение или повреждение государственного имущества. Тяжкое преступление.' },
+            { tab: 3, article: '10.6.3', title: 'Поджог / взрыв', stars: '★★★★', penalty: '4 года / $50,000',
+              desc: 'Уничтожение имущества путем поджога, взрыва или иным общеопасным способом. Тяжкое преступление.' },
+            { tab: 3, article: '10.7', title: 'Вымогательство', stars: '★★★', penalty: '3 года / $25,000',
+              desc: 'Требование передачи имущества под угрозой применения насилия или уничтожения имущества.' },
             
             // ТАБ 4: НАРКОТИКИ / ОРУЖИЕ
-            { tab: 4, article: '12.7.1', title: 'Проникновение на закрытый объект', stars: '★★★★', penalty: '4 года / $50,000' },
-            { tab: 4, article: '12.7.2', title: 'Проникновение на режимный объект', stars: '★★★★★', penalty: '5 лет / $75,000' },
-            { tab: 4, article: '12.8.1', title: 'Хранение оружия', stars: '★★★★', penalty: '4 года / $40,000' },
-            { tab: 4, article: '12.8.2', title: 'Оружие гос. образца', stars: '★★★★★', penalty: '5 лет' },
-            { tab: 4, article: '12.8.3', title: 'Нарушение оборота оружия', stars: '★★★', penalty: '3 года / $30,000' },
-            { tab: 4, article: '12.8.4', title: 'Подделка накладной', stars: '★★★', penalty: '3 года / $25,000' },
-            { tab: 4, article: '12.9', title: 'Взрывчатые вещества', stars: '★★★★', penalty: '4 года' },
-            { tab: 4, article: '12.10.1', title: 'Хищение оружия', stars: '★★★', penalty: '3 года' },
-            { tab: 4, article: '13.1.1', title: 'Наркотики 6–10 гр', stars: '★★★', penalty: '3 года / $50,000' },
-            { tab: 4, article: '13.1.2', title: 'Наркотики 11+ гр', stars: '★★★★★', penalty: '5 лет' },
-            { tab: 4, article: '13.2', title: 'Производство наркотиков', stars: '★★★★★', penalty: '5 лет / $60,000' },
+            { tab: 4, article: '12.7.1', title: 'Проникновение на закрытый объект', stars: '★★★★', penalty: '4 года / $50,000',
+              desc: 'Незаконное проникновение или нахождение на закрытом объекте. Тяжкое преступление.' },
+            { tab: 4, article: '12.7.2', title: 'Проникновение на режимный объект', stars: '★★★★★', penalty: '5 лет / $75,000',
+              desc: 'Незаконное проникновение на режимный объект особого статуса (SANG/FIB/GOV). Особо тяжкое преступление.' },
+            { tab: 4, article: '12.8.1', title: 'Хранение оружия', stars: '★★★★', penalty: '4 года / $40,000',
+              desc: 'Незаконное хранение, ношение или использование оружия, спецсредств и боеприпасов. Тяжкое преступление.' },
+            { tab: 4, article: '12.8.2', title: 'Оружие гос. образца', stars: '★★★★★', penalty: '5 лет',
+              desc: 'Использование гражданскими лицами спецсредств государственного образца с серийными номерами. Особо тяжкое преступление.' },
+            { tab: 4, article: '12.8.3', title: 'Нарушение оборота оружия', stars: '★★★', penalty: '3 года / $30,000',
+              desc: 'Нарушение правил оборота оружия согласно закону.' },
+            { tab: 4, article: '12.8.4', title: 'Подделка накладной', stars: '★★★', penalty: '3 года / $25,000',
+              desc: 'Подделка или фальсификация грузосопроводительного документа (транспортной накладной).' },
+            { tab: 4, article: '12.9', title: 'Взрывчатые вещества', stars: '★★★★', penalty: '4 года',
+              desc: 'Незаконное приобретение, хранение, перевозка, изготовление взрывчатых веществ или устройств.' },
+            { tab: 4, article: '12.10.1', title: 'Хищение оружия', stars: '★★★', penalty: '3 года',
+              desc: 'Хищение огнестрельного оружия, комплектующих, спецсредств, боеприпасов, взрывчатки.' },
+            { tab: 4, article: '13.1.1', title: 'Наркотики 6–10 гр', stars: '★★★', penalty: '3 года / $50,000',
+              desc: 'Хранение, приобретение, перевозка наркотиков в значительном размере (от 6 до 10 грамм). До 5 гр - легально.' },
+            { tab: 4, article: '13.1.2', title: 'Наркотики 11+ гр', stars: '★★★★★', penalty: '5 лет',
+              desc: 'Хранение, приобретение, перевозка наркотиков в крупном размере (от 11 грамм). Особо тяжкое преступление.' },
+            { tab: 4, article: '13.2', title: 'Производство наркотиков', stars: '★★★★★', penalty: '5 лет / $60,000',
+              desc: 'Кустарное производство наркотических веществ: удобрение, полив, сбор или рассада кустарников.' },
             
             // ТАБ 5: ДОЛЖНОСТНЫЕ
-            { tab: 5, article: '15.1.1', title: 'Превышение полномочий', stars: '★★★★', penalty: '4 года / $50,000' },
-            { tab: 5, article: '15.1.2', title: 'Превышение (руководство)', stars: '★★★★', penalty: '4 года / $200,000' },
-            { tab: 5, article: '15.1.3', title: 'Превышение (GOV)', stars: '★★★★★', penalty: '5 лет / $500,000' },
-            { tab: 5, article: '15.5', title: 'Получение взятки', stars: '★★★★★', penalty: '5 лет' },
-            { tab: 5, article: '15.6', title: 'Дача взятки', stars: '★★★★', penalty: '4 года / штраф ×3' },
-            { tab: 5, article: '15.7', title: 'Халатность', stars: '★★★–★★★★★', penalty: '3-5 лет / $30-70k' },
-            { tab: 5, article: '17.3', title: 'Оскорбление власти', stars: '★★★', penalty: '3 года / $20-60k' },
+            { tab: 5, article: '15.1.1', title: 'Превышение полномочий', stars: '★★★★', penalty: '4 года / $50,000',
+              desc: 'Совершение должностным лицом действий, явно выходящих за пределы его полномочий. Тяжкое преступление.' },
+            { tab: 5, article: '15.1.2', title: 'Превышение (руководство)', stars: '★★★★', penalty: '4 года / $200,000',
+              desc: 'Превышение полномочий лицом, занимающим руководящую должность гос. структуры. Повышенный штраф.' },
+            { tab: 5, article: '15.1.3', title: 'Превышение (GOV)', stars: '★★★★★', penalty: '5 лет / $500,000',
+              desc: 'Превышение полномочий лицом, занимающим руководящую должность в Правительстве. Особо тяжкое преступление.' },
+            { tab: 5, article: '15.5', title: 'Получение взятки', stars: '★★★★★', penalty: '5 лет',
+              desc: 'Получение взятки должностным лицом лично или через посредника. Особо тяжкое преступление.' },
+            { tab: 5, article: '15.6', title: 'Дача взятки', stars: '★★★★', penalty: '4 года / штраф ×3',
+              desc: 'Дача взятки должностному лицу лично или через посредника. Тяжкое преступление.' },
+            { tab: 5, article: '15.7', title: 'Халатность', stars: '★★★–★★★★★', penalty: '3-5 лет / $30-70k',
+              desc: 'Неисполнение или ненадлежащее исполнение должностным лицом своих обязанностей.' },
+            { tab: 5, article: '17.3', title: 'Оскорбление власти', stars: '★★★', penalty: '3 года / $20-60k',
+              desc: 'Оскорбление представителя власти при исполнении им своих должностных обязанностей.' },
             
             // ТАБ 6: ПРАВОСУДИЕ
-            { tab: 6, article: '16.1', title: 'Вмешательство в правосудие', stars: '★★★★★', penalty: '5 лет / $30,000' },
-            { tab: 6, article: '16.2', title: 'Препятствие адвокату', stars: '★★★', penalty: '3 года / $40,000' },
-            { tab: 6, article: '16.3', title: 'Препятствие прокурору', stars: '★★★★', penalty: '4 года / $50,000' },
-            { tab: 6, article: '16.4', title: 'Угроза судье', stars: '★★★★★', penalty: '5 лет' },
-            { tab: 6, article: '16.17', title: 'Побег', stars: '★★★★★', penalty: '5 лет / $30,000' },
-            { tab: 6, article: '17.6', title: 'Неподчинение', stars: '★★★', penalty: '3 года / $20-60k' },
-            { tab: 6, article: '17.7', title: 'Отказ от штрафа', stars: '★★★', penalty: '3 года' },
-            { tab: 6, article: '17.8', title: 'Укрывательство', stars: '★★', penalty: '2 года / $35,000' },
-            { tab: 6, article: '17.10', title: 'Помеха задержанию', stars: '★★★★', penalty: '4 года / $60,000' },
-            { tab: 6, article: '17.12', title: 'Побег при задержании', stars: '★★★', penalty: '3 года / $25,000' },
+            { tab: 6, article: '16.1', title: 'Вмешательство в правосудие', stars: '★★★★★', penalty: '5 лет / $30,000',
+              desc: 'Вмешательство в любой форме в деятельность суда, следствия, воспрепятствование правосудию.' },
+            { tab: 6, article: '16.2', title: 'Препятствие адвокату', stars: '★★★', penalty: '3 года / $40,000',
+              desc: 'Воспрепятствование законной деятельности адвоката, неповиновение его требованию.' },
+            { tab: 6, article: '16.3', title: 'Препятствие прокурору', stars: '★★★★', penalty: '4 года / $50,000',
+              desc: 'Воспрепятствование деятельности прокурора или лица, производящего следствие.' },
+            { tab: 6, article: '16.4', title: 'Угроза судье', stars: '★★★★★', penalty: '5 лет',
+              desc: 'Угроза или посягательство на жизнь судьи, прокурора, защитника, эксперта или их близких.' },
+            { tab: 6, article: '16.17', title: 'Побег', stars: '★★★★★', penalty: '5 лет / $30,000',
+              desc: 'Побег из места лишения свободы, из-под ареста или из-под стражи. Особо тяжкое преступление.' },
+            { tab: 6, article: '17.6', title: 'Неподчинение', stars: '★★★', penalty: '3 года / $20-60k',
+              desc: 'Неповиновение законному распоряжению или требованию правомочного лица. Отказ снять маску - не является нарушением.' },
+            { tab: 6, article: '17.7', title: 'Отказ от штрафа', stars: '★★★', penalty: '3 года',
+              desc: 'Отказ от оплаты штрафа, выписанного правомочным лицом. Считается отказом: возврат тикета, порча, устный отказ, игнорирование.' },
+            { tab: 6, article: '17.8', title: 'Укрывательство', stars: '★★', penalty: '2 года / $35,000',
+              desc: 'Заранее не обещанное укрывательство преступника, орудий, следов или предметов преступления.' },
+            { tab: 6, article: '17.10', title: 'Помеха задержанию', stars: '★★★★', penalty: '4 года / $60,000',
+              desc: 'Вмешательство в задержание с применением насилия или угрозой его применения. Тяжкое преступление.' },
+            { tab: 6, article: '17.12', title: 'Побег при задержании', stars: '★★★', penalty: '3 года / $25,000',
+              desc: 'Побег при задержании, уклонение от правосудия.' },
             
             // ТАБ 7: ВОЕННЫЕ
-            { tab: 7, article: '12.1.1', title: 'Терроризм', stars: '★★★★★', penalty: '10 лет' },
-            { tab: 7, article: '12.3', title: 'Захват заложников', stars: '★★★★★', penalty: '5 лет' },
-            { tab: 7, article: '14.1', title: 'Посягательство на гос. деятеля', stars: '★★★★★', penalty: '5 лет' },
-            { tab: 7, article: '14.2.1', title: 'Вооруженный мятеж', stars: '★★★★★', penalty: '5 лет' },
-            { tab: 7, article: '18.1', title: 'Неисполнение военного приказа', stars: '★★★', penalty: '3 года / $30,000' },
-            { tab: 7, article: '18.3', title: 'Дезертирство', stars: '★★★', penalty: '3 года / $25,000' }
+            { tab: 7, article: '12.1.1', title: 'Терроризм', stars: '★★★★★', penalty: '10 лет',
+              desc: 'Совершение взрыва, поджога или иных действий, устрашающих население, в целях дестабилизации власти.' },
+            { tab: 7, article: '12.3', title: 'Захват заложников', stars: '★★★★★', penalty: '5 лет',
+              desc: 'Захват или удержание лица в качестве заложника для понуждения государства или граждан.' },
+            { tab: 7, article: '14.1', title: 'Посягательство на гос. деятеля', stars: '★★★★★', penalty: '5 лет',
+              desc: 'Посягательство на жизнь государственного или общественного деятеля.' },
+            { tab: 7, article: '14.2.1', title: 'Вооруженный мятеж', stars: '★★★★★', penalty: '5 лет',
+              desc: 'Действия, направленные на насильственный захват власти, вооруженный мятеж.' },
+            { tab: 7, article: '18.1', title: 'Неисполнение военного приказа', stars: '★★★', penalty: '3 года / $30,000',
+              desc: 'Неисполнение подчиненным приказа начальника, причинившее существенный вред интересам службы.' },
+            { tab: 7, article: '18.3', title: 'Дезертирство', stars: '★★★', penalty: '3 года / $25,000',
+              desc: 'Самовольное оставление части в целях уклонения от прохождения военной службы.' }
         ];
 
         // ========== ЗВЁЗДНОЕ НЕБО ==========
@@ -867,7 +922,7 @@
                     tbody.innerHTML = tabLaws.map(law => `
                         <tr>
                             <td>${law.article}</td>
-                            <td data-tooltip="${law.title}">${law.title}</td>
+                            <td data-tooltip="${law.desc}">${law.title}</td>
                             <td class="stars">${law.stars}</td>
                             <td>${law.penalty}</td>
                             <td><span class="bookmark-star" onclick="toggleFavorite('${law.article}', '${law.title}', '${law.stars}', '${law.penalty}')">☆</span></td>
@@ -946,68 +1001,103 @@
             }
         }
 
-        // ========== ЭКЗАМЕН LSPD ==========
-        let lspdExam = { current: 0, score: 0, questions: [
-            { question: 'Какое наказание за убийство (ст. 6.2)?', options: ['3 года', '4 года', '5 лет', '6 лет'], correct: 1 },
-            { question: 'Сколько грамм наркотиков можно хранить без наказания?', options: ['3 гр', '5 гр', '7 гр', '10 гр'], correct: 1 },
-            { question: 'Какой приоритет розыска у ст. 17.6?', options: ['★★', '★★★', '★★★★', '★★★★★'], correct: 1 },
-            { question: 'Что грозит за угон авто?', options: ['2 года', '3 года', '4 года', '5 лет'], correct: 1 },
-            { question: 'Какая статья за хранение оружия?', options: ['12.7.1', '12.8.1', '12.9', '13.1.1'], correct: 1 }
-        ]};
+        // ========== ТЕСТ 2.0 (20 ВОПРОСОВ) ==========
+        let quizState = {
+            current: 0,
+            score: 0,
+            total: 20,
+            questions: []
+        };
 
-        function loadLSPDQuestion() {
-            if (lspdExam.current < lspdExam.questions.length) {
-                const q = lspdExam.questions[lspdExam.current];
-                let html = `<div style="margin-bottom: 16px;">${lspdExam.current + 1}. ${q.question}</div>`;
-                html += '<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">';
+        function generateQuizQuestions() {
+            const questions = [
+                { question: 'Какое наказание за убийство (ст. 6.2)?', options: ['3 года', '4 года', '5 лет', '6 лет'], correct: 1 },
+                { question: 'Сколько грамм наркотиков можно хранить без наказания?', options: ['3 гр', '5 гр', '7 гр', '10 гр'], correct: 1 },
+                { question: 'Какой приоритет розыска у ст. 17.6 (Неподчинение)?', options: ['★★', '★★★', '★★★★', '★★★★★'], correct: 1 },
+                { question: 'Что грозит за угон авто (ст. 10.5.1)?', options: ['2 года / $25k', '3 года / $30k', '4 года / $45k', '5 лет'], correct: 1 },
+                { question: 'Какая статья за хранение оружия?', options: ['12.7.1', '12.8.1', '12.9', '13.1.1'], correct: 1 },
+                { question: 'Что такое ст. 17.1?', options: ['Неподчинение', 'Посягательство на сотрудника', 'Убийство', 'Кража'], correct: 1 },
+                { question: 'Какое наказание по ст. 13.1.1 (наркотики 6-10 гр)?', options: ['2 года', '3 года', '4 года', '5 лет'], correct: 1 },
+                { question: 'Ст. 10.4 - это...', options: ['Грабеж', 'Разбой', 'Кража', 'Мошенничество'], correct: 1 },
+                { question: 'Какой приоритет у ст. 6.4 (групповое убийство)?', options: ['★★★★', '★★★★★', '★★★', '★★'], correct: 1 },
+                { question: 'Что такое ст. 5.5?', options: ['Наркотики до 5 гр', 'Наркотики 6-10 гр', 'Добровольная сдача', 'Снятие судимости'], correct: 0 },
+                { question: 'Ст. 16.17 - это...', options: ['Побег', 'Неподчинение', 'Укрывательство', 'Вмешательство'], correct: 0 },
+                { question: 'Какое наказание по ст. 17.7?', options: ['2 года', '3 года', '4 года', '5 лет'], correct: 1 },
+                { question: 'Ст. 12.8.1 - это...', options: ['Хранение оружия', 'Проникновение', 'Взрывчатка', 'Наркотики'], correct: 0 },
+                { question: 'Какой приоритет у ст. 6.1.1?', options: ['★★', '★★★', '★★★★', '★'], correct: 1 },
+                { question: 'Что такое ст. 15.1.1?', options: ['Превышение полномочий', 'Злоупотребление', 'Взятка', 'Халатность'], correct: 0 },
+                { question: 'Ст. 7.1 - это...', options: ['Похищение', 'Клевета', 'Убийство', 'Грабеж'], correct: 0 },
+                { question: 'Какое наказание по ст. 6.7.3?', options: ['3 года / $35k', '4 года / $60k', '4 года', '5 лет'], correct: 1 },
+                { question: 'Ст. 14.1 - это...', options: ['Мятеж', 'Терроризм', 'Посягательство на гос. деятеля', 'Геноцид'], correct: 2 },
+                { question: 'Какой приоритет у ст. 13.2?', options: ['★★★★', '★★★★★', '★★★', '★★'], correct: 1 },
+                { question: 'Что такое ст. 5.7?', options: ['Залог', 'Штраф', 'Срок', 'Лишение'], correct: 0 }
+            ];
+            // Перемешиваем и берем 20
+            return questions.sort(() => Math.random() - 0.5).slice(0, 20);
+        }
+
+        function loadQuizQuestion() {
+            if (quizState.questions.length === 0) {
+                quizState.questions = generateQuizQuestions();
+            }
+            
+            if (quizState.current < quizState.total) {
+                const q = quizState.questions[quizState.current];
+                let html = `<div class="quiz-question">Вопрос ${quizState.current + 1} из ${quizState.total}: ${q.question}</div>`;
+                html += '<div class="quiz-options">';
                 q.options.forEach((opt, index) => {
-                    html += `<div class="exam-option" onclick="checkLSPDAnswer(this, ${index}, ${q.correct})">${opt}</div>`;
+                    html += `<div class="quiz-option" onclick="checkQuizAnswer(this, ${index}, ${q.correct})">${opt}</div>`;
                 });
-                html += '</div><div id="lspdFeedback" style="margin-top: 16px;"></div>';
-                document.getElementById('lspdExamArea').innerHTML = html;
+                html += '</div><div id="quizFeedback" class="quiz-feedback"></div>';
+                document.getElementById('quizArea').innerHTML = html;
+                document.getElementById('quizScoreDisplay').textContent = `${quizState.score}/${quizState.total}`;
             } else {
-                document.getElementById('lspdExamArea').innerHTML = `
-                    <div style="text-align: center; padding: 20px;">
-                        <span style="font-size: 48px;">🎉</span>
-                        <h3 style="margin: 16px 0;">Экзамен сдан!</h3>
-                        <p style="font-size: 18px;">Результат: ${lspdExam.score}/${lspdExam.questions.length}</p>
+                document.getElementById('quizArea').innerHTML = `
+                    <div style="text-align: center; padding: 40px;">
+                        <span style="font-size: 48px;">🏆</span>
+                        <h2 style="margin: 20px 0;">Тест завершен!</h2>
+                        <p style="font-size: 24px;">Ваш результат: ${quizState.score}/${quizState.total}</p>
+                        ${quizState.score >= 15 ? '<p style="color: #00ff00;">Отлично! Вы знаток УК!</p>' : 
+                          quizState.score >= 10 ? '<p style="color: #ffff00;">Хорошо, но есть куда расти</p>' : 
+                          '<p style="color: #ff6666;">Стоит повторить УК</p>'}
                     </div>
                 `;
-                lspdExam.current = 0;
-                lspdExam.score = 0;
             }
         }
 
-        function checkLSPDAnswer(element, selected, correct) {
-            const options = document.querySelectorAll('.exam-option');
+        function checkQuizAnswer(element, selected, correct) {
+            const options = document.querySelectorAll('.quiz-option');
             options.forEach(opt => opt.style.pointerEvents = 'none');
+            
             if (selected === correct) {
                 element.classList.add('correct');
-                lspdExam.score++;
-                document.getElementById('lspdFeedback').innerHTML = '✅ Правильно!';
+                quizState.score++;
+                document.getElementById('quizFeedback').innerHTML = '✅ Правильно!';
             } else {
                 element.classList.add('wrong');
                 options[correct].classList.add('correct');
-                document.getElementById('lspdFeedback').innerHTML = `❌ Неправильно. Ответ: ${lspdExam.questions[lspdExam.current].options[correct]}`;
+                document.getElementById('quizFeedback').innerHTML = `❌ Неправильно. Правильный ответ: ${quizState.questions[quizState.current].options[correct]}`;
             }
-            lspdExam.current++;
-            setTimeout(loadLSPDQuestion, 1500);
+            
+            quizState.current++;
+            document.getElementById('quizScoreDisplay').textContent = `${quizState.score}/${quizState.total}`;
+            
+            setTimeout(() => {
+                loadQuizQuestion();
+            }, 1500);
         }
 
-        function resetLSPDExam() {
-            lspdExam.current = 0;
-            lspdExam.score = 0;
-            loadLSPDQuestion();
-        }
-
-        function takeOath() {
-            document.getElementById('oathMessage').innerHTML = '✅ Присяга принята! Добро пожаловать в LSPD.';
+        function resetQuiz() {
+            quizState.current = 0;
+            quizState.score = 0;
+            quizState.questions = generateQuizQuestions();
+            loadQuizQuestion();
         }
 
         // ========== КОНСТРУКТОР ==========
         let protocolArticles = [];
         function addArticleToProtocol() {
-            const article = prompt("Введи номер статьи:");
+            const article = prompt("Введи номер статьи (например 6.2):");
             if (article) {
                 const law = lawDatabase.find(l => l.article === article);
                 if (law) {
@@ -1047,41 +1137,151 @@ ${protocolArticles.map(l => `• ${l.article} - ${l.title} (${l.penalty})`).join
 Права Миранды зачитаны. Наручники надеты.`;
         }
 
-        // ========== АССИСТЕНТ ==========
-        let chatHistory = JSON.parse(localStorage.getItem('reznovChatHistory')) || [];
+        // ========== АССИСТЕНТ (SIRI) ==========
+        let assistantMessages = JSON.parse(localStorage.getItem('reznovAssistantMessages')) || [];
+        let isListening = false;
+
         function toggleAssistant() {
             const modal = document.getElementById('assistantModal');
             modal.style.display = modal.style.display === 'none' ? 'block' : 'none';
+            if (modal.style.display === 'block') {
+                loadAssistantMessages();
+            }
         }
+
+        function loadAssistantMessages() {
+            const container = document.getElementById('assistantMessages');
+            container.innerHTML = '';
+            if (assistantMessages.length === 0) {
+                container.innerHTML = `
+                    <div class="message">
+                        <div class="message-avatar">🤖</div>
+                        <div class="message-content">
+                            Привет! Я голосовой помощник Reznov.<br>
+                            Спроси меня про любую статью, например:<br>
+                            <span style="color: #888888;">«Что за статья 6.2?»</span>
+                        </div>
+                    </div>
+                `;
+            } else {
+                assistantMessages.slice(-20).forEach(msg => {
+                    const msgDiv = document.createElement('div');
+                    msgDiv.className = `message ${msg.sender === 'user' ? 'message-user' : ''}`;
+                    msgDiv.innerHTML = msg.sender === 'user' 
+                        ? `<div class="message-content">${msg.text}</div><div class="message-avatar">👤</div>`
+                        : `<div class="message-avatar">🤖</div><div class="message-content">${msg.text}</div>`;
+                    container.appendChild(msgDiv);
+                });
+            }
+            container.scrollTop = container.scrollHeight;
+        }
+
+        function addAssistantMessage(sender, text) {
+            assistantMessages.push({ sender, text, time: Date.now() });
+            if (assistantMessages.length > 50) assistantMessages.shift();
+            localStorage.setItem('reznovAssistantMessages', JSON.stringify(assistantMessages));
+            loadAssistantMessages();
+        }
+
         function sendAssistantMessage() {
             const input = document.getElementById('assistantInput');
             const question = input.value.trim();
             if (!question) return;
-            addMessageToChat('user', question);
+            
+            addAssistantMessage('user', question);
             input.value = '';
-            let answer = 'Я не понял вопрос. Спроси про кодекс чести или статьи УК.';
-            if (question.includes('кодекс')) answer = 'Кодекс чести LSPD — 10 заповедей офицера.';
-            if (question.includes('экзамен')) answer = 'Экзамен на знание УК — 5 вопросов. Удачи!';
-            setTimeout(() => addMessageToChat('assistant', answer), 500);
+            
+            // Ищем ответ в базе
+            let answer = findAssistantAnswer(question);
+            
+            setTimeout(() => {
+                addAssistantMessage('assistant', answer);
+                speakAnswer(answer);
+            }, 500);
         }
-        function addMessageToChat(sender, content) {
-            const chat = document.getElementById('chatHistory');
-            const msg = document.createElement('div');
-            msg.style.marginBottom = '12px';
-            msg.innerHTML = sender === 'user' 
-                ? `<div style="text-align: right;"><span style="background: #333; padding: 8px 16px; border-radius: 18px; display: inline-block;">${content}</span></div>`
-                : `<div style="display: flex; gap: 8px;"><span style="background: #444; padding: 8px 16px; border-radius: 18px;">🤖 ${content}</span></div>`;
-            chat.appendChild(msg);
-            chat.scrollTop = chat.scrollHeight;
-            chatHistory.push({ sender, content });
-            localStorage.setItem('reznovChatHistory', JSON.stringify(chatHistory.slice(-20)));
-        }
-        function loadChatHistory() {
-            const chat = document.getElementById('chatHistory');
-            chat.innerHTML = '';
-            if (chatHistory.length === 0) {
-                chat.innerHTML = '<div style="color: #888; padding: 12px;">🤖 Привет! Я помощник LSPD. Спроси про кодекс чести или экзамен.</div>';
+
+        function findAssistantAnswer(question) {
+            const q = question.toLowerCase();
+            
+            // Приветствия
+            if (q.includes('привет') || q.includes('здравствуй')) {
+                return 'Привет! Я голосовой помощник Reznov. Чем могу помочь?';
             }
+            if (q.includes('спасиб')) {
+                return 'Всегда рад помочь! Обращайся ещё.';
+            }
+            
+            // Поиск по статьям
+            for (let law of lawDatabase) {
+                if (q.includes(law.article) || q.includes(law.article.replace('.', ''))) {
+                    return `Статья ${law.article}: ${law.title}. Наказание: ${law.penalty}. ${law.desc}`;
+                }
+            }
+            
+            // Ключевые слова
+            if (q.includes('убийство')) {
+                const law = lawDatabase.find(l => l.article === '6.2');
+                return `Статья 6.2: Убийство. Наказание: 4 года лишения свободы. Умышленное причинение смерти другому человеку. Тяжкое преступление.`;
+            }
+            if (q.includes('наркотик')) {
+                return 'За хранение наркотиков: до 5 гр - изъятие без срока, 6-10 гр (ст. 13.1.1) - 3 года / $50,000, 11+ гр (ст. 13.1.2) - 5 лет.';
+            }
+            if (q.includes('оружие')) {
+                return 'Хранение оружия (ст. 12.8.1) - 4 года / $40,000. За гос. оружие (ст. 12.8.2) - 5 лет.';
+            }
+            if (q.includes('угон')) {
+                return 'Угон авто (ст. 10.5.1) - 3 года / $30,000. Угон гос. транспорта (ст. 10.5.2) - 4 года / $45,000.';
+            }
+            if (q.includes('неподчинение')) {
+                return 'Неподчинение (ст. 17.6) - 3 года / $20-60k. Отказ снять маску не является нарушением.';
+            }
+            if (q.includes('кража')) {
+                return 'Кража: от $2,000 - 1 год, от $5,000 - 2 года, от $10,000 - 3 года, от $30,000 - 4 года.';
+            }
+            
+            return 'Извините, я не нашёл информацию по вашему запросу. Попробуйте спросить про конкретную статью (например "статья 6.2") или преступление ("что за убийство?").';
+        }
+
+        function speakAnswer(text) {
+            if (!('speechSynthesis' in window)) return;
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'ru-RU';
+            utterance.rate = 1.0;
+            utterance.pitch = 1.0;
+            window.speechSynthesis.speak(utterance);
+        }
+
+        function startVoiceAssistant() {
+            if (!('webkitSpeechRecognition' in window)) {
+                alert('Голосовой ввод работает в Chrome/Edge');
+                return;
+            }
+            
+            const btn = document.getElementById('voiceAssistantBtn');
+            btn.classList.add('listening');
+            
+            const recognition = new webkitSpeechRecognition();
+            recognition.lang = 'ru-RU';
+            recognition.continuous = false;
+            recognition.interimResults = false;
+            
+            recognition.onresult = (e) => {
+                const text = e.results[0][0].transcript;
+                document.getElementById('assistantInput').value = text;
+                sendAssistantMessage();
+                btn.classList.remove('listening');
+            };
+            
+            recognition.onerror = () => {
+                btn.classList.remove('listening');
+            };
+            
+            recognition.onend = () => {
+                btn.classList.remove('listening');
+            };
+            
+            recognition.start();
         }
 
         // ========== ТЕМА ==========
@@ -1119,40 +1319,43 @@ ${protocolArticles.map(l => `• ${l.article} - ${l.title} (${l.penalty})`).join
                 drawStars();
                 initTables();
                 updateFavoritesTab();
-                loadChatHistory();
-                loadLSPDQuestion();
+                resetQuiz();
                 showTab(1);
+                
+                // Инициализируем ассистента
+                document.getElementById('voiceAssistantBtn').addEventListener('click', function() {
+                    if (document.getElementById('assistantModal').style.display === 'block') {
+                        toggleAssistant();
+                    } else {
+                        toggleAssistant();
+                        startVoiceAssistant();
+                    }
+                });
             } else {
                 document.getElementById('loginError').style.display = 'block';
                 setTimeout(() => document.getElementById('loginError').style.display = 'none', 2000);
             }
         }
 
-        // ========== ГОЛОСОВОЙ ПОИСК ==========
+        // ========== ГОЛОСОВОЙ ПОИСК (СТАРЫЙ) ==========
         function startVoiceSearch() {
-            if (!('webkitSpeechRecognition' in window)) return;
+            if (!('webkitSpeechRecognition' in window)) {
+                alert('Голосовой поиск работает в Chrome/Edge');
+                return;
+            }
             const btn = document.getElementById('voiceBtn');
-            btn.classList.add('listening');
             btn.textContent = '🎤 Слушаю...';
             const recognition = new webkitSpeechRecognition();
             recognition.lang = 'ru-RU';
             recognition.onresult = (e) => {
                 document.getElementById('searchInput').value = e.results[0][0].transcript;
                 searchArticles();
-                btn.classList.remove('listening');
+                btn.textContent = '🎤 Голос';
+            };
+            recognition.onend = () => {
                 btn.textContent = '🎤 Голос';
             };
             recognition.start();
-        }
-
-        // Инициализация голосов
-        if ('speechSynthesis' in window) {
-            window.speechSynthesis.onvoiceschanged = function() {
-                const voiceSelect = document.getElementById('voiceSelect');
-                const voices = window.speechSynthesis.getVoices();
-                const russianVoices = voices.filter(v => v.lang.includes('ru'));
-                voiceSelect.innerHTML = russianVoices.map(v => `<option value="${v.voiceURI}">${v.name}</option>`).join('');
-            };
         }
     </script>
 </body>
